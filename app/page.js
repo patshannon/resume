@@ -7,6 +7,7 @@ import { softSkillsData } from '@/data/skillsData';
 import { educationData } from '@/data/educationData';
 import EducationCard from '@/components/educationCard';
 import { ScrollDown } from '@/components/scrollDown';
+import Image from 'next/image';
 export default function Home() {
   return (
     <main>
@@ -44,9 +45,9 @@ export default function Home() {
             <SkillsChart data={softSkillsData} />
           </div>
         </div>
-        <div className="mt-10 max-w-md p-2 border-2 border-zinc-200">
-          <div className="text-sm"><strong>BONUS: 3000hrs flying airplanes</strong></div>
-          <div className="text-sm mt-1">I use my unique skills from my past career as an airline pilot to develop precise and professional solutions.</div>
+        <div className="mt-16 bg-zinc-900 opacity-40 h-px w-10"></div>
+        <div className="mt-5 max-w-lg p-2">
+          <div className="text-sm">Leveraging my unique skills from my past career as an airline pilot<br/>I develop precise and professional solutions.</div>
         </div>    
       </section>
       <section className="relative px-10 py-10 min-h-screen container-xl flex flex-col justify-center align-center items-center text-center">
@@ -63,14 +64,14 @@ export default function Home() {
           <div>peshannon104@gmail.com</div>
           <div className="flex gap-2">
             <a target="_blank" href="https://github.com/patshannon" className="w-10 h-10 hover:scale-105 transition-transform">
-              <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" />
+              <Image width="40" height="40" src="/ps-github-link-icon.svg" alt="github icon" />
             </a>
             <a target="_blank" href="https://www.linkedin.com/in/patrick-e-shannon/" className="w-10 h-10 hover:scale-105 transition-transform">
-              <img src="https://cdn-icons-png.flaticon.com/512/1384/1384014.png" />
+              <Image width="40" height="40" src="/ps-linkedin-link-icon.svg" alt="linkedin icon" />
             </a>
           </div>
           <a href="" className="rounded-full bg-zinc-900 text-zinc-50 px-6 py-4 hover:scale-105 transition-transform">
-            Download Resume
+            View Resume
           </a>
         </div>
       </section>
