@@ -70,8 +70,8 @@ export default function Home() {
               <Image width="40" height="40" src="/ps-linkedin-link-icon.svg" alt="linkedin icon" />
             </a>
           </div>
-          <a href="" className="rounded-full bg-zinc-900 text-zinc-50 px-6 py-4 hover:scale-105 transition-transform">
-            View Resume
+          <a download href="/ps-resume-2023.pdf" className="rounded-full bg-zinc-900 text-zinc-50 px-6 py-4 hover:scale-105 transition-transform">
+            Download Resume
           </a>
         </div>
       </section>
