@@ -11,11 +11,11 @@ import Image from 'next/image';
 export default function Home() {
   return (
     <main>
-      <section className="relative px-10 py-10 min-h-screen container-xl flex flex-col justify-center align-center items-center text-center">
+      <section className="relative px-10 sm: px-5 py-10 sm: py-5 min-h-screen container-xl flex flex-col justify-center align-center items-center text-center">
         <h1 className="text-7xl font-extrabold">Patrick Shannon</h1>
-        <div className="mt-10 mb-10 text-zinc-900 text-2xl font-extrabold">
-          <span className="p-5 bg-zinc-800 rounded-xl text-zinc-50">Web Developer</span>{' '}
-          <span className="p-5 ml-2 bg-zinc-800 rounded-xl text-zinc-50">Webflow Expert</span>
+        <div className="flex flex-col sm:flex-row gap-2 mt-10 mb-10 text-zinc-900 text-2xl font-extrabold">
+          <div className="p-5 bg-zinc-800 rounded-xl text-zinc-50">Web Developer</div>
+          <div className="p-5 bg-zinc-800 rounded-xl text-zinc-50">Webflow Expert</div>
         </div>
         <div className="font-light">Halifax, N.S. Canada</div>
         <div className="absolute w-100 text-center m-auto bottom-10 left-0 right-0 flex justify-center">
@@ -37,7 +37,7 @@ export default function Home() {
       </section>
       <section className="bg-zinc-50 text-zinc-900 relative px-10 py-10 min-h-screen container-xl flex flex-col justify-center align-center items-center text-center">
         <h2 className="text-5xl font-extrabold max-w-lg mx-auto mb-10">Skills distribution</h2>
-        <div className="flex justify-center items-center align-center gap-10 max-w-4xl">
+        <div className="flex flex-col md:flex-row justify-center items-center align-center gap-10 max-w-4xl">
           <div className="w-full h-32">
             <SkillsChart data={hardSkillsData} />
           </div>
@@ -45,14 +45,14 @@ export default function Home() {
             <SkillsChart data={softSkillsData} />
           </div>
         </div>
-        <div className="mt-16 bg-zinc-900 opacity-40 h-px w-10"></div>
+        <div className="mt-10 md:mt-15 bg-zinc-900 opacity-40 h-px w-10"></div>
         <div className="mt-5 max-w-lg p-2">
           <div className="text-sm">Leveraging my unique skills from my past career as an airline pilot<br/>I develop precise and professional solutions.</div>
         </div>    
       </section>
       <section className="relative px-10 py-10 min-h-screen container-xl flex flex-col justify-center align-center items-center text-center">
         <h2 className="text-5xl font-extrabold max-w-lg mx-auto mb-10">Education</h2>
-        <div className="grid grid-cols-2 max-w-3xl mx-auto gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 max-w-3xl mx-auto gap-4">
           {educationData.map((item) => (
             <EducationCard data={item} />
           ))}
