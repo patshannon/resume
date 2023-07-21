@@ -4,14 +4,20 @@ import Image from 'next/image'
 
 export default function ToolIcon({data}) {
   const [showPopup, setShowPopup] = useState(false);
+  const isWindowTablet = () => {
+    if (typeof window !== 'undefined') {
+      return window.innerWidth < 1024;
+    }
+    return false;
+  }
   const handleOnMouseEnter = () => {
-    setShowPopup(true);
+    !isWindowTablet() && setShowPopup(true);
   };
   const handleOnMouseLeave = () => {
-    setShowPopup(false);
+    !isWindowTablet() && setShowPopup(false);
   };
   const handleOnClick = () => {
-    setShowPopup(!showPopup);
+    isWindowTablet() && setShowPopup(!showPopup);
   };
   return (
     <div className="relative" onClick={handleOnClick} onMouseEnter={handleOnMouseEnter} onMouseLeave={handleOnMouseLeave}>
