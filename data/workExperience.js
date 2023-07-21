@@ -6,7 +6,7 @@ const data = [
     location: "Remote",
     start: `${new Date("2022-01-02").toLocaleDateString("en-US", { month: "long", year: "numeric" })}`,
     end: "Present",
-    duration: `${Math.floor((now - new Date("2022-01-02")) / (1000 * 60 * 60 * 24 * 30))/12} years`,
+    duration: `${+(Math.round(((now - new Date("2022-01-02")) / (1000 * 60 * 60 * 24 * 30)/12)+"e+2")+"e-2")} years`,
     description: "Developing websites and web applications for clients using a variety of tools and technologies.",
     tools: [
       "Webflow",
@@ -25,7 +25,7 @@ const data = [
     location: "Remote",
     start: `${new Date("2021-04-02").toLocaleDateString("en-US", { month: "long", year: "numeric" })}`,
     end: "Present",
-    duration: `${Math.floor((now - new Date("2021-04-02")) / (1000 * 60 * 60 * 24 * 30))/12} years`,
+    duration: `${+(Math.round(((now - new Date("2021-04-02")) / (1000 * 60 * 60 * 24 * 30)/12)+"e+2")+"e-2")} years`,
     description: "Designing and developing websites for clients using Webflow.",
     tools: [
       "Webflow",

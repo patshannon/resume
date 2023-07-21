@@ -20,8 +20,8 @@ export const hardSkillsData = {
 
 export const softSkillsData = {
   labels: [
-    'Problem Solving',
     'Time Management',
+    'Problem Solving',
     'Communication',
     'Teamwork',
     'Leadership',
@@ -29,7 +29,7 @@ export const softSkillsData = {
     'Creativity',
   ],
   datasets: [{
-    data: [85, 90, 80, 85, 80, 80, 95],
+    data: [90, 85, 80, 85, 80, 80, 95],
     fill: true,
     backgroundColor: 'rgba(24, 24, 27, 0.3)',
     borderColor: 'rgb(24, 24, 27,0.6)',

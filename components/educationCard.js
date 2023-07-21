@@ -6,7 +6,7 @@ export default function EducationCard({data}){
     setIsFlipped(!isFlipped);
   }
   return (
-    <div onClick={handleOnClick} className="relative p-4 rounded bg-zinc-800 text-left hover:outline-1 hover:outline hover:outline-zinc-50 cursor-pointer">
+    <div onClick={handleOnClick} className="relative p-4 rounded bg-zinc-800 text-left lg:hover:outline-1 lg:hover:outline lg:hover:outline-zinc-50 cursor-pointer">
       <div className={`relative ${isFlipped?"opacity-0":"opacity-100"} transition-opacity duration-500`}>
         <div className="text-lg font-semibold mb-1">{data.title}</div>
         <div className="text-sm font-light">{data.school}</div>
