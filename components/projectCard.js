@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function ProjectCard({data, index}) {
   return (
-    <div className={`flex ${index%2==0?'flex-row':'flex-row-reverse'} mb-12 gap-8`}>
+    <div className={`flex flex-col ${index%2==0?'md:flex-row':'md:flex-row-reverse'} mb-16 md:mb-10 gap-6 md:gap-8`}>
       <div className="w-full relative">
         <Image className="w-full rounded-lg" src={data.image} width={1000} height={625}/>
         </div>
