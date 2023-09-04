@@ -1,5 +1,17 @@
 const data = [
   {
+    url: 'https://cdn.icon-icons.com/icons2/2699/PNG/512/webflow_logo_icon_169218.png',
+    alt: 'Webflow',
+    text: 'Webflow',
+    src: '/ps-webflow-icon.svg'
+  },
+  {
+    url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png',
+    alt: 'React',
+    text: 'React',
+    src: '/ps-react-icon.svg'
+  },
+  {
     url: 'https://cdn.iconscout.com/icon/free/png-256/free-javascript-2038874-1720087.png',
     alt: 'JavaScript',
     text: 'JavaScript',
@@ -16,18 +28,6 @@ const data = [
     alt: 'CSS',
     text: 'CSS',
     src: '/ps-css-icon.svg'
-  },
-  {
-    url: 'https://cdn.icon-icons.com/icons2/2699/PNG/512/webflow_logo_icon_169218.png',
-    alt: 'Webflow',
-    text: 'Webflow',
-    src: '/ps-webflow-icon.svg'
-  },
-  {
-    url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png',
-    alt: 'React',
-    text: 'React',
-    src: '/ps-react-icon.svg'
   },
   {
     url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/2048px-Typescript_logo_2020.svg.png',

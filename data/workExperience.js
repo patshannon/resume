@@ -13,10 +13,12 @@ const data = [
       "React",
       "TypeScript",
       "Firebase",
+      "Google Cloud",
       "Cloudflare",
       "Squidex",
       "GraphQL",
       "Algolia",
+      "Jira"
     ],
   },
   {
