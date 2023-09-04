@@ -8,6 +8,8 @@ import { educationData } from '@/data/educationData';
 import EducationCard from '@/components/educationCard';
 import { ScrollDown } from '@/components/scrollDown';
 import Image from 'next/image';
+import ProjectCard from '@/components/projectCard';
+import { projectData } from '@/data/projectData';
 export default function Home() {
   return (
     <main>
@@ -36,6 +38,14 @@ export default function Home() {
         </div>
       </section>
       <section className="bg-zinc-50 text-zinc-900 relative px-10 py-20 min-h-screen container-xl flex flex-col justify-center align-center items-center text-center">
+        <h2 className="text-5xl font-extrabold max-w-lg mx-auto mb-16">Portfolio</h2>
+        <div className="max-w-3xl">
+          {projectData.map((project, index) => (
+            <ProjectCard data={project} index={index}/>
+          ))}
+        </div>
+      </section>
+      {/* <section className="bg-zinc-50 text-zinc-900 relative px-10 py-20 min-h-screen container-xl flex flex-col justify-center align-center items-center text-center">
         <h2 className="text-5xl font-extrabold max-w-lg mx-auto mb-10">Skills distribution</h2>
         <div className="flex flex-col md:flex-row justify-center items-center align-center gap-10 max-w-4xl">
           <div className="w-full h-32">
@@ -49,9 +59,9 @@ export default function Home() {
         <div className="mt-5 max-w-lg p-2">
           <div className="text-sm">Leveraging my unique skills from my past career as an airline pilot I develop precise and professional solutions.</div>
         </div>    
-      </section>
+      </section> */}
       <section className="relative px-10 py-20 min-h-screen container-xl flex flex-col justify-center align-center items-center text-center">
-        <h2 className="text-5xl font-extrabold max-w-lg mx-auto mb-10">Education</h2>
+        <h2 className="text-5xl font-extrabold max-w-lg mx-auto mb-16">Education</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 max-w-3xl mx-auto gap-4">
           {educationData.map((item) => (
             <EducationCard data={item} />
