@@ -1,4 +1,5 @@
 import { Inter } from 'next/font/google'
+import { SpeedInsights } from '@vercel/speed-insights/*'
 import './globals.css'
 const inter = Inter({
   subsets: ['latin'],
@@ -14,6 +15,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={inter.className}>
       <body className="bg-zinc-900 text-zinc-50">
         {children}
+        <SpeedInsights />
       </body>
     </html>
   )
