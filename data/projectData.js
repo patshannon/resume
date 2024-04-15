@@ -1,5 +1,12 @@
 export const projectData = [
   {
+    title: "La Vitrine Culturelle",
+    description: "A longterm project that involved management of multiple teams. I was responsible for the implementation of UI, data integration, content APIs and managing the integration of all components. I also played a key role in discussions with the client to guide the project towards a successful launch.",
+    url: "https://www.lavitrine.com/en",
+    image: "/lvc-website-16-10.webp",
+    tools: ["Team Management", "Webflow", "Webcomponents", "SDLC", "Supabase", "NocoDB", "GCP", "Firebase", "Squidex CMS", "GraphQL", "Algolia", "TypeScript"]
+  },
+  {
     title: "Tel-jeunes",
     description: "I spearheaded the comprehensive overhaul of the Tel-jeunes website, overseeing CMS planning and architecture, developing backend Cloud Functions to streamline data integration, and seamlessly integrating the frontend with Webflow. This multifaceted approach was geared towards improving the website's user experience, readability, and overall functionality.",
     url: "https://www.teljeunes.com/en",
