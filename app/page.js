@@ -1,9 +1,6 @@
 import Toolkit from '@/components/toolkit';
 import workData from '../data/workExperience';
 import { Workcard } from '@/components/workcard';
-import SkillsChart from '@/components/skillsChart';
-import { hardSkillsData } from '@/data/skillsData';
-import { softSkillsData } from '@/data/skillsData';
 import { educationData } from '@/data/educationData';
 import EducationCard from '@/components/educationCard';
 import { ScrollDown } from '@/components/scrollDown';
@@ -15,8 +12,8 @@ export default function Home() {
     <main>
       <section className="relative px-10 sm: px-5 py-20 sm: py-5 min-h-screen container-xl flex flex-col justify-center align-center items-center text-center">
         <h1 className="text-7xl font-extrabold">Patrick Shannon</h1>
-        <div className="flex flex-col sm:flex-row gap-2 mt-10 mb-10 text-zinc-900 text-2xl font-extrabold">
-          <div className="p-5 bg-zinc-800 rounded-xl text-zinc-50">Web Developer</div>
+        <div className="flex flex-col gap-2 items-center mt-10 mb-10 text-zinc-900 text-2xl font-extrabold">
+          <div className="p-5 bg-zinc-800 rounded-xl text-zinc-50">Software Developer Team Lead</div>
           <div className="p-5 bg-zinc-800 rounded-xl text-zinc-50">Webflow Expert</div>
         </div>
         <div className="font-light">Halifax, N.S. Canada</div>
@@ -80,7 +77,7 @@ export default function Home() {
               <Image width="40" height="40" src="/ps-linkedin-link-icon.svg" alt="linkedin icon" />
             </a>
           </div>
-          <a download href="/ps-resume-2023.pdf" className="rounded-full bg-zinc-900 text-zinc-50 px-6 py-4 hover:scale-105 transition-transform">
+          <a download href="/ps-resume-2024.pdf" className="rounded-full bg-zinc-900 text-zinc-50 px-6 py-4 hover:scale-105 transition-transform">
             Download Resume
           </a>
         </div>
