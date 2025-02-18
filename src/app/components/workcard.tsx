@@ -8,8 +8,8 @@ export function Workcard({data}){
         <p className="text-sm mt-2 italic">{data.description}</p>
       </div>
       <div className="flex flex-wrap gap-2 justify-center sm:justify-end max-w-xs mx-auto">
-        {data.tools.map(tool => (
-          <span className="text-xs bg-zinc-800 px-2 py-1 rounded-lg text-zinc-200 font-bold">{tool}</span>
+        {data.tools.map((tool, index) => (
+          <span key={index} className="text-xs bg-zinc-800 px-2 py-1 rounded-lg text-zinc-200 font-bold">{tool}</span>
         ))}
       </div>
     </div>

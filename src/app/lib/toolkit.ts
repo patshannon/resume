@@ -1,15 +1,21 @@
 const data = [
   {
-    url: 'https://cdn.icon-icons.com/icons2/2699/PNG/512/webflow_logo_icon_169218.png',
-    alt: 'Webflow',
-    text: 'Webflow',
-    src: '/ps-webflow-icon.svg'
+    url: 'https://static-00.iconduck.com/assets.00/next-js-icon-512x512-zuauazrk.png',
+    alt: 'Next.js',
+    text: 'Next.js',
+    src: '/ps-nextjs-icon.svg'
   },
   {
     url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png',
     alt: 'React',
     text: 'React',
     src: '/ps-react-icon.svg'
+  },
+  {
+    url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/2048px-Typescript_logo_2020.svg.png',
+    alt: 'TypeScript',
+    text: 'TypeScript',
+    src: '/ps-typescript-icon.svg'
   },
   {
     url: 'https://cdn.iconscout.com/icon/free/png-256/free-javascript-2038874-1720087.png',
@@ -29,11 +35,12 @@ const data = [
     text: 'CSS',
     src: '/ps-css-icon.svg'
   },
+
   {
-    url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/2048px-Typescript_logo_2020.svg.png',
-    alt: 'TypeScript',
-    text: 'TypeScript',
-    src: '/ps-typescript-icon.svg'
+    url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/1200px-Tailwind_CSS_Logo.svg.png',
+    alt: 'Tailwind CSS',
+    text: 'Tailwind CSS',
+    src: '/ps-tailwind-icon.svg'
   },
   {
     url: 'https://cdn4.iconfinder.com/data/icons/google-i-o-2016/512/google_firebase-2-512.png',
@@ -71,17 +78,13 @@ const data = [
     text: 'Algolia',
     src: '/ps-algolia-icon.svg'
   },
+
+
   {
-    url: 'https://static-00.iconduck.com/assets.00/next-js-icon-512x512-zuauazrk.png',
-    alt: 'Next.js',
-    text: 'Next.js',
-    src: '/ps-nextjs-icon.svg'
-  },
-  {
-    url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/1200px-Tailwind_CSS_Logo.svg.png',
-    alt: 'Tailwind CSS',
-    text: 'Tailwind CSS',
-    src: '/ps-tailwind-icon.svg'
+    url: 'https://cdn.icon-icons.com/icons2/2699/PNG/512/webflow_logo_icon_169218.png',
+    alt: 'Webflow',
+    text: 'Webflow',
+    src: '/ps-webflow-icon.svg'
   },
   {
     url: 'https://cdn-icons-png.flaticon.com/512/5968/5968705.png',

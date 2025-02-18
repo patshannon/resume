@@ -1,6 +1,6 @@
-const now = new Date();
 const data = [
   {
+    id: 1,
     role: "Software Developer Team Lead",
     company: "bbox.digital",
     location: "Remote",
@@ -19,6 +19,7 @@ const data = [
     ],
   },
   {
+    id: 2,
     role: "Software Developer",
     company: "bbox.digital",
     location: "Remote",
@@ -39,6 +40,7 @@ const data = [
     ],
   },
   {
+    id: 3,
     role: "Webflow Expert | Webflow Developer",
     company: "Freelance",
     location: "Remote",
