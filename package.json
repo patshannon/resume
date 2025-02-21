@@ -12,6 +12,7 @@
     "@vercel/speed-insights": "^1.0.3",
     "chart.js": "^4.3.0",
     "chartjs-plugin-datalabels": "^2.2.0",
+    "framer-motion": "^12.4.7",
     "next": "^15.1.7",
     "react": "^19.0.0",
     "react-chartjs-2": "^5.2.0",
