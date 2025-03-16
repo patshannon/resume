@@ -3,8 +3,8 @@ export const projectData = [
     title: "La Vitrine Culturelle",
     description: "A longterm project that involved management of multiple teams. I was responsible for the implementation of UI, data integration, content APIs and managing the integration of all components. I also played a key role in discussions with the client to guide the project towards a successful launch.",
     url: "https://www.lavitrine.com/en",
-    image: "/lvc-website-16-10.webp",
-    tools: ["Team Management", "Webflow", "Webcomponents", "SDLC", "Supabase", "NocoDB", "GCP", "Firebase", "Squidex CMS", "GraphQL", "Algolia", "TypeScript"]
+    image: "/lvc-v2-16-10.png",
+    tools: ["Webcomponents", "TypeScript", "Firebase Auth", "Webflow", "Playwright", "CI/CD", "Firebase Firestore", "Supabase", "PostgreSQL", "Squidex CMS", "Algolia", "Google Cloud Functions", "GraphQL"]
   },
   {
     title: "Tel-jeunes",
