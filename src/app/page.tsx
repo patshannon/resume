@@ -39,6 +39,7 @@ export default function Home() {
             alt="Patrick Shannon" 
             width={125} 
             height={125}
+            quality={100}
             priority
           />
         </MotionDiv>
