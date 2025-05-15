@@ -12,7 +12,7 @@ interface WorkcardProps {
   };
 }
 
-export function Workcard({ data }: WorkcardProps) {
+const WorkCard = ({ data }: WorkcardProps) => {
   return (
     <MotionDiv 
       initial={{ opacity: 0, y: 20 }}
@@ -73,3 +73,5 @@ export function Workcard({ data }: WorkcardProps) {
     </MotionDiv>
   );
 }
+
+export default WorkCard

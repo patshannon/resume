@@ -1,4 +1,4 @@
-export default function Navbar() {
+const Navbar = () => {
   return (
     <nav className="px-10 py-5 bg-gray-600 uppercase text-white container-xl font-light">
       <div className="flex flex-row justify-between">
@@ -10,3 +10,5 @@ export default function Navbar() {
     </nav>
   )
 }
+
+export default Navbar;

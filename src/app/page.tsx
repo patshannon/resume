@@ -1,17 +1,17 @@
-import Toolkit from '@/components/toolkit';
+import Toolkit from '@/components/Toolkit';
 import workData from '@/lib/workExperience';
-import { Workcard } from '@/components/workcard';
+import Workcard from '@/components/Workcard';
 import { educationData } from '@/lib/educationData';
-import EducationCard from '@/components/educationCard';
-import { ScrollDown } from '@/components/scrollDown';
+import EducationCard from '@/components/EducationCard';
+import ScrollDown from '@/components/ScrollDown';
 import Image from 'next/image';
-import ProjectCard from '@/components/projectCard';
+import ProjectCard from '@/components/ProjectCard';
 import { projectData } from '@/lib/projectData';
 import { Metadata } from 'next';
 import { MotionDiv, MotionSection, MotionH1 } from './motion';
 
 export const metadata: Metadata = {
-  title: 'Patrick Shannon - Software Developer Team Lead',
+  title: 'Patrick Shannon - Full Stack Developer | Technical Team Lead',
   description: 'Experienced Software Developer Team Lead specializing in web development, team management, and technical leadership. Based in Halifax, NS.',
   openGraph: {
     title: 'Patrick Shannon - Software Developer Team Lead',
@@ -51,13 +51,13 @@ export default function Home() {
           Patrick Shannon
         </MotionH1>
         <MotionDiv 
-          className="flex flex-col gap-2 items-center mt-10 mb-10 text-zinc-900 text-2xl font-extrabold"
+          className="flex flex-col gap-2 items-center mt-10 mb-10 text-zinc-900 text-xl font-extrabold"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
           <div className="p-5 bg-zinc-800 rounded-xl text-zinc-50">
-            Software Developer Team Lead
+            Full Stack Developer | Technical Team Lead
           </div>
         </MotionDiv>
         <MotionDiv 
@@ -114,22 +114,6 @@ export default function Home() {
           ))}
         </div>
       </MotionSection>
-
-      {/* <section className="bg-zinc-50 text-zinc-900 relative px-10 py-20 min-h-screen container-xl flex flex-col justify-center align-center items-center text-center">
-        <h2 className="text-5xl font-extrabold max-w-lg mx-auto mb-10">Skills distribution</h2>
-        <div className="flex flex-col md:flex-row justify-center items-center align-center gap-10 max-w-4xl">
-          <div className="w-full h-32">
-            <SkillsChart data={hardSkillsData} />
-          </div>
-          <div className="w-full h-40">
-            <SkillsChart data={softSkillsData} />
-          </div>
-        </div>
-        <div className="mt-10 md:mt-15 bg-zinc-900 opacity-40 h-px w-10"></div>
-        <div className="mt-5 max-w-lg p-2">
-          <div className="text-sm">Leveraging my unique skills from my past career as an airline pilot I develop precise and professional solutions.</div>
-        </div>    
-      </section> */}
 
       <MotionSection 
         className="relative px-10 py-20 min-h-screen container-xl flex flex-col justify-center align-center items-center text-center"

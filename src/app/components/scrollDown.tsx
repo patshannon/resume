@@ -1,7 +1,7 @@
-'use client';
+'use client'
 import { MotionDiv, MotionSvg, MotionPath } from '../motion';
 
-export function ScrollDown() {
+const ScrollDown = () => {
   const handleClick = () => {
     window.scrollTo({
       top: window.innerHeight,
@@ -56,3 +56,5 @@ export function ScrollDown() {
     </MotionDiv>
   )
 }
+
+export default ScrollDown

@@ -12,7 +12,7 @@ interface ToolIconProps {
   index: number;
 }
 
-export default function ToolIcon({ data, index }: ToolIconProps) {
+const ToolIcon = ({ data, index }: ToolIconProps) => {
   const [showPopup, setShowPopup] = useState(false);
   const isWindowTablet = () => {
     if (typeof window !== 'undefined') {
@@ -73,3 +73,5 @@ export default function ToolIcon({ data, index }: ToolIconProps) {
     </MotionDiv>
   )
 }
+
+export default ToolIcon;

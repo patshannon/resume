@@ -12,14 +12,14 @@ interface EducationCardProps {
   };
 }
 
-export default function EducationCard({ data }: EducationCardProps) {
+const EducationCard = ({ data }: EducationCardProps) => {
   const [isFlipped, setIsFlipped] = useState(false);
   const handleOnClick = () => {
     setIsFlipped(!isFlipped);
-  }
+  };
   return (
-    <MotionDiv 
-      onClick={handleOnClick} 
+    <MotionDiv
+      onClick={handleOnClick}
       className="relative p-6 rounded-xl bg-zinc-800 text-left cursor-pointer min-h-[200px] group"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -37,14 +37,14 @@ export default function EducationCard({ data }: EducationCardProps) {
             transition={{ duration: 0.3 }}
             className="h-full"
           >
-            <MotionDiv 
+            <MotionDiv
               className="text-lg font-semibold mb-2 bg-gradient-to-r from-zinc-50 to-zinc-300 bg-clip-text text-transparent"
               initial={{ y: 10 }}
               animate={{ y: 0 }}
             >
               {data.title}
             </MotionDiv>
-            <MotionDiv 
+            <MotionDiv
               className="text-sm text-zinc-300"
               initial={{ y: 10 }}
               animate={{ y: 0 }}
@@ -52,7 +52,7 @@ export default function EducationCard({ data }: EducationCardProps) {
             >
               {data.school}
             </MotionDiv>
-            <MotionDiv 
+            <MotionDiv
               className="text-sm text-zinc-400"
               initial={{ y: 10 }}
               animate={{ y: 0 }}
@@ -60,7 +60,7 @@ export default function EducationCard({ data }: EducationCardProps) {
             >
               {data.location}
             </MotionDiv>
-            <MotionDiv 
+            <MotionDiv
               className="text-sm text-zinc-400"
               initial={{ y: 10 }}
               animate={{ y: 0 }}
@@ -100,5 +100,7 @@ export default function EducationCard({ data }: EducationCardProps) {
       </AnimatePresence>
       <div className="absolute inset-0 bg-gradient-to-br from-zinc-700/5 to-transparent rounded-xl pointer-events-none group-hover:opacity-100 opacity-0 transition-opacity duration-300" />
     </MotionDiv>
-  )
-}
+  );
+};
+
+export default EducationCard;
