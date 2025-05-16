@@ -10,9 +10,10 @@ interface WorkcardProps {
     description: string;
     tools: string[];
   };
+  variant?: 'dark' | 'light'
 }
 
-const WorkCard = ({ data }: WorkcardProps) => {
+const WorkCard = ({ data, variant='dark' }: WorkcardProps) => {
   return (
     <MotionDiv 
       initial={{ opacity: 0, y: 20 }}
@@ -64,7 +65,7 @@ const WorkCard = ({ data }: WorkcardProps) => {
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.1 * index }}
-            className="text-xs bg-zinc-800 px-2 py-1 rounded-lg text-zinc-200 font-bold cursor-default"
+            className={`text-xs  px-2 py-1 rounded-lg  font-bold cursor-default ${variant === 'dark' ? 'bg-zinc-800 text-zinc-200': 'bg-zinc-200 text-zinc-800' }`}
           >
             {tool}
           </MotionSpan>

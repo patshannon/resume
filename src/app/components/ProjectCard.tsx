@@ -35,6 +35,7 @@ const ProjectCard = ({ data, index }) => {
             height={625}
             alt={`${data.title} project screenshot`}
             priority={index < 2}
+            quality={100}
           />
         </a>
       </MotionDiv>

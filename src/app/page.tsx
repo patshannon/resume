@@ -12,10 +12,12 @@ import { MotionDiv, MotionSection, MotionH1 } from './motion';
 
 export const metadata: Metadata = {
   title: 'Patrick Shannon - Full Stack Developer | Technical Team Lead',
-  description: 'Experienced Software Developer Team Lead specializing in web development, team management, and technical leadership. Based in Halifax, NS.',
+  description:
+    'Experienced Software Developer Team Lead specializing in web development, team management, and technical leadership. Based in Halifax, NS.',
   openGraph: {
     title: 'Patrick Shannon - Software Developer Team Lead',
-    description: 'Experienced Software Developer Team Lead specializing in web development, team management, and technical leadership.',
+    description:
+      'Experienced Software Developer Team Lead specializing in web development, team management, and technical leadership.',
     images: ['/headshot-rounded.png'],
   },
 };
@@ -23,7 +25,8 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main>
-      <MotionSection 
+      {/* Header */}
+      <MotionSection
         className="relative px-10 sm:px-5 py-20 sm:py-5 min-h-screen container-xl flex flex-col justify-center align-center items-center text-center"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -34,16 +37,9 @@ export default function Home() {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <Image 
-            src="/headshot-rounded.png" 
-            alt="Patrick Shannon" 
-            width={125} 
-            height={125}
-            quality={100}
-            priority
-          />
+          <Image src="/headshot-rounded.png" alt="Patrick Shannon" width={125} height={125} quality={100} priority />
         </MotionDiv>
-        <MotionH1 
+        <MotionH1
           className="text-7xl font-extrabold mt-6"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -51,17 +47,15 @@ export default function Home() {
         >
           Patrick Shannon
         </MotionH1>
-        <MotionDiv 
+        <MotionDiv
           className="flex flex-col gap-2 items-center mt-10 mb-10 text-zinc-900 text-xl font-extrabold"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <div className="p-5 bg-zinc-800 rounded-xl text-zinc-50">
-            Full Stack Developer | Technical Team Lead
-          </div>
+          <div className="p-5 bg-zinc-800 rounded-xl text-zinc-50">Full Stack Developer | Technical Team Lead</div>
         </MotionDiv>
-        <MotionDiv 
+        <MotionDiv
           className="font-light"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -74,8 +68,25 @@ export default function Home() {
         </div>
       </MotionSection>
 
-      <MotionSection 
-        className="flex flex-col justify-center min-h-screen px-10 py-20 bg-zinc-50 text-zinc-900 text-center"
+      {/* Projects */}
+      <MotionSection
+        className="bg-zinc-50 text-zinc-900 relative px-10 py-20 min-h-screen container-xl flex flex-col justify-center align-center items-center text-center"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        <h2 className="text-5xl font-extrabold max-w-lg mx-auto mb-16">Portfolio</h2>
+        <div className="max-w-3xl">
+          {projectData.map((project, index) => (
+            <ProjectCard key={project.title} data={project} index={index} />
+          ))}
+        </div>
+      </MotionSection>
+
+      {/* Toolkit */}
+      <MotionSection
+        className="flex flex-col justify-center min-h-screen px-10 py-20 text-center"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
@@ -86,8 +97,9 @@ export default function Home() {
         <div className="mt-16 text-sm font-light">...new tools are added frequenty, stay tuned.</div>
       </MotionSection>
 
-      <MotionSection 
-        className="relative px-10 py-20 min-h-screen container-xl flex flex-col justify-center align-center items-center text-center"
+      {/* Work Experience */}
+      <MotionSection
+        className="bg-zinc-50 text-zinc-900 relative px-10 py-20 min-h-screen container-xl flex flex-col justify-center align-center items-center text-center"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
@@ -96,27 +108,13 @@ export default function Home() {
         <h2 className="text-5xl font-extrabold max-w-lg mx-auto mb-16">Work experience</h2>
         <div className="flex flex-col gap-10">
           {workData.map((work) => (
-            <Workcard key={work.id} data={work} />
+            <Workcard key={work.id} data={work} variant='light' />
           ))}
         </div>
       </MotionSection>
 
-      <MotionSection 
-        className="bg-zinc-50 text-zinc-900 relative px-10 py-20 min-h-screen container-xl flex flex-col justify-center align-center items-center text-center"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-      >
-        <h2 className="text-5xl font-extrabold max-w-lg mx-auto mb-16">Portfolio</h2>
-        <div className="max-w-3xl">
-          {projectData.map((project, index) => (
-            <ProjectCard key={project.title} data={project} index={index}/>
-          ))}
-        </div>
-      </MotionSection>
-
-      <MotionSection 
+      {/* Education */}
+      <MotionSection
         className="relative px-10 py-20 min-h-screen container-xl flex flex-col justify-center align-center items-center text-center"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -131,7 +129,8 @@ export default function Home() {
         </div>
       </MotionSection>
 
-      <MotionSection 
+      {/* Contact */}
+      <MotionSection
         className="relative bg-zinc-50 text-zinc-900 px-10 py-20 min-h-screen container-xl flex flex-col justify-center align-center items-center text-center"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -142,14 +141,26 @@ export default function Home() {
         <div className="flex flex-col gap-10 items-center">
           <div>peshannon104@gmail.com</div>
           <div className="flex gap-2">
-            <a target="_blank" href="https://github.com/patshannon" className="w-10 h-10 hover:scale-105 transition-transform">
+            <a
+              target="_blank"
+              href="https://github.com/patshannon"
+              className="w-10 h-10 hover:scale-105 transition-transform"
+            >
               <Image width="40" height="40" src="/ps-github-link-icon.svg" alt="github icon" />
             </a>
-            <a target="_blank" href="https://www.linkedin.com/in/patrick-e-shannon/" className="w-10 h-10 hover:scale-105 transition-transform">
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/patrick-e-shannon/"
+              className="w-10 h-10 hover:scale-105 transition-transform"
+            >
               <Image width="40" height="40" src="/ps-linkedin-link-icon.svg" alt="linkedin icon" />
             </a>
           </div>
-          <a download href="/pshannon2025.pdf" className="rounded-full bg-zinc-900 text-zinc-50 px-6 py-4 hover:scale-105 transition-transform">
+          <a
+            download
+            href="/pshannon-dev.pdf"
+            className="rounded-full bg-zinc-900 text-zinc-50 px-6 py-4 hover:scale-105 transition-transform"
+          >
             Download Resume
           </a>
         </div>
