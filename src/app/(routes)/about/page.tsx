@@ -21,7 +21,7 @@ const highlights = [
   },
   {
     icon: HiCode,
-    stat: '60 ? 85',
+    stat: '60 to 85',
     description: 'Boosted Lighthouse mobile performance score',
   },
   {
@@ -118,7 +118,7 @@ export default function Page() {
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             <p>
-              At <span className="text-zinc-100 font-medium">bbox.digital</span>, I lead end-to-end development ? using React, Next.js, and TypeScript on the frontend, and Node.js, Firebase, and GCP on the backend. I take projects from spec and architecture through implementation, optimization, and deployment, collaborating closely with the founding team to align technical decisions with product goals.
+              At <span className="text-zinc-100 font-medium">bbox.digital</span>, I lead end-to-end development - using React, Next.js, and TypeScript on the frontend, and Node.js, Firebase, and GCP on the backend. I take projects from spec and architecture through implementation, optimization, and deployment, collaborating closely with the founding team to align technical decisions with product goals.
             </p>
           </MotionDiv>
         </div>
@@ -298,7 +298,7 @@ export default function Page() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            I'm passionate about building systems that scale ? emphasizing{' '}
+            I'm passionate about building systems that scale - emphasizing{' '}
             <span className="text-zinc-900 font-medium">clean architecture</span>,{' '}
             <span className="text-zinc-900 font-medium">measurable performance</span>, and{' '}
             <span className="text-zinc-900 font-medium">reliability</span>. I also leverage AI-assisted tools to accelerate planning, refactoring, and documentation, enabling faster delivery of high-quality software.
