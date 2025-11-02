@@ -62,17 +62,24 @@ function MetricCard({ title, value, subtitle, color, delay, icon }: MetricCardPr
             }}
           >
             <div
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-none"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-none [text-shadow:_0_0_20px_rgb(0_0_0_/_40%)]"
               style={{
-                background: `linear-gradient(135deg, ${color}, ${color}dd)`,
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
                 color: color,
-                filter: 'drop-shadow(0 0 20px ' + color + '40)',
               }}
             >
-              {value}
+              <span
+                className="bg-clip-text text-transparent hidden sm:inline"
+                style={{
+                  background: `linear-gradient(135deg, ${color}, ${color}dd)`,
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                }}
+              >
+                {value}
+              </span>
+              <span className="sm:hidden" style={{ color: color }}>
+                {value}
+              </span>
             </div>
           </MotionDiv>
 
