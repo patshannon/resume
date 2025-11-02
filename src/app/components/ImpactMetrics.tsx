@@ -1,6 +1,8 @@
 'use client';
 
 import { MotionDiv } from '../motion';
+import { IoFlash, IoSearch, IoTrendingUp, IoTarget } from 'react-icons/io5';
+import { ReactNode } from 'react';
 
 interface MetricCardProps {
   title: string;
@@ -8,7 +10,7 @@ interface MetricCardProps {
   subtitle: string;
   color: string;
   delay: number;
-  icon: string;
+  icon: ReactNode;
 }
 
 function MetricCard({ title, value, subtitle, color, delay, icon }: MetricCardProps) {
@@ -59,12 +61,13 @@ function MetricCard({ title, value, subtitle, color, delay, icon }: MetricCardPr
             }}
           >
             <div
-              className="text-6xl md:text-7xl font-black tracking-tight"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-none"
               style={{
                 background: `linear-gradient(135deg, ${color}, ${color}dd)`,
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
+                color: color,
                 filter: 'drop-shadow(0 0 20px ' + color + '40)',
               }}
             >
@@ -97,7 +100,7 @@ export default function ImpactMetrics() {
       value: '+100%',
       subtitle: 'CMS API efficiency improvement through strategic caching',
       color: 'rgba(16, 185, 129, 1)', // Emerald
-      icon: '⚡',
+      icon: <IoFlash />,
       delay: 200,
     },
     {
@@ -105,7 +108,7 @@ export default function ImpactMetrics() {
       value: '95%',
       subtitle: 'Reduction in Algolia requests: 4.9M → 0.23M per month',
       color: 'rgba(59, 130, 246, 1)', // Blue
-      icon: '🔍',
+      icon: <IoSearch />,
       delay: 400,
     },
     {
@@ -113,7 +116,7 @@ export default function ImpactMetrics() {
       value: '+40%',
       subtitle: 'Increase in Google Search impressions through optimization',
       color: 'rgba(168, 85, 247, 1)', // Purple
-      icon: '📈',
+      icon: <IoTrendingUp />,
       delay: 600,
     },
     {
@@ -121,7 +124,7 @@ export default function ImpactMetrics() {
       value: '−20%',
       subtitle: 'Reduction in external API calls via intelligent caching',
       color: 'rgba(234, 179, 8, 1)', // Yellow
-      icon: '🎯',
+      icon: <IoTarget />,
       delay: 800,
     },
   ];
