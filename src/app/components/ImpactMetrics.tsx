@@ -1,62 +1,17 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
-import {
-  Chart as ChartJS,
-  ArcElement,
-  Tooltip,
-  Legend,
-  ChartOptions,
-} from 'chart.js';
-import { Doughnut } from 'react-chartjs-2';
 import { MotionDiv } from '../motion';
-
-ChartJS.register(ArcElement, Tooltip, Legend);
 
 interface MetricCardProps {
   title: string;
   value: string;
   subtitle: string;
-  percentage: number;
   color: string;
   delay: number;
   icon: string;
 }
 
-function MetricCard({ title, value, subtitle, percentage, color, delay, icon }: MetricCardProps) {
-  const chartRef = useRef<ChartJS<'doughnut'>>(null);
-
-  const data = {
-    datasets: [
-      {
-        data: [percentage, 100 - percentage],
-        backgroundColor: [color, 'rgba(255, 255, 255, 0.1)'],
-        borderWidth: 0,
-        cutout: '75%',
-      },
-    ],
-  };
-
-  const options: ChartOptions<'doughnut'> = {
-    responsive: true,
-    maintainAspectRatio: true,
-    plugins: {
-      legend: {
-        display: false,
-      },
-      tooltip: {
-        enabled: false,
-      },
-    },
-    animation: {
-      animateRotate: true,
-      animateScale: true,
-      duration: 2000,
-      delay: delay,
-      easing: 'easeInOutQuart',
-    },
-  };
-
+function MetricCard({ title, value, subtitle, color, delay, icon }: MetricCardProps) {
   return (
     <MotionDiv
       className="relative group"
@@ -65,42 +20,71 @@ function MetricCard({ title, value, subtitle, percentage, color, delay, icon }: 
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: delay / 1000 }}
     >
-      <div className="bg-zinc-800/50 backdrop-blur-sm rounded-2xl p-6 border border-zinc-700/50 shadow-xl hover:shadow-2xl hover:border-zinc-600/50 transition-all duration-500 h-full">
-        {/* Icon and Title */}
-        <div className="flex items-start justify-between mb-4">
-          <div className="flex-1">
-            <div className="text-3xl mb-2">{icon}</div>
-            <h4 className="text-sm font-medium text-zinc-400 uppercase tracking-wide mb-1">
-              {title}
-            </h4>
-            <div className="text-4xl font-bold bg-gradient-to-r from-zinc-50 to-zinc-300 bg-clip-text text-transparent">
+      <div className="relative bg-zinc-800/50 backdrop-blur-sm rounded-2xl p-8 border border-zinc-700/50 shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all duration-500 h-full overflow-hidden">
+        {/* Animated gradient background glow */}
+        <div
+          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl"
+          style={{ background: `radial-gradient(circle at 50% 50%, ${color}, transparent 70%)` }}
+        />
+
+        {/* Content */}
+        <div className="relative z-10">
+          {/* Icon with glow effect */}
+          <MotionDiv
+            className="text-5xl mb-4 drop-shadow-lg"
+            initial={{ scale: 0.8, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: delay / 1000 + 0.2 }}
+          >
+            {icon}
+          </MotionDiv>
+
+          {/* Title */}
+          <h4 className="text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-3">
+            {title}
+          </h4>
+
+          {/* The Hero: Big Impact Number */}
+          <MotionDiv
+            className="mb-4"
+            initial={{ scale: 0.5, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 0.8,
+              delay: delay / 1000 + 0.3,
+              type: "spring",
+              stiffness: 200
+            }}
+          >
+            <div
+              className="text-6xl md:text-7xl font-black tracking-tight"
+              style={{
+                background: `linear-gradient(135deg, ${color}, ${color}dd)`,
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+                filter: 'drop-shadow(0 0 20px ' + color + '40)',
+              }}
+            >
               {value}
             </div>
-          </div>
+          </MotionDiv>
 
-          {/* Mini Doughnut Chart */}
-          <div className="w-16 h-16 relative">
-            <Doughnut ref={chartRef} data={data} options={options} />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-xs font-bold text-zinc-300">{percentage}%</span>
-            </div>
-          </div>
+          {/* Subtitle/Context */}
+          <p className="text-sm text-zinc-400 leading-relaxed">
+            {subtitle}
+          </p>
         </div>
 
-        {/* Subtitle/Context */}
-        <p className="text-xs text-zinc-500 leading-relaxed">{subtitle}</p>
-
-        {/* Progress bar (alternative visualization) */}
-        <div className="mt-4 relative h-2 bg-zinc-700/30 rounded-full overflow-hidden">
-          <MotionDiv
-            className="absolute inset-y-0 left-0 rounded-full"
-            style={{ backgroundColor: color }}
-            initial={{ width: 0 }}
-            whileInView={{ width: `${percentage}%` }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.5, delay: delay / 1000 + 0.3, ease: 'easeOut' }}
-          />
-        </div>
+        {/* Decorative corner accent */}
+        <div
+          className="absolute top-0 right-0 w-24 h-24 opacity-10"
+          style={{
+            background: `radial-gradient(circle at 100% 0%, ${color}, transparent 70%)`
+          }}
+        />
       </div>
     </MotionDiv>
   );
@@ -112,8 +96,7 @@ export default function ImpactMetrics() {
       title: 'API Optimization',
       value: '+100%',
       subtitle: 'CMS API efficiency improvement through strategic caching',
-      percentage: 100,
-      color: 'rgba(16, 185, 129, 0.8)', // Emerald
+      color: 'rgba(16, 185, 129, 1)', // Emerald
       icon: '⚡',
       delay: 200,
     },
@@ -121,8 +104,7 @@ export default function ImpactMetrics() {
       title: 'Search Efficiency',
       value: '95%',
       subtitle: 'Reduction in Algolia requests: 4.9M → 0.23M per month',
-      percentage: 95,
-      color: 'rgba(59, 130, 246, 0.8)', // Blue
+      color: 'rgba(59, 130, 246, 1)', // Blue
       icon: '🔍',
       delay: 400,
     },
@@ -130,17 +112,15 @@ export default function ImpactMetrics() {
       title: 'SEO Impact',
       value: '+40%',
       subtitle: 'Increase in Google Search impressions through optimization',
-      percentage: 40,
-      color: 'rgba(168, 85, 247, 0.8)', // Purple
+      color: 'rgba(168, 85, 247, 1)', // Purple
       icon: '📈',
       delay: 600,
     },
     {
       title: 'API Efficiency',
-      value: '-20%',
+      value: '−20%',
       subtitle: 'Reduction in external API calls via intelligent caching',
-      percentage: 20,
-      color: 'rgba(234, 179, 8, 0.8)', // Yellow
+      color: 'rgba(234, 179, 8, 1)', // Yellow
       icon: '🎯',
       delay: 800,
     },
