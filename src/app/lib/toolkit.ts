@@ -92,11 +92,21 @@ const data = [
     text: 'Atlassian',
     src: '/ps-atlassian-icon.svg'
   },
+  {
+    alt: 'Claude Code',
+    text: 'Claude Code',
+    src: '/ps-claude-code-icon.svg'
+  },
+  {
+    alt: 'OpenAI Codex',
+    text: 'OpenAI Codex',
+    src: '/ps-openai-codex-icon.svg'
+  },
   // {
   //   alt: 'VS Code',
   //   text: 'VS Code',
   //   src: '/ps-vscode-icon.svg'
-  // }, 
+  // },
 ];
 
 export default data;
