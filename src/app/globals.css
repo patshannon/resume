@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  /* Performance optimizations for animations */
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Enable hardware acceleration for transforms */
+  [class*="transform"],
+  [class*="translate"],
+  [class*="scale"],
+  [class*="rotate"] {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  /* Optimize blur effects */
+  [class*="blur"] {
+    transform: translateZ(0);
+  }
+}
