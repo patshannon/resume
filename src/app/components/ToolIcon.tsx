@@ -1,22 +1,25 @@
 "use client";
-import { useState } from 'react';
-import Image from 'next/image';
-import { MotionDiv } from '../motion';
+import { IconType } from 'react-icons';
 
 interface ToolIconProps {
   data: {
-    src: string;
+    icon: IconType;
     alt: string;
     text: string;
   };
   index: number;
 }
 
-const ToolIcon = ({ data, index }: ToolIconProps) => {
-  return (
-      <Image src={data.src} width={44} height={44} alt={data.alt} className='bg-white h-11 w-11 rounded-lg'/>
+const ToolIcon = ({ data }: ToolIconProps) => {
+  const Icon = data.icon;
 
-  )
+  return (
+    <Icon
+      size={44}
+      className='bg-white h-11 w-11 rounded-lg p-2'
+      aria-label={data.alt}
+    />
+  );
 }
 
-export default ToolIcon
+export default ToolIcon;

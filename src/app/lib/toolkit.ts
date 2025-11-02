@@ -1,112 +1,128 @@
-const data = [
+import { IconType } from 'react-icons';
+import {
+  SiReact,
+  SiNodedotjs,
+  SiTypescript,
+  SiNextdotjs,
+  SiJavascript,
+  SiHtml5,
+  SiCss3,
+  SiTailwindcss,
+  SiFirebase,
+  SiGooglecloud,
+  SiCloudflare,
+  SiGraphql,
+  SiAlgolia,
+  SiWebflow,
+  SiFigma,
+  SiGithub,
+  SiAtlassian,
+  SiClaude,
+  SiOpenai,
+} from 'react-icons/si';
+
+interface ToolkitItem {
+  alt: string;
+  text: string;
+  icon: IconType;
+}
+
+const data: ToolkitItem[] = [
   {
     alt: 'React',
     text: 'React',
-    src: '/ps-react-icon.svg'
+    icon: SiReact,
   },
   {
     alt: 'Node.js',
     text: 'Node.js',
-    src: '/ps-node-icon.svg'
+    icon: SiNodedotjs,
   },
   {
     alt: 'TypeScript',
     text: 'TypeScript',
-    src: '/ps-typescript-icon.svg'
+    icon: SiTypescript,
   },
   {
     alt: 'Next.js',
     text: 'Next.js',
-    src: '/ps-nextjs-icon.svg'
+    icon: SiNextdotjs,
   },
   {
     alt: 'JavaScript',
     text: 'JavaScript',
-    src: '/ps-javascript-icon.svg'
+    icon: SiJavascript,
   },
   {
     alt: 'HTML',
     text: 'HTML',
-    src: '/ps-html-icon.svg'
+    icon: SiHtml5,
   },
   {
     alt: 'CSS',
     text: 'CSS',
-    src: '/ps-css-icon.svg'
+    icon: SiCss3,
   },
-
   {
     alt: 'Tailwind CSS',
     text: 'Tailwind CSS',
-    src: '/ps-tailwind-icon.svg'
+    icon: SiTailwindcss,
   },
   {
     alt: 'Firebase',
     text: 'Firebase',
-    src: '/ps-firebase-icon.svg'
+    icon: SiFirebase,
   },
   {
     alt: 'Google Cloud',
     text: 'Google Cloud',
-    src: '/ps-googlecloud-icon.svg'
+    icon: SiGooglecloud,
   },
   {
     alt: 'Cloudflare',
     text: 'Cloudflare',
-    src: '/ps-cloudflare-icon.svg'
-  },
-  {
-    alt: 'Squidex',
-    text: 'Squidex',
-    src: '/ps-squidex-icon.svg'
+    icon: SiCloudflare,
   },
   {
     alt: 'GraphQL',
     text: 'GraphQL',
-    src: '/ps-graphql-icon.svg'
+    icon: SiGraphql,
   },
   {
     alt: 'Algolia',
     text: 'Algolia',
-    src: '/ps-algolia-icon.svg'
+    icon: SiAlgolia,
   },
-
-
   {
     alt: 'Webflow',
     text: 'Webflow',
-    src: '/ps-webflow-icon.svg'
+    icon: SiWebflow,
   },
   {
     alt: 'Figma',
     text: 'Figma',
-    src: '/ps-figma-icon.svg'
+    icon: SiFigma,
   },
   {
     alt: 'Github',
     text: 'Github',
-    src: '/ps-github-icon.svg'
+    icon: SiGithub,
   },
   {
     alt: 'Atlassian',
     text: 'Atlassian',
-    src: '/ps-atlassian-icon.svg'
+    icon: SiAtlassian,
   },
   {
     alt: 'Claude Code',
     text: 'Claude Code',
-    src: '/ps-claude-code-icon.svg'
+    icon: SiClaude,
   },
   {
     alt: 'OpenAI Codex',
     text: 'OpenAI Codex',
-    src: '/ps-openai-codex-icon.svg'
+    icon: SiOpenai,
   },
-  // {
-  //   alt: 'VS Code',
-  //   text: 'VS Code',
-  //   src: '/ps-vscode-icon.svg'
-  // },
 ];
 
 export default data;
