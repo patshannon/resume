@@ -45,7 +45,8 @@ export default function Home() {
         {/* Floating background shapes */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <MotionDiv
-            className="absolute top-20 left-10 w-72 h-72 bg-white/5 rounded-full blur-3xl"
+            className="absolute top-20 left-10 w-72 h-72 bg-white/5 rounded-full blur-2xl"
+            style={{ willChange: 'transform' }}
             animate={{
               x: [0, 100, 0],
               y: [0, 50, 0],
@@ -58,7 +59,8 @@ export default function Home() {
             }}
           />
           <MotionDiv
-            className="absolute bottom-20 right-10 w-96 h-96 bg-white/5 rounded-full blur-3xl"
+            className="absolute bottom-20 right-10 w-96 h-96 bg-white/5 rounded-full blur-2xl"
+            style={{ willChange: 'transform' }}
             animate={{
               x: [0, -80, 0],
               y: [0, -60, 0],
@@ -79,10 +81,11 @@ export default function Home() {
             initial={{ scale: 0.5, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
+            style={{ willChange: 'transform, opacity' }}
           >
             {/* Profile image with animated glow */}
             <div className="relative inline-block">
-              <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-zinc-400/20 to-white/20 rounded-full blur-xl" />
+              <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-zinc-400/20 to-white/20 rounded-full blur-lg" />
               <div className="relative">
                 <Image 
                   src="/headshot-rounded.png" 
@@ -102,6 +105,7 @@ export default function Home() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
+            style={{ willChange: 'transform, opacity' }}
           >
             <span className="bg-gradient-to-r from-zinc-50 via-zinc-100 to-zinc-200 bg-clip-text text-transparent">
               Patrick Shannon
@@ -113,6 +117,7 @@ export default function Home() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
+            style={{ willChange: 'transform, opacity' }}
           >
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-r from-zinc-800 via-zinc-700 to-zinc-800 rounded-xl blur opacity-50 group-hover:opacity-75 transition-opacity" />
@@ -127,6 +132,7 @@ export default function Home() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.6 }}
+            style={{ willChange: 'transform, opacity' }}
           >
             <HiLocationMarker className="text-zinc-500" />
             <span className="font-light">Halifax, N.S. Canada</span>
@@ -138,6 +144,7 @@ export default function Home() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.8 }}
+            style={{ willChange: 'transform, opacity' }}
           >
             <p>
               Crafting scalable solutions and leading complete software lifecycles — 
@@ -151,6 +158,7 @@ export default function Home() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 1 }}
+            style={{ willChange: 'transform, opacity' }}
           >
             <div className="flex flex-col items-center">
               <div className="text-2xl font-bold text-zinc-50">5+</div>
