@@ -1,30 +1,30 @@
 export const educationData = [
   {
-    title: 'Full Stack Web Development Bootcamp',
-    school: 'Udemy',
+    title: 'Software Development Training',
+    school: 'Self-Directed',
     location: 'Online',
-    date: '2021',
-    description: "Completed intensive bootcamp providing the fundamental skills to become a full stack web developer."
+    date: 'Jan 2021 - Jan 2022',
+    description: 'Planned and executed a comprehensive, self-directed software development curriculum emphasizing modern full stack web application technologies, including React, JavaScript, CSS, HTML, and Node.js. Developed strong understanding of software architecture, scalable backend solutions, REST APIs, GraphQL, cloud platforms (GCP), and databases, applying best practices in system design, testing, quality assurance, and security. Enhanced technical skills through hands-on project work, code reviews, and Agile workflows, while building communication, collaboration, and leadership abilities by mentoring peers and delivering customer-focused, maintainable products aligned with industry standards.',
   },
   {
-    title: 'Webflow University',
-    school: 'Webflow',
-    location: 'Online',
-    date: '2021',
-    description: "Completed Webflow University courses covering the fundamentals of Webflow"
-  },
-  {
-    title: 'Complete Web Design: from Figma to Webflow to Freelancing',
-    school: 'Udemy',
-    location: 'Online',
-    date: '2021',
-    description: "Completed web design course covering design fundamentals and Webflow"
-  },
-  {
-    title: 'Bachelor of Science in Aviation',
+    title: 'Bachelor of Science Degree, Aviation',
     school: 'Mount Allison University',
-    location: 'Sackville, NB. Canada',
+    location: 'Sackville, NB',
     date: '2009 - 2013',
-    description: 'Graduated with a Bachelor of Science in Aviation with a minor in Physics. Completed a 4-year degree in 3 years.',
+    description: 'Graduated with 3.68 GPA',
+  },
+  {
+    title: 'Mentor, Skills for Hire Atlantic Mentorship Program',
+    school: 'Digital Nova Scotia',
+    location: 'Halifax, NS',
+    date: '2025 Cohort (Ongoing)',
+    description: 'Mentoring emerging tech professionals in Atlantic Canada through the Skills for Hire Atlantic program.',
+  },
+  {
+    title: 'Architecture Brigade Volunteer',
+    school: 'Global Brigades, Honduras',
+    location: 'Honduras',
+    date: '2013',
+    description: 'Participated in architecture brigade volunteer work in Honduras.',
   },
 ]
