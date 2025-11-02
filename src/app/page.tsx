@@ -5,6 +5,7 @@ import { educationData } from '@/lib/educationData';
 import EducationCard from '@/components/EducationCard';
 import ScrollDown from '@/components/ScrollDown';
 import SkillsRadarChart from '@/components/SkillsRadarChart';
+import ImpactMetrics from '@/components/ImpactMetrics';
 import Image from 'next/image';
 import ProjectCard from '@/components/ProjectCard';
 import { projectData } from '@/lib/projectData';
@@ -115,8 +116,18 @@ export default function Home() {
         <p className="relative text-zinc-400 mb-16 max-w-2xl text-center font-light">
           A visual representation of my technical expertise and professional capabilities
         </p>
-        <div className="relative">
+        <div className="relative w-full">
           <SkillsRadarChart />
+        </div>
+
+        {/* Divider */}
+        <div className="relative w-full max-w-4xl my-20">
+          <div className="h-px bg-gradient-to-r from-transparent via-zinc-700 to-transparent" />
+        </div>
+
+        {/* Impact Metrics Dashboard */}
+        <div className="relative w-full">
+          <ImpactMetrics />
         </div>
       </MotionSection>
 
