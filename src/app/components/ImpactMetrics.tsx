@@ -1,7 +1,8 @@
 'use client';
 
 import { MotionDiv } from '../motion';
-import { IoFlash, IoSearch, IoTrendingUp, IoTarget } from 'react-icons/io5';
+import { IoFlash, IoSearch, IoTrendingUp } from 'react-icons/io5';
+import { FaBullseye } from 'react-icons/fa';
 import { ReactNode } from 'react';
 
 interface MetricCardProps {
@@ -124,7 +125,7 @@ export default function ImpactMetrics() {
       value: '−20%',
       subtitle: 'Reduction in external API calls via intelligent caching',
       color: 'rgba(234, 179, 8, 1)', // Yellow
-      icon: <IoTarget />,
+      icon: <FaBullseye />,
       delay: 800,
     },
   ];
