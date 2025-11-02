@@ -78,7 +78,7 @@ export default function SkillsRadarChart() {
           color: 'rgba(255, 255, 255, 0.6)',
           font: {
             size: 11,
-            weight: '300',
+            weight: 'lighter',
           },
         },
         grid: {
@@ -89,7 +89,7 @@ export default function SkillsRadarChart() {
           color: 'rgba(255, 255, 255, 0.9)',
           font: {
             size: 13,
-            weight: '500',
+            weight: 'normal',
           },
           padding: 15,
         },
