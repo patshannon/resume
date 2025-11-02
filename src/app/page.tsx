@@ -4,6 +4,8 @@ import Workcard from '@/components/Workcard';
 import { educationData } from '@/lib/educationData';
 import EducationCard from '@/components/EducationCard';
 import ScrollDown from '@/components/ScrollDown';
+import SkillsRadarChart from '@/components/SkillsRadarChart';
+import ImpactMetrics from '@/components/ImpactMetrics';
 import Image from 'next/image';
 import ProjectCard from '@/components/ProjectCard';
 import { projectData } from '@/lib/projectData';
@@ -95,6 +97,38 @@ export default function Home() {
         <h2 className="text-5xl font-extrabold max-w-lg mx-auto mb-16">Toolkit</h2>
         <Toolkit />
         <div className="mt-16 text-sm font-light">...new tools are added frequenty, stay tuned.</div>
+      </MotionSection>
+
+      {/* Skills Visualization */}
+      <MotionSection
+        className="bg-gradient-to-b from-zinc-900 via-zinc-800 to-zinc-900 relative px-10 py-20 min-h-screen container-xl flex flex-col justify-center align-center items-center overflow-hidden"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        {/* Ambient background glow */}
+        <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/5 via-purple-500/5 to-indigo-500/5 pointer-events-none" />
+
+        <h2 className="relative text-5xl font-extrabold max-w-lg mx-auto mb-4 bg-gradient-to-r from-zinc-50 via-zinc-100 to-zinc-50 bg-clip-text text-transparent">
+          Skills Breakdown
+        </h2>
+        <p className="relative text-zinc-400 mb-16 max-w-2xl text-center font-light">
+          A visual representation of my technical expertise and professional capabilities
+        </p>
+        <div className="relative w-full">
+          <SkillsRadarChart />
+        </div>
+
+        {/* Divider */}
+        <div className="relative w-full max-w-4xl my-20">
+          <div className="h-px bg-gradient-to-r from-transparent via-zinc-700 to-transparent" />
+        </div>
+
+        {/* Impact Metrics Dashboard */}
+        <div className="relative w-full">
+          <ImpactMetrics />
+        </div>
       </MotionSection>
 
       {/* Work Experience */}
