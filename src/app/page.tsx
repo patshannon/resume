@@ -198,7 +198,7 @@ export default function Home() {
       >
         <h2 className="text-5xl font-extrabold max-w-lg mx-auto mb-16">Toolkit</h2>
         <Toolkit />
-        <div className="mt-16 text-sm font-light">...new tools are added frequenty, stay tuned.</div>
+        <div className="mt-16 text-sm font-light">...new tools are added frequently, stay tuned.</div>
       </MotionSection>
 
       {/* Skills Visualization */}
