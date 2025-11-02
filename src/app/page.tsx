@@ -82,7 +82,7 @@ export default function Home() {
           >
             {/* Profile image with animated glow */}
             <div className="relative inline-block">
-              <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-zinc-400/20 to-white/20 rounded-full blur-xl animate-pulse" />
+              <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-zinc-400/20 to-white/20 rounded-full blur-xl" />
               <div className="relative">
                 <Image 
                   src="/headshot-rounded.png" 
@@ -93,7 +93,6 @@ export default function Home() {
                   priority
                   className="relative z-10 rounded-full border-4 border-zinc-700/50 shadow-2xl"
                 />
-                <div className="absolute inset-0 rounded-full border-2 border-white/20 animate-ping" />
               </div>
             </div>
           </MotionDiv>
