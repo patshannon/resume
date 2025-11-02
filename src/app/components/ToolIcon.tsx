@@ -63,7 +63,7 @@ const ToolIcon = ({ data }: ToolIconProps) => {
   return (
     <Icon
       size={44}
-      className='bg-white h-11 w-11 rounded-lg p-2'
+      className='bg-gray-800 text-white h-11 w-11 rounded-lg p-2'
       aria-label={data.alt}
     />
   );
