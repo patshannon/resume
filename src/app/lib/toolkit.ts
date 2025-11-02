@@ -1,127 +1,104 @@
-import { IconType } from 'react-icons';
-import {
-  SiReact,
-  SiNodedotjs,
-  SiTypescript,
-  SiNextdotjs,
-  SiJavascript,
-  SiHtml5,
-  SiCss3,
-  SiTailwindcss,
-  SiFirebase,
-  SiGooglecloud,
-  SiCloudflare,
-  SiGraphql,
-  SiAlgolia,
-  SiWebflow,
-  SiFigma,
-  SiGithub,
-  SiAtlassian,
-  SiClaude,
-  SiOpenai,
-} from 'react-icons/si';
-
 interface ToolkitItem {
   alt: string;
   text: string;
-  icon: IconType;
+  iconName: string;
 }
 
 const data: ToolkitItem[] = [
   {
     alt: 'React',
     text: 'React',
-    icon: SiReact,
+    iconName: 'SiReact',
   },
   {
     alt: 'Node.js',
     text: 'Node.js',
-    icon: SiNodedotjs,
+    iconName: 'SiNodedotjs',
   },
   {
     alt: 'TypeScript',
     text: 'TypeScript',
-    icon: SiTypescript,
+    iconName: 'SiTypescript',
   },
   {
     alt: 'Next.js',
     text: 'Next.js',
-    icon: SiNextdotjs,
+    iconName: 'SiNextdotjs',
   },
   {
     alt: 'JavaScript',
     text: 'JavaScript',
-    icon: SiJavascript,
+    iconName: 'SiJavascript',
   },
   {
     alt: 'HTML',
     text: 'HTML',
-    icon: SiHtml5,
+    iconName: 'SiHtml5',
   },
   {
     alt: 'CSS',
     text: 'CSS',
-    icon: SiCss3,
+    iconName: 'SiCss3',
   },
   {
     alt: 'Tailwind CSS',
     text: 'Tailwind CSS',
-    icon: SiTailwindcss,
+    iconName: 'SiTailwindcss',
   },
   {
     alt: 'Firebase',
     text: 'Firebase',
-    icon: SiFirebase,
+    iconName: 'SiFirebase',
   },
   {
     alt: 'Google Cloud',
     text: 'Google Cloud',
-    icon: SiGooglecloud,
+    iconName: 'SiGooglecloud',
   },
   {
     alt: 'Cloudflare',
     text: 'Cloudflare',
-    icon: SiCloudflare,
+    iconName: 'SiCloudflare',
   },
   {
     alt: 'GraphQL',
     text: 'GraphQL',
-    icon: SiGraphql,
+    iconName: 'SiGraphql',
   },
   {
     alt: 'Algolia',
     text: 'Algolia',
-    icon: SiAlgolia,
+    iconName: 'SiAlgolia',
   },
   {
     alt: 'Webflow',
     text: 'Webflow',
-    icon: SiWebflow,
+    iconName: 'SiWebflow',
   },
   {
     alt: 'Figma',
     text: 'Figma',
-    icon: SiFigma,
+    iconName: 'SiFigma',
   },
   {
     alt: 'Github',
     text: 'Github',
-    icon: SiGithub,
+    iconName: 'SiGithub',
   },
   {
     alt: 'Atlassian',
     text: 'Atlassian',
-    icon: SiAtlassian,
+    iconName: 'SiAtlassian',
   },
   {
     alt: 'Claude Code',
     text: 'Claude Code',
-    icon: SiClaude,
+    iconName: 'SiClaude',
   },
   {
     alt: 'OpenAI Codex',
     text: 'OpenAI Codex',
-    icon: SiOpenai,
+    iconName: 'SiOpenai',
   },
 ];
 

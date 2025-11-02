@@ -1,17 +1,64 @@
 "use client";
-import { IconType } from 'react-icons';
+import {
+  SiReact,
+  SiNodedotjs,
+  SiTypescript,
+  SiNextdotjs,
+  SiJavascript,
+  SiHtml5,
+  SiCss3,
+  SiTailwindcss,
+  SiFirebase,
+  SiGooglecloud,
+  SiCloudflare,
+  SiGraphql,
+  SiAlgolia,
+  SiWebflow,
+  SiFigma,
+  SiGithub,
+  SiAtlassian,
+  SiClaude,
+  SiOpenai,
+} from 'react-icons/si';
 
 interface ToolIconProps {
   data: {
-    icon: IconType;
+    iconName: string;
     alt: string;
     text: string;
   };
   index: number;
 }
 
+const iconMap: { [key: string]: React.ComponentType<{ size?: number; className?: string; 'aria-label'?: string }> } = {
+  SiReact,
+  SiNodedotjs,
+  SiTypescript,
+  SiNextdotjs,
+  SiJavascript,
+  SiHtml5,
+  SiCss3,
+  SiTailwindcss,
+  SiFirebase,
+  SiGooglecloud,
+  SiCloudflare,
+  SiGraphql,
+  SiAlgolia,
+  SiWebflow,
+  SiFigma,
+  SiGithub,
+  SiAtlassian,
+  SiClaude,
+  SiOpenai,
+};
+
 const ToolIcon = ({ data }: ToolIconProps) => {
-  const Icon = data.icon;
+  const Icon = iconMap[data.iconName];
+
+  if (!Icon) {
+    console.error(`Icon not found: ${data.iconName}`);
+    return null;
+  }
 
   return (
     <Icon
