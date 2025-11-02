@@ -1,6 +1,5 @@
 import Image from 'next/image';
-import { MotionDiv, MotionSpan } from '../motion';
-import Link from 'next/link';
+import { MotionDiv } from '../motion';
 
 const ProjectCard = ({ data, index }) => {
   const cardVariants = {
@@ -60,15 +59,12 @@ const ProjectCard = ({ data, index }) => {
         <div className="text-sm text-zinc-500 border-l-2 pl-2 border-zinc-300">{data.description}</div>
         <div className="flex flex-wrap gap-2 mt-2">
           {data.tools.map((tool, index) => (
-            <MotionSpan
+            <span
               key={index}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ delay: index * 0.1 }}
               className="text-xs bg-zinc-200 px-2 py-1 rounded-lg text-zinc-800 font-bold"
             >
               {tool}
-            </MotionSpan>
+            </span>
           ))}
         </div>
       </div>

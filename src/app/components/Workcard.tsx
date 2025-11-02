@@ -1,4 +1,4 @@
-import { MotionDiv, MotionH3, MotionP, MotionSpan } from '../motion';
+import { MotionDiv, MotionH3, MotionP } from '../motion';
 
 interface WorkcardProps {
   data: {
@@ -53,24 +53,16 @@ const WorkCard = ({ data, variant='dark' }: WorkcardProps) => {
           {data.description}
         </MotionP>
       </div>
-      <MotionDiv 
-        className="flex flex-wrap gap-2 justify-center sm:justify-end max-w-xs mx-auto"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ delay: 0.5 }}
-      >
+      <div className="flex flex-wrap gap-2 justify-center sm:justify-end max-w-xs mx-auto">
         {data.tools.map((tool, index) => (
-          <MotionSpan
+          <span
             key={index}
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.1 * index }}
             className={`text-xs  px-2 py-1 rounded-lg  font-bold cursor-default ${variant === 'dark' ? 'bg-zinc-800 text-zinc-200': 'bg-zinc-200 text-zinc-800' }`}
           >
             {tool}
-          </MotionSpan>
+          </span>
         ))}
-      </MotionDiv>
+      </div>
     </MotionDiv>
   );
 }
