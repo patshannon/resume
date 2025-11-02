@@ -29,43 +29,145 @@ export default function Home() {
     <main>
       {/* Header */}
       <MotionSection
-        className="relative px-10 sm:px-5 py-20 sm:py-5 min-h-screen container-xl flex flex-col justify-center align-center items-center text-center"
+        className="relative px-10 sm:px-5 py-20 sm:py-5 min-h-screen container-xl flex flex-col justify-center align-center items-center text-center overflow-hidden"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <MotionDiv
-          initial={{ scale: 0.5, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.5 }}
-        >
-          <Image src="/headshot-rounded.png" alt="Patrick Shannon" width={125} height={125} quality={100} priority />
-        </MotionDiv>
-        <MotionH1
-          className="text-7xl font-extrabold mt-6"
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          Patrick Shannon
-        </MotionH1>
-        <MotionDiv
-          className="flex flex-col gap-2 items-center mt-10 mb-10 text-zinc-900 text-xl font-extrabold"
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-        >
-          <div className="p-5 bg-zinc-800 rounded-xl text-zinc-50">Senior Full Stack Developer</div>
-        </MotionDiv>
-        <MotionDiv
-          className="font-light"
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-        >
-          Halifax, N.S. Canada
-        </MotionDiv>
-        <div className="absolute w-20 text-center mx-auto bottom-10 left-0 right-0 flex justify-center">
+        {/* Animated gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.1),transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(139,92,246,0.08),transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(59,130,246,0.08),transparent_50%)]" />
+        </div>
+
+        {/* Floating background shapes */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <MotionDiv
+            className="absolute top-20 left-10 w-72 h-72 bg-purple-500/5 rounded-full blur-3xl"
+            animate={{
+              x: [0, 100, 0],
+              y: [0, 50, 0],
+              scale: [1, 1.2, 1],
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          <MotionDiv
+            className="absolute bottom-20 right-10 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl"
+            animate={{
+              x: [0, -80, 0],
+              y: [0, -60, 0],
+              scale: [1, 1.1, 1],
+            }}
+            transition={{
+              duration: 25,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10">
+          <MotionDiv
+            className="relative mb-8"
+            initial={{ scale: 0.5, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
+          >
+            {/* Profile image with animated glow */}
+            <div className="relative inline-block">
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/50 via-indigo-500/50 to-purple-500/50 rounded-full blur-xl animate-pulse" />
+              <div className="relative">
+                <Image 
+                  src="/headshot-rounded.png" 
+                  alt="Patrick Shannon" 
+                  width={150} 
+                  height={150} 
+                  quality={100} 
+                  priority
+                  className="relative z-10 rounded-full border-4 border-zinc-700/50 shadow-2xl"
+                />
+                <div className="absolute inset-0 rounded-full border-2 border-purple-500/30 animate-ping" />
+              </div>
+            </div>
+          </MotionDiv>
+
+          <MotionH1
+            className="text-7xl sm:text-5xl font-extrabold mt-6 mb-4"
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <span className="bg-gradient-to-r from-zinc-50 via-zinc-100 to-zinc-200 bg-clip-text text-transparent">
+              Patrick Shannon
+            </span>
+          </MotionH1>
+
+          <MotionDiv
+            className="flex flex-col gap-4 items-center mt-8 mb-8"
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-600 rounded-xl blur opacity-50 group-hover:opacity-75 transition-opacity" />
+              <div className="relative px-8 py-4 bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-600 rounded-xl text-zinc-50 text-xl font-bold shadow-lg">
+                Senior Full Stack Developer
+              </div>
+            </div>
+          </MotionDiv>
+
+          <MotionDiv
+            className="text-zinc-400 text-lg mb-6"
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+          >
+            <span className="font-light">📍 </span>
+            Halifax, N.S. Canada
+          </MotionDiv>
+
+          {/* Tagline */}
+          <MotionDiv
+            className="max-w-2xl mx-auto text-zinc-300 text-lg font-light leading-relaxed"
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+          >
+            <p>
+              Crafting scalable solutions and leading complete software lifecycles — 
+              <span className="text-zinc-100 font-medium"> from architecture to optimization</span>
+            </p>
+          </MotionDiv>
+
+          {/* Quick stats */}
+          <MotionDiv
+            className="flex flex-wrap justify-center gap-8 mt-12 text-sm"
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 1 }}
+          >
+            <div className="flex flex-col items-center">
+              <div className="text-2xl font-bold text-zinc-50">5+</div>
+              <div className="text-zinc-400">Years Experience</div>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="text-2xl font-bold text-zinc-50">Full Stack</div>
+              <div className="text-zinc-400">Expertise</div>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="text-2xl font-bold text-zinc-50">React</div>
+              <div className="text-zinc-400">Specialized</div>
+            </div>
+          </MotionDiv>
+        </div>
+
+        <div className="absolute w-20 text-center mx-auto bottom-10 left-0 right-0 flex justify-center z-10">
           <ScrollDown />
         </div>
       </MotionSection>
