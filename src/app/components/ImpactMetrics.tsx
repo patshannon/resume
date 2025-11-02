@@ -129,7 +129,7 @@ export default function ImpactMetrics() {
     },
     {
       title: 'API Efficiency',
-      value: '−20%',
+      value: '20%',
       subtitle: 'Reduction in external API calls via intelligent caching',
       color: 'rgba(234, 179, 8, 1)', // Yellow
       icon: <FaBullseye />,
