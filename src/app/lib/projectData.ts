@@ -4,28 +4,28 @@ export const projectData = [
     description: "Job platform for Quebec NPOs featuring user dashboards, authentication, and Stripe payments. Built with Next.js, TypeScript, Firebase, Algolia, and Plasmic.",
     url: "https://emploi.espaceobnl.ca/fr",
     image: "/eo-16-10.png",
-    tools: ["Next.js", "React", "TypeScript", "Tailwind CSS", "User Dashboard", "Firebase Auth", "Firebase Firestore", "GCP","SaaS", "Stripe", "Algolia", "Plasmic"]
+    tools: ["Next.js", "TypeScript", "Firebase", "Stripe", "Algolia"]
   },
   {
     title: "La Vitrine Culturelle",
     description: "Event curator platform for Quebec, built with Webflow and custom Web Components. Integrated with Supabase, Firestore, and Squidex CMS, featuring authentication, Algolia search, and serverless cloud functions.",
     url: "https://www.lavitrine.com/en",
     image: "/lvc-v2-16-10.png",
-    tools: ["Webcomponents", "TypeScript", "Firebase Auth", "Webflow", "Playwright", "CI/CD", "Firebase Firestore", "Supabase", "PostgreSQL", "Squidex CMS", "Algolia", "Google Cloud Functions", "GraphQL"]
+    tools: ["Webflow", "TypeScript", "Firebase", "Supabase", "GraphQL", "Algolia"]
   },
   {
     title: "Tel-jeunes",
     description: "Youth support platform for Quebec, built with Webflow and custom Web Components. Features a headless CMS, GraphQL integration, and serverless backend using Google Cloud Functions.",
     url: "https://www.teljeunes.com/en",
     image: "/tj-website-16-10.webp",
-    tools: ["Webflow", "Google Cloud Functions", "Firebase", "Squidex CMS", "GraphQL", "Algolia", "TypeScript"]
+    tools: ["Webflow", "Firebase", "GraphQL", "Algolia"]
   },
   {
     title: "Institut des troubles d'apprentissage",
     description: "Resource center for educators supporting students with learning difficulties. Built with Webflow, a headless CMS, and Cloud Functions, featuring robust search powered by Algolia.",
     url: "https://www.institutta.com",
     image: "/ita-website-16-10.webp",
-    tools: ["Webflow", "Google Cloud Functions", "Firebase", "Squidex CMS", "GraphQL", "Algolia", "JavaScript"]
+    tools: ["Webflow", "Firebase", "GraphQL", "Algolia"]
   },
   {
     title: "Alloprof",
