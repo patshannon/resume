@@ -42,47 +42,32 @@ export default function Home() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(255,255,255,0.02),transparent_50%)]" />
         </div>
 
-        {/* Enhanced floating background shapes with more dynamic movement */}
+        {/* Floating background shapes */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <MotionDiv
-            className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-white/10 via-zinc-400/5 to-transparent rounded-full blur-3xl"
+            className="absolute top-20 left-10 w-72 h-72 bg-white/5 rounded-full blur-3xl"
             style={{ willChange: 'transform' }}
             animate={{
-              x: [0, 120, -30, 0],
-              y: [0, 60, 80, 0],
-              scale: [1, 1.3, 1.1, 1],
-              rotate: [0, 90, 180, 360],
+              x: [0, 50, 0],
+              y: [0, 30, 0],
+              scale: [1, 1.1, 1],
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          <MotionDiv
+            className="absolute bottom-20 right-10 w-96 h-96 bg-white/5 rounded-full blur-3xl"
+            style={{ willChange: 'transform' }}
+            animate={{
+              x: [0, -40, 0],
+              y: [0, -30, 0],
+              scale: [1, 1.08, 1],
             }}
             transition={{
               duration: 25,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-          <MotionDiv
-            className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-tr from-zinc-400/10 via-white/5 to-transparent rounded-full blur-3xl"
-            style={{ willChange: 'transform' }}
-            animate={{
-              x: [0, -90, 40, 0],
-              y: [0, -70, -40, 0],
-              scale: [1, 1.2, 1.15, 1],
-              rotate: [0, -90, -180, -360],
-            }}
-            transition={{
-              duration: 30,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-          <MotionDiv
-            className="absolute top-1/2 left-1/2 w-64 h-64 bg-white/5 rounded-full blur-3xl"
-            style={{ willChange: 'transform' }}
-            animate={{
-              scale: [1, 1.5, 1.2, 1],
-              opacity: [0.3, 0.6, 0.4, 0.3],
-            }}
-            transition={{
-              duration: 15,
               repeat: Infinity,
               ease: "easeInOut",
             }}
@@ -91,46 +76,32 @@ export default function Home() {
 
         {/* Content */}
         <div className="relative z-10">
-          {/* Enhanced profile image with 3D effect and reveal animation */}
+          {/* Profile image with subtle reveal animation */}
           <MotionDiv
-            className="relative mb-8 group perspective-1000"
-            initial={{ scale: 0, opacity: 0, rotateY: -180 }}
-            animate={{ scale: 1, opacity: 1, rotateY: 0 }}
+            className="relative mb-8 group"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
             transition={{
-              duration: 1,
-              type: "spring",
-              stiffness: 80,
-              delay: 0.2
+              duration: 0.6,
+              ease: "easeOut",
+              delay: 0.1
             }}
-            whileHover={{ scale: 1.05, rotateY: 5 }}
+            whileHover={{ scale: 1.03 }}
             style={{
-              willChange: 'transform, opacity',
-              transformStyle: 'preserve-3d'
+              willChange: 'transform, opacity'
             }}
           >
-            {/* Multiple layered glows for depth */}
+            {/* Subtle glow effect */}
             <div className="relative inline-block">
               <MotionDiv
-                className="absolute inset-0 bg-gradient-to-r from-white/30 via-zinc-300/30 to-white/30 rounded-full blur-xl"
+                className="absolute inset-0 bg-gradient-to-r from-white/20 via-zinc-300/20 to-white/20 rounded-full blur-xl"
                 animate={{
-                  scale: [1, 1.2, 1],
-                  opacity: [0.5, 0.8, 0.5],
+                  opacity: [0.4, 0.6, 0.4],
                 }}
                 transition={{
-                  duration: 3,
+                  duration: 4,
                   repeat: Infinity,
                   ease: "easeInOut",
-                }}
-              />
-              <MotionDiv
-                className="absolute -inset-2 bg-gradient-to-r from-zinc-400/20 via-white/20 to-zinc-400/20 rounded-full blur-2xl"
-                animate={{
-                  rotate: [0, 360],
-                }}
-                transition={{
-                  duration: 20,
-                  repeat: Infinity,
-                  ease: "linear",
                 }}
               />
               <div className="relative">
@@ -147,16 +118,15 @@ export default function Home() {
             </div>
           </MotionDiv>
 
-          {/* Enhanced name animation with split letter effect */}
+          {/* Name animation */}
           <MotionH1
             className="text-7xl sm:text-5xl font-extrabold mt-6 mb-4"
-            initial={{ y: 30, opacity: 0, scale: 0.9 }}
-            animate={{ y: 0, opacity: 1, scale: 1 }}
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
             transition={{
-              duration: 0.8,
-              delay: 0.5,
-              type: "spring",
-              stiffness: 100
+              duration: 0.6,
+              delay: 0.3,
+              ease: "easeOut"
             }}
             style={{ willChange: 'transform, opacity' }}
           >
@@ -165,80 +135,44 @@ export default function Home() {
             </span>
           </MotionH1>
 
-          {/* Enhanced job title with shimmer effect */}
+          {/* Job title */}
           <MotionDiv
             className="flex flex-col gap-4 items-center mt-8 mb-8"
-            initial={{ y: 30, opacity: 0, scale: 0.8 }}
-            animate={{ y: 0, opacity: 1, scale: 1 }}
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
             transition={{
-              duration: 0.8,
-              delay: 0.7,
-              type: "spring",
-              stiffness: 100
+              duration: 0.6,
+              delay: 0.5,
+              ease: "easeOut"
             }}
             style={{ willChange: 'transform, opacity' }}
           >
-            <div className="relative group overflow-hidden">
-              {/* Animated background glow */}
-              <MotionDiv
-                className="absolute inset-0 bg-gradient-to-r from-zinc-800 via-zinc-600 to-zinc-800 rounded-xl blur opacity-50 group-hover:opacity-75"
-                animate={{
-                  backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
-                }}
-                transition={{
-                  duration: 5,
-                  repeat: Infinity,
-                  ease: "linear",
-                }}
-              />
-              {/* Shimmer effect overlay */}
-              <MotionDiv
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-                animate={{
-                  x: ['-200%', '200%'],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  repeatDelay: 2,
-                }}
-              />
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-r from-zinc-800 via-zinc-700 to-zinc-800 rounded-xl blur opacity-50 group-hover:opacity-75 transition-opacity" />
               <div className="relative px-8 py-4 bg-gradient-to-r from-zinc-800 via-zinc-700 to-zinc-800 rounded-xl text-zinc-50 text-xl font-bold shadow-lg border border-zinc-600/50">
                 Senior Full Stack Developer
               </div>
             </div>
           </MotionDiv>
 
-          {/* Location with icon bounce */}
+          {/* Location */}
           <MotionDiv
             className="text-zinc-400 text-lg mb-6 flex items-center justify-center gap-2"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.9 }}
+            transition={{ duration: 0.6, delay: 0.7, ease: "easeOut" }}
             style={{ willChange: 'transform, opacity' }}
           >
-            <MotionDiv
-              animate={{
-                y: [0, -3, 0],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            >
-              <HiLocationMarker className="text-zinc-500" />
-            </MotionDiv>
+            <HiLocationMarker className="text-zinc-500" />
             <span className="font-light">Halifax, N.S. Canada</span>
           </MotionDiv>
 
-          {/* Tagline with reveal effect */}
+          {/* Tagline */}
           <MotionDiv
-            className="max-w-2xl mx-auto text-zinc-300 text-lg font-light leading-relaxed overflow-hidden"
+            className="max-w-2xl mx-auto text-zinc-300 text-lg font-light leading-relaxed"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 1.1 }}
+            transition={{ duration: 0.6, delay: 0.9, ease: "easeOut" }}
             style={{ willChange: 'transform, opacity' }}
           >
             <p>
@@ -247,63 +181,32 @@ export default function Home() {
             </p>
           </MotionDiv>
 
-          {/* Enhanced quick stats with 3D floating cards */}
+          {/* Quick stats */}
           <MotionDiv
             className="flex flex-wrap justify-center gap-8 mt-12 text-sm"
-            initial={{ y: 30, opacity: 0 }}
+            initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 1.3 }}
+            transition={{ duration: 0.6, delay: 1.1, ease: "easeOut" }}
             style={{ willChange: 'transform, opacity' }}
           >
             {[
-              { value: '5+', label: 'Years Experience', delay: 0 },
-              { value: 'Full Stack', label: 'Expertise', delay: 0.1 },
-              { value: 'React', label: 'Specialized', delay: 0.2 }
+              { value: '5+', label: 'Years Experience' },
+              { value: 'Full Stack', label: 'Expertise' },
+              { value: 'React', label: 'Specialized' }
             ].map((stat, index) => (
-              <MotionDiv
+              <div
                 key={index}
                 className="flex flex-col items-center group cursor-default"
-                initial={{ y: 20, opacity: 0, rotateX: -90 }}
-                animate={{ y: 0, opacity: 1, rotateX: 0 }}
-                transition={{
-                  duration: 0.6,
-                  delay: 1.5 + stat.delay,
-                  type: "spring",
-                  stiffness: 100
-                }}
-                whileHover={{
-                  y: -8,
-                  scale: 1.05,
-                  transition: { duration: 0.3 }
-                }}
-                style={{
-                  transformStyle: 'preserve-3d',
-                  willChange: 'transform'
-                }}
               >
-                <MotionDiv
-                  className="relative"
-                  animate={{
-                    y: [0, -5, 0],
-                  }}
-                  transition={{
-                    duration: 3,
-                    delay: stat.delay,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                >
-                  <div className="absolute inset-0 bg-white/5 rounded-lg blur-md group-hover:bg-white/10 transition-colors" />
-                  <div className="relative px-4 py-2 bg-zinc-800/50 backdrop-blur-sm rounded-lg border border-zinc-700/50 group-hover:border-zinc-600/50 transition-colors">
-                    <div className="text-2xl font-bold text-zinc-50 group-hover:text-white transition-colors">
-                      {stat.value}
-                    </div>
-                    <div className="text-zinc-400 group-hover:text-zinc-300 transition-colors">
-                      {stat.label}
-                    </div>
+                <div className="relative px-4 py-2 bg-zinc-800/50 backdrop-blur-sm rounded-lg border border-zinc-700/50 group-hover:border-zinc-600/50 hover:bg-zinc-800/70 transition-all duration-300">
+                  <div className="text-2xl font-bold text-zinc-50 group-hover:text-white transition-colors">
+                    {stat.value}
                   </div>
-                </MotionDiv>
-              </MotionDiv>
+                  <div className="text-zinc-400 group-hover:text-zinc-300 transition-colors">
+                    {stat.label}
+                  </div>
+                </div>
+              </div>
             ))}
           </MotionDiv>
         </div>
