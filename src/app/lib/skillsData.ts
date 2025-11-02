@@ -9,7 +9,7 @@ export const hardSkillsData = {
     'Design',
   ],
   datasets: [{
-    data: [90, 75, 70, 75, 50, 60, 80],
+    data: [92, 80, 75, 75, 65, 68, 74],
     fill: true,
     backgroundColor: 'rgba(24, 24, 27, 0.3)',
     borderColor: 'rgb(24, 24, 27,0.6)',
@@ -26,10 +26,10 @@ export const softSkillsData = {
     'Teamwork',
     'Leadership',
     'Adaptability',
-    'Creativity',
+    'Learning Agility',
   ],
   datasets: [{
-    data: [90, 85, 80, 85, 80, 80, 95],
+    data: [85, 90, 85, 82, 87, 93, 92],
     fill: true,
     backgroundColor: 'rgba(24, 24, 27, 0.3)',
     borderColor: 'rgb(24, 24, 27,0.6)',
