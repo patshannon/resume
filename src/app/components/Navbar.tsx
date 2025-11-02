@@ -26,7 +26,7 @@ const Navbar = () => {
           <li>
             <a
               href="/"
-              className="relative hover:text-purple-300 transition-colors duration-200 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-purple-300 hover:after:w-full after:transition-all after:duration-300"
+              className="relative hover:text-zinc-300 transition-colors duration-200 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-zinc-300 hover:after:w-full after:transition-all after:duration-300"
             >
               Home
             </a>
@@ -34,7 +34,7 @@ const Navbar = () => {
           <li>
             <a
               href="/about"
-              className="relative hover:text-purple-300 transition-colors duration-200 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-purple-300 hover:after:w-full after:transition-all after:duration-300"
+              className="relative hover:text-zinc-300 transition-colors duration-200 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-zinc-300 hover:after:w-full after:transition-all after:duration-300"
             >
               About
             </a>

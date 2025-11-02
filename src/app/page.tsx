@@ -11,6 +11,7 @@ import ProjectCard from '@/components/ProjectCard';
 import { projectData } from '@/lib/projectData';
 import { Metadata } from 'next';
 import { MotionDiv, MotionSection, MotionH1 } from './motion';
+import { HiLocationMarker } from 'react-icons/hi';
 
 export const metadata: Metadata = {
   title: 'Patrick Shannon - Senior Full Stack Developer',
@@ -36,15 +37,15 @@ export default function Home() {
       >
         {/* Animated gradient background */}
         <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.1),transparent_50%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(139,92,246,0.08),transparent_50%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(59,130,246,0.08),transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.03),transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,255,255,0.02),transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(255,255,255,0.02),transparent_50%)]" />
         </div>
 
         {/* Floating background shapes */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <MotionDiv
-            className="absolute top-20 left-10 w-72 h-72 bg-purple-500/5 rounded-full blur-3xl"
+            className="absolute top-20 left-10 w-72 h-72 bg-white/5 rounded-full blur-3xl"
             animate={{
               x: [0, 100, 0],
               y: [0, 50, 0],
@@ -57,7 +58,7 @@ export default function Home() {
             }}
           />
           <MotionDiv
-            className="absolute bottom-20 right-10 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl"
+            className="absolute bottom-20 right-10 w-96 h-96 bg-white/5 rounded-full blur-3xl"
             animate={{
               x: [0, -80, 0],
               y: [0, -60, 0],
@@ -81,7 +82,7 @@ export default function Home() {
           >
             {/* Profile image with animated glow */}
             <div className="relative inline-block">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/50 via-indigo-500/50 to-purple-500/50 rounded-full blur-xl animate-pulse" />
+              <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-zinc-400/20 to-white/20 rounded-full blur-xl animate-pulse" />
               <div className="relative">
                 <Image 
                   src="/headshot-rounded.png" 
@@ -92,7 +93,7 @@ export default function Home() {
                   priority
                   className="relative z-10 rounded-full border-4 border-zinc-700/50 shadow-2xl"
                 />
-                <div className="absolute inset-0 rounded-full border-2 border-purple-500/30 animate-ping" />
+                <div className="absolute inset-0 rounded-full border-2 border-white/20 animate-ping" />
               </div>
             </div>
           </MotionDiv>
@@ -115,21 +116,21 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-600 rounded-xl blur opacity-50 group-hover:opacity-75 transition-opacity" />
-              <div className="relative px-8 py-4 bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-600 rounded-xl text-zinc-50 text-xl font-bold shadow-lg">
+              <div className="absolute inset-0 bg-gradient-to-r from-zinc-800 via-zinc-700 to-zinc-800 rounded-xl blur opacity-50 group-hover:opacity-75 transition-opacity" />
+              <div className="relative px-8 py-4 bg-gradient-to-r from-zinc-800 via-zinc-700 to-zinc-800 rounded-xl text-zinc-50 text-xl font-bold shadow-lg border border-zinc-600/50">
                 Senior Full Stack Developer
               </div>
             </div>
           </MotionDiv>
 
           <MotionDiv
-            className="text-zinc-400 text-lg mb-6"
+            className="text-zinc-400 text-lg mb-6 flex items-center justify-center gap-2"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            <span className="font-light">📍 </span>
-            Halifax, N.S. Canada
+            <HiLocationMarker className="text-zinc-500" />
+            <span className="font-light">Halifax, N.S. Canada</span>
           </MotionDiv>
 
           {/* Tagline */}
