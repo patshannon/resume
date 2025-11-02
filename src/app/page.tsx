@@ -11,13 +11,13 @@ import { Metadata } from 'next';
 import { MotionDiv, MotionSection, MotionH1 } from './motion';
 
 export const metadata: Metadata = {
-  title: 'Patrick Shannon - Full Stack Developer | Technical Team Lead',
+  title: 'Patrick Shannon - Senior Full Stack Developer',
   description:
-    'Experienced Software Developer Team Lead specializing in web development, team management, and technical leadership. Based in Halifax, NS.',
+    'Senior full-stack developer (5+ years) experienced in leading complete software lifecycles — from technical planning and architecture to implementation and optimization. Skilled in React, Next.js, Node.js, and GCP/Firebase, with a focus on system design, performance optimization, scalability, and maintainability. Based in Halifax, NS.',
   openGraph: {
-    title: 'Patrick Shannon - Software Developer Team Lead',
+    title: 'Patrick Shannon - Senior Full Stack Developer',
     description:
-      'Experienced Software Developer Team Lead specializing in web development, team management, and technical leadership.',
+      'Senior full-stack developer (5+ years) experienced in leading complete software lifecycles — from technical planning and architecture to implementation and optimization. Skilled in React, Next.js, Node.js, and GCP/Firebase.',
     images: ['/headshot-rounded.png'],
   },
 };
@@ -53,7 +53,7 @@ export default function Home() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <div className="p-5 bg-zinc-800 rounded-xl text-zinc-50">Full Stack Developer | Technical Team Lead</div>
+          <div className="p-5 bg-zinc-800 rounded-xl text-zinc-50">Senior Full Stack Developer</div>
         </MotionDiv>
         <MotionDiv
           className="font-light"
