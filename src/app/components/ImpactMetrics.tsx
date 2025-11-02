@@ -130,7 +130,7 @@ export default function ImpactMetrics() {
       title: 'SEO Impact',
       value: '+40%',
       subtitle: 'Increase in Google Search impressions through optimization',
-      percentage: 85, // 85% progress toward goal
+      percentage: 40,
       color: 'rgba(168, 85, 247, 0.8)', // Purple
       icon: '📈',
       delay: 600,
@@ -139,7 +139,7 @@ export default function ImpactMetrics() {
       title: 'API Efficiency',
       value: '-20%',
       subtitle: 'Reduction in external API calls via intelligent caching',
-      percentage: 80,
+      percentage: 20,
       color: 'rgba(234, 179, 8, 0.8)', // Yellow
       icon: '🎯',
       delay: 800,
