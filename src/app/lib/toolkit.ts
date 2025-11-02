@@ -1,102 +1,112 @@
-const data = [
+interface ToolkitItem {
+  alt: string;
+  text: string;
+  iconName: string;
+}
+
+const data: ToolkitItem[] = [
+  // Core Modern Stack - Most sought-after skills
   {
     alt: 'React',
     text: 'React',
-    src: '/ps-react-icon.svg'
-  },
-  {
-    alt: 'Node.js',
-    text: 'Node.js',
-    src: '/ps-node-icon.svg'
+    iconName: 'SiReact',
   },
   {
     alt: 'TypeScript',
     text: 'TypeScript',
-    src: '/ps-typescript-icon.svg'
+    iconName: 'SiTypescript',
   },
   {
     alt: 'Next.js',
     text: 'Next.js',
-    src: '/ps-nextjs-icon.svg'
+    iconName: 'SiNextdotjs',
   },
   {
-    alt: 'JavaScript',
-    text: 'JavaScript',
-    src: '/ps-javascript-icon.svg'
+    alt: 'Node.js',
+    text: 'Node.js',
+    iconName: 'SiNodedotjs',
   },
-  {
-    alt: 'HTML',
-    text: 'HTML',
-    src: '/ps-html-icon.svg'
-  },
-  {
-    alt: 'CSS',
-    text: 'CSS',
-    src: '/ps-css-icon.svg'
-  },
-
   {
     alt: 'Tailwind CSS',
     text: 'Tailwind CSS',
-    src: '/ps-tailwind-icon.svg'
+    iconName: 'SiTailwindcss',
+  },
+  // AI Tools - Trending & cutting-edge
+  {
+    alt: 'Claude Code',
+    text: 'Claude Code',
+    iconName: 'SiClaude',
   },
   {
-    alt: 'Firebase',
-    text: 'Firebase',
-    src: '/ps-firebase-icon.svg'
+    alt: 'OpenAI Codex',
+    text: 'OpenAI Codex',
+    iconName: 'SiOpenai',
   },
+  // Core Technologies & Modern APIs
   {
-    alt: 'Google Cloud',
-    text: 'Google Cloud',
-    src: '/ps-googlecloud-icon.svg'
-  },
-  {
-    alt: 'Cloudflare',
-    text: 'Cloudflare',
-    src: '/ps-cloudflare-icon.svg'
-  },
-  {
-    alt: 'Squidex',
-    text: 'Squidex',
-    src: '/ps-squidex-icon.svg'
+    alt: 'JavaScript',
+    text: 'JavaScript',
+    iconName: 'SiJavascript',
   },
   {
     alt: 'GraphQL',
     text: 'GraphQL',
-    src: '/ps-graphql-icon.svg'
+    iconName: 'SiGraphql',
+  },
+  // Cloud & Backend Services
+  {
+    alt: 'Google Cloud',
+    text: 'Google Cloud',
+    iconName: 'SiGooglecloud',
   },
   {
-    alt: 'Algolia',
-    text: 'Algolia',
-    src: '/ps-algolia-icon.svg'
+    alt: 'Firebase',
+    text: 'Firebase',
+    iconName: 'SiFirebase',
   },
-
-
+  // Essential Developer Tools
   {
-    alt: 'Webflow',
-    text: 'Webflow',
-    src: '/ps-webflow-icon.svg'
+    alt: 'Github',
+    text: 'Github',
+    iconName: 'SiGithub',
   },
   {
     alt: 'Figma',
     text: 'Figma',
-    src: '/ps-figma-icon.svg'
+    iconName: 'SiFigma',
+  },
+  // Web Fundamentals
+  {
+    alt: 'HTML',
+    text: 'HTML',
+    iconName: 'SiHtml5',
   },
   {
-    alt: 'Github',
-    text: 'Github',
-    src: '/ps-github-icon.svg'
+    alt: 'CSS',
+    text: 'CSS',
+    iconName: 'SiCss3',
+  },
+  // Supporting Tools & Services
+  {
+    alt: 'Cloudflare',
+    text: 'Cloudflare',
+    iconName: 'SiCloudflare',
+  },
+  {
+    alt: 'Webflow',
+    text: 'Webflow',
+    iconName: 'SiWebflow',
   },
   {
     alt: 'Atlassian',
     text: 'Atlassian',
-    src: '/ps-atlassian-icon.svg'
+    iconName: 'SiAtlassian',
   },
-  // {
-  //   alt: 'VS Code',
-  //   text: 'VS Code',
-  //   src: '/ps-vscode-icon.svg'
-  // }, 
+  {
+    alt: 'Algolia',
+    text: 'Algolia',
+    iconName: 'SiAlgolia',
+  },
 ];
 
 export default data;
