@@ -6,6 +6,7 @@ import EducationCard from '@/components/EducationCard';
 import ScrollDown from '@/components/ScrollDown';
 import SkillsRadarChart from '@/components/SkillsRadarChart';
 import ImpactMetrics from '@/components/ImpactMetrics';
+import GitHubContributions from '@/components/GitHubContributions';
 import Image from 'next/image';
 import ProjectCard from '@/components/ProjectCard';
 import { projectData } from '@/lib/projectData';
@@ -128,6 +129,22 @@ export default function Home() {
         {/* Impact Metrics Dashboard */}
         <div className="relative w-full">
           <ImpactMetrics />
+        </div>
+      </MotionSection>
+
+      {/* GitHub Contributions */}
+      <MotionSection
+        className="bg-gradient-to-b from-zinc-900 via-zinc-800 to-zinc-900 relative px-10 py-20 min-h-screen container-xl flex flex-col justify-center align-center items-center overflow-hidden"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        {/* Ambient background glow */}
+        <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/5 via-blue-500/5 to-purple-500/5 pointer-events-none" />
+
+        <div className="relative w-full">
+          <GitHubContributions />
         </div>
       </MotionSection>
 
