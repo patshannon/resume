@@ -5,15 +5,11 @@ interface ToolkitItem {
 }
 
 const data: ToolkitItem[] = [
+  // Core Modern Stack - Most sought-after skills
   {
     alt: 'React',
     text: 'React',
     iconName: 'SiReact',
-  },
-  {
-    alt: 'Node.js',
-    text: 'Node.js',
-    iconName: 'SiNodedotjs',
   },
   {
     alt: 'TypeScript',
@@ -26,10 +22,60 @@ const data: ToolkitItem[] = [
     iconName: 'SiNextdotjs',
   },
   {
+    alt: 'Node.js',
+    text: 'Node.js',
+    iconName: 'SiNodedotjs',
+  },
+  {
+    alt: 'Tailwind CSS',
+    text: 'Tailwind CSS',
+    iconName: 'SiTailwindcss',
+  },
+  // AI Tools - Trending & cutting-edge
+  {
+    alt: 'Claude Code',
+    text: 'Claude Code',
+    iconName: 'SiClaude',
+  },
+  {
+    alt: 'OpenAI Codex',
+    text: 'OpenAI Codex',
+    iconName: 'SiOpenai',
+  },
+  // Core Technologies & Modern APIs
+  {
     alt: 'JavaScript',
     text: 'JavaScript',
     iconName: 'SiJavascript',
   },
+  {
+    alt: 'GraphQL',
+    text: 'GraphQL',
+    iconName: 'SiGraphql',
+  },
+  // Cloud & Backend Services
+  {
+    alt: 'Google Cloud',
+    text: 'Google Cloud',
+    iconName: 'SiGooglecloud',
+  },
+  {
+    alt: 'Firebase',
+    text: 'Firebase',
+    iconName: 'SiFirebase',
+  },
+  // Essential Developer Tools
+  {
+    alt: 'Github',
+    text: 'Github',
+    iconName: 'SiGithub',
+  },
+  {
+    alt: 'Figma',
+    text: 'Figma',
+    iconName: 'SiFigma',
+  },
+  // Web Fundamentals
   {
     alt: 'HTML',
     text: 'HTML',
@@ -40,35 +86,11 @@ const data: ToolkitItem[] = [
     text: 'CSS',
     iconName: 'SiCss3',
   },
-  {
-    alt: 'Tailwind CSS',
-    text: 'Tailwind CSS',
-    iconName: 'SiTailwindcss',
-  },
-  {
-    alt: 'Firebase',
-    text: 'Firebase',
-    iconName: 'SiFirebase',
-  },
-  {
-    alt: 'Google Cloud',
-    text: 'Google Cloud',
-    iconName: 'SiGooglecloud',
-  },
+  // Supporting Tools & Services
   {
     alt: 'Cloudflare',
     text: 'Cloudflare',
     iconName: 'SiCloudflare',
-  },
-  {
-    alt: 'GraphQL',
-    text: 'GraphQL',
-    iconName: 'SiGraphql',
-  },
-  {
-    alt: 'Algolia',
-    text: 'Algolia',
-    iconName: 'SiAlgolia',
   },
   {
     alt: 'Webflow',
@@ -76,29 +98,14 @@ const data: ToolkitItem[] = [
     iconName: 'SiWebflow',
   },
   {
-    alt: 'Figma',
-    text: 'Figma',
-    iconName: 'SiFigma',
-  },
-  {
-    alt: 'Github',
-    text: 'Github',
-    iconName: 'SiGithub',
-  },
-  {
     alt: 'Atlassian',
     text: 'Atlassian',
     iconName: 'SiAtlassian',
   },
   {
-    alt: 'Claude Code',
-    text: 'Claude Code',
-    iconName: 'SiClaude',
-  },
-  {
-    alt: 'OpenAI Codex',
-    text: 'OpenAI Codex',
-    iconName: 'SiOpenai',
+    alt: 'Algolia',
+    text: 'Algolia',
+    iconName: 'SiAlgolia',
   },
 ];
 
