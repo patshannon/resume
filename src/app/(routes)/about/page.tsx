@@ -120,6 +120,9 @@ export default function Page() {
             <p>
               At <span className="text-zinc-100 font-medium">bbox.digital</span>, I lead end-to-end development - using React, Next.js, and TypeScript on the frontend, and Node.js, Firebase, and GCP on the backend. I take projects from spec and architecture through implementation, optimization, and deployment, collaborating closely with the founding team to align technical decisions with product goals.
             </p>
+            <p>
+              My path to software development is unique. Before transitioning to tech, I trained as a pilot and spent time in the aviation industry, where I developed a deep appreciation for precision, systematic thinking, and operating under high-stakes conditions. The discipline and problem-solving mindset from aviation translated naturally into software development, where attention to detail and methodical approaches are equally critical.
+            </p>
           </MotionDiv>
         </div>
       </MotionSection>
