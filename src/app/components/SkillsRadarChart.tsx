@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   Chart as ChartJS,
   RadialLinearScale,
@@ -20,6 +20,19 @@ ChartJS.register(RadialLinearScale, PointElement, LineElement, Filler, Tooltip, 
 export default function SkillsRadarChart() {
   const hardChartRef = useRef<ChartJS<'radar'>>(null);
   const softChartRef = useRef<ChartJS<'radar'>>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detect mobile viewport
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Stunning gradient configuration
   const createGradient = (ctx: CanvasRenderingContext2D, color1: string, color2: string) => {
@@ -62,11 +75,14 @@ export default function SkillsRadarChart() {
       softChartRef.current.data.datasets[0].pointHoverBorderColor = 'rgb(168, 85, 247)';
       softChartRef.current.update();
     }
-  }, []);
+  }, [isMobile]);
 
   const chartOptions: ChartOptions<'radar'> = {
     responsive: true,
     maintainAspectRatio: true,
+    layout: {
+      padding: isMobile ? 20 : 10,
+    },
     scales: {
       r: {
         min: 0,
@@ -77,7 +93,7 @@ export default function SkillsRadarChart() {
           backdropColor: 'transparent',
           color: 'rgba(255, 255, 255, 0.6)',
           font: {
-            size: 11,
+            size: isMobile ? 9 : 11,
             weight: 'lighter',
           },
         },
@@ -88,10 +104,20 @@ export default function SkillsRadarChart() {
         pointLabels: {
           color: 'rgba(255, 255, 255, 0.9)',
           font: {
-            size: 13,
+            size: isMobile ? 10 : 13,
             weight: 'normal',
           },
-          padding: 15,
+          padding: isMobile ? 20 : 15,
+          callback: function(label) {
+            // Wrap long labels on mobile
+            if (isMobile && typeof label === 'string' && label.length > 12) {
+              const words = label.split(' ');
+              if (words.length > 1) {
+                return words;
+              }
+            }
+            return label;
+          },
         },
         angleLines: {
           color: 'rgba(255, 255, 255, 0.1)',
@@ -154,7 +180,7 @@ export default function SkillsRadarChart() {
             Hard Skills
           </h3>
 
-          <div className="bg-zinc-800/50 backdrop-blur-sm rounded-2xl p-8 border border-zinc-700/50 shadow-xl hover:shadow-indigo-500/20 transition-shadow duration-500">
+          <div className="bg-zinc-800/50 backdrop-blur-sm rounded-2xl p-4 sm:p-8 border border-zinc-700/50 shadow-xl hover:shadow-indigo-500/20 transition-shadow duration-500">
             <Radar ref={hardChartRef} data={hardSkillsData} options={chartOptions} />
           </div>
 
@@ -180,7 +206,7 @@ export default function SkillsRadarChart() {
             Soft Skills
           </h3>
 
-          <div className="bg-zinc-800/50 backdrop-blur-sm rounded-2xl p-8 border border-zinc-700/50 shadow-xl hover:shadow-purple-500/20 transition-shadow duration-500">
+          <div className="bg-zinc-800/50 backdrop-blur-sm rounded-2xl p-4 sm:p-8 border border-zinc-700/50 shadow-xl hover:shadow-purple-500/20 transition-shadow duration-500">
             <Radar ref={softChartRef} data={softSkillsData} options={chartOptions} />
           </div>
 
