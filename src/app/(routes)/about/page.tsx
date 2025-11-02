@@ -98,7 +98,7 @@ export default function Page() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <span className="bg-gradient-to-r from-zinc-50 via-zinc-100 to-zinc-200 bg-clip-text text-transparent">
-              Building Scalable Solutions
+              Hi, I'm Patrick
             </span>
           </MotionH1>
 
@@ -108,7 +108,7 @@ export default function Page() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            I'm a <span className="text-zinc-100 font-medium">Senior Full-Stack Software Developer</span> with 5 years of experience building scalable web applications focused on performance, maintainability, and user experience.
+            I'm a software developer who loves solving complex problems and building things that matter. Over the past 5 years, I've focused on creating web applications that are fast, maintainable, and genuinely useful to the people who use them.
           </MotionP>
 
           <MotionDiv
