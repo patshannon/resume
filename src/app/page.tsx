@@ -13,6 +13,8 @@ import { projectData } from '@/lib/projectData';
 import { Metadata } from 'next';
 import { MotionDiv, MotionSection, MotionH1 } from './motion';
 import { HiLocationMarker } from 'react-icons/hi';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { HiDownload } from 'react-icons/hi';
 
 export const metadata: Metadata = {
   title: 'Patrick Shannon - Senior Full Stack Developer',
@@ -523,25 +525,49 @@ export default function Home() {
               <a
                 target="_blank"
                 href="https://github.com/patshannon"
-                className="w-10 h-10 hover:scale-105 transition-transform"
+                className="w-10 h-10 hover:scale-105 transition-transform flex items-center justify-center bg-white rounded-full text-black"
               >
-                <Image width="40" height="40" src="/ps-github-link-icon.svg" alt="github icon" />
+                <FaGithub size={24} />
               </a>
               <a
                 target="_blank"
                 href="https://www.linkedin.com/in/patrick-e-shannon/"
-                className="w-10 h-10 hover:scale-105 transition-transform"
+                className="w-10 h-10 hover:scale-105 transition-transform flex items-center justify-center bg-white rounded-full text-black"
               >
-                <Image width="40" height="40" src="/ps-linkedin-link-icon.svg" alt="linkedin icon" />
+                <FaLinkedin size={24} />
               </a>
             </div>
-            <a
-              download
-              href="/pshannon-dev.pdf"
-              className="rounded-full bg-zinc-50 text-zinc-900 px-6 py-4 hover:scale-105 transition-transform font-semibold"
+            <MotionDiv
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              className="relative"
             >
-              Download Resume
-            </a>
+              {/* Glow shadow on hover */}
+              <div className="absolute inset-0 rounded-xl bg-white/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
+              
+              <a
+                download
+                href="/Patrick_Shannon_FullStack_Resume_2025.pdf"
+                className="relative group inline-flex items-center gap-3 px-8 py-4 rounded-xl font-semibold text-zinc-50 overflow-hidden shadow-lg shadow-black/30 group-hover:shadow-xl group-hover:shadow-white/5 transition-shadow duration-300"
+              >
+                {/* Animated gradient background */}
+                <div className="absolute inset-0 bg-gradient-to-r from-zinc-800 via-zinc-700 to-zinc-800 rounded-xl" />
+                <div className="absolute inset-0 bg-gradient-to-r from-zinc-700 via-zinc-600 to-zinc-700 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                
+                {/* Subtle inner glow */}
+                <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                
+                {/* Border */}
+                <div className="absolute inset-0 rounded-xl border border-zinc-600/50 group-hover:border-zinc-500/70 transition-colors duration-300" />
+                
+                {/* Content */}
+                <span className="relative z-10 flex items-center gap-3">
+                  <HiDownload className="text-xl group-hover:translate-y-0.5 transition-transform duration-300" />
+                  <span>Download Resume</span>
+                </span>
+              </a>
+            </MotionDiv>
           </div>
         </div>
       </MotionSection>
