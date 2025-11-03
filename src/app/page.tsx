@@ -253,8 +253,8 @@ export default function Home() {
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        {/* Ambient background glow */}
-        <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/5 via-purple-500/5 to-indigo-500/5 pointer-events-none" />
+        {/* Ambient background */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-gray-900/10 to-black/20 pointer-events-none" />
 
         <h2 className="relative text-5xl font-extrabold max-w-lg mx-auto mb-4 bg-gradient-to-r from-zinc-50 via-zinc-100 to-zinc-50 bg-clip-text text-transparent">
           Skills Breakdown
