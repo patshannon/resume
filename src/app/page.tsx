@@ -245,7 +245,26 @@ export default function Home() {
         <div className="mt-16 text-sm font-light">...new tools are added frequently, stay tuned.</div>
       </MotionSection>
 
-      {/* Skills Visualization */}
+      {/* Skills Breakdown */}
+      <MotionSection
+        className="bg-zinc-50 text-zinc-900 relative px-10 py-20 min-h-screen container-xl flex flex-col justify-center align-center items-center overflow-hidden"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        <h2 className="text-5xl font-extrabold max-w-lg mx-auto mb-4 text-center">
+          Skills Breakdown
+        </h2>
+        <p className="text-zinc-600 mb-16 max-w-2xl text-center font-light">
+          A visual representation of my technical expertise and professional capabilities
+        </p>
+        <div className="relative w-full">
+          <SkillsRadarChart />
+        </div>
+      </MotionSection>
+
+      {/* Impact Metrics */}
       <MotionSection
         className="bg-gradient-to-b from-zinc-900 via-zinc-800 to-zinc-900 relative px-10 py-20 min-h-screen container-xl flex flex-col justify-center align-center items-center overflow-hidden"
         initial={{ opacity: 0 }}
@@ -253,25 +272,12 @@ export default function Home() {
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        {/* Ambient background glow */}
-        <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/5 via-purple-500/5 to-indigo-500/5 pointer-events-none" />
+        {/* Ambient background */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-gray-900/10 to-black/20 pointer-events-none" />
 
-        <h2 className="relative text-5xl font-extrabold max-w-lg mx-auto mb-4 bg-gradient-to-r from-zinc-50 via-zinc-100 to-zinc-50 bg-clip-text text-transparent">
-          Skills Breakdown
+        <h2 className="relative text-5xl font-extrabold max-w-lg mx-auto mb-16 text-center bg-gradient-to-r from-zinc-50 via-zinc-100 to-zinc-50 bg-clip-text text-transparent">
+          Measurable Impact
         </h2>
-        <p className="relative text-zinc-400 mb-16 max-w-2xl text-center font-light">
-          A visual representation of my technical expertise and professional capabilities
-        </p>
-        <div className="relative w-full">
-          <SkillsRadarChart />
-        </div>
-
-        {/* Divider */}
-        <div className="relative w-full max-w-4xl my-20">
-          <div className="h-px bg-gradient-to-r from-transparent via-zinc-700 to-transparent" />
-        </div>
-
-        {/* Impact Metrics Dashboard */}
         <div className="relative w-full">
           <ImpactMetrics />
         </div>
