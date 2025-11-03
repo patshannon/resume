@@ -1,7 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { MotionDiv } from '../motion';
+import { createPortal } from 'react-dom';
+import { MotionDiv, AnimatePresence } from '../motion';
 
 interface ContributionDay {
   date: string;
@@ -21,8 +22,10 @@ export default function ContributionHeatmap({ weeks }: ContributionHeatmapProps)
   const [isMobile, setIsMobile] = useState(false);
   const [hoveredDay, setHoveredDay] = useState<ContributionDay | null>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
@@ -49,19 +52,31 @@ export default function ContributionHeatmap({ weeks }: ContributionHeatmapProps)
     setHoveredDay(null);
   };
 
-  // Get month labels from the weeks
+  // For mobile, show last 26 weeks (6 months)
+  // For desktop, show all 52 weeks (1 year)
+  const displayWeeks = isMobile ? weeks.slice(-26) : weeks;
+  const cellSize = isMobile ? 8 : 12;
+  const cellGap = isMobile ? 2 : 3;
+
+  // Get month labels from the weeks - GitHub style (at start of month)
   const getMonthLabels = () => {
     const labels: { month: string; weekIndex: number }[] = [];
     let currentMonth = '';
+    let lastLabelWeek = -2; // Track last label position to avoid overlap
 
-    weeks.forEach((week, index) => {
+    displayWeeks.forEach((week, index) => {
       const firstDay = week.contributionDays[0];
       if (firstDay) {
         const date = new Date(firstDay.date);
         const month = date.toLocaleDateString('en-US', { month: 'short' });
 
-        if (month !== currentMonth && (index === 0 || index % 4 === 0)) {
+        // Only add label if month changed AND there's enough space from last label
+        if (month !== currentMonth && (index - lastLabelWeek) >= 2) {
           labels.push({ month, weekIndex: index });
+          currentMonth = month;
+          lastLabelWeek = index;
+        } else if (month !== currentMonth) {
+          // Month changed but not enough space, just update currentMonth
           currentMonth = month;
         }
       }
@@ -71,12 +86,6 @@ export default function ContributionHeatmap({ weeks }: ContributionHeatmapProps)
   };
 
   const monthLabels = getMonthLabels();
-
-  // For mobile, show last 26 weeks (6 months)
-  // For desktop, show all 52 weeks (1 year)
-  const displayWeeks = isMobile ? weeks.slice(-26) : weeks;
-  const cellSize = isMobile ? 8 : 12;
-  const cellGap = isMobile ? 2 : 3;
 
   return (
     <div className="relative w-full overflow-x-auto">
@@ -88,13 +97,13 @@ export default function ContributionHeatmap({ weeks }: ContributionHeatmapProps)
         transition={{ duration: 0.6 }}
       >
         {/* Month labels */}
-        <div className="flex mb-2 pl-8">
+        <div className="relative mb-2" style={{ height: '20px' }}>
           {monthLabels.map((label, index) => (
             <div
               key={index}
-              className="text-xs text-zinc-400"
+              className="absolute text-xs text-zinc-400"
               style={{
-                marginLeft: index === 0 ? 0 : `${label.weekIndex * (cellSize + cellGap) - (monthLabels[index - 1]?.weekIndex || 0) * (cellSize + cellGap)}px`,
+                left: `${label.weekIndex * (cellSize + cellGap)}px`,
               }}
             >
               {label.month}
@@ -104,17 +113,6 @@ export default function ContributionHeatmap({ weeks }: ContributionHeatmapProps)
 
         {/* Contribution grid */}
         <div className="flex">
-          {/* Day labels */}
-          <div className="flex flex-col justify-around mr-2 text-xs text-zinc-400">
-            {!isMobile && (
-              <>
-                <div>Mon</div>
-                <div>Wed</div>
-                <div>Fri</div>
-              </>
-            )}
-          </div>
-
           {/* Weeks grid */}
           <div className="flex gap-[2px] md:gap-[3px]">
             {displayWeeks.map((week, weekIndex) => (
@@ -166,26 +164,35 @@ export default function ContributionHeatmap({ weeks }: ContributionHeatmapProps)
       </MotionDiv>
 
       {/* Tooltip */}
-      {hoveredDay && (
-        <div
-          className="fixed z-50 pointer-events-none bg-zinc-900 text-zinc-50 px-3 py-2 rounded-lg shadow-xl border border-zinc-700 text-sm"
-          style={{
-            left: `${mousePosition.x + 10}px`,
-            top: `${mousePosition.y - 40}px`,
-          }}
-        >
-          <div className="font-semibold">
-            {hoveredDay.contributionCount} contribution{hoveredDay.contributionCount !== 1 ? 's' : ''}
-          </div>
-          <div className="text-xs text-zinc-400">
-            {new Date(hoveredDay.date).toLocaleDateString('en-US', {
-              weekday: 'short',
-              year: 'numeric',
-              month: 'short',
-              day: 'numeric',
-            })}
-          </div>
-        </div>
+      {mounted && createPortal(
+        <AnimatePresence>
+          {hoveredDay && (
+            <MotionDiv
+              className="fixed z-[9999] pointer-events-none bg-zinc-900 text-zinc-50 px-3 py-2 rounded-lg shadow-xl border border-zinc-700 text-sm whitespace-nowrap"
+              style={{
+                left: `${Math.max(10, mousePosition.x + 10)}px`,
+                top: `${Math.max(10, mousePosition.y - 50)}px`,
+              }}
+              initial={{ opacity: 0, scale: 0.8, y: 10 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.8, y: 10 }}
+              transition={{ duration: 0.15, ease: 'easeOut' }}
+            >
+              <div className="font-semibold">
+                {hoveredDay.contributionCount} contribution{hoveredDay.contributionCount !== 1 ? 's' : ''}
+              </div>
+              <div className="text-xs text-zinc-400">
+                {new Date(hoveredDay.date).toLocaleDateString('en-US', {
+                  weekday: 'short',
+                  year: 'numeric',
+                  month: 'short',
+                  day: 'numeric',
+                })}
+              </div>
+            </MotionDiv>
+          )}
+        </AnimatePresence>,
+        document.body
       )}
     </div>
   );

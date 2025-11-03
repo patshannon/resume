@@ -128,7 +128,7 @@ export async function GET() {
         currentStreak,
       },
     };
-
+    console.log(transformedData);
     return NextResponse.json(transformedData);
   } catch (error) {
     console.error('GitHub API Error:', error);

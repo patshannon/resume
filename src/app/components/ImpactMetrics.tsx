@@ -34,7 +34,8 @@ function MetricCard({ title, value, subtitle, color, delay, icon }: MetricCardPr
         <div className="relative z-10">
           {/* Icon with glow effect */}
           <MotionDiv
-            className="text-5xl mb-4 drop-shadow-lg text-white"
+            className="text-5xl mb-4 drop-shadow-lg"
+            style={{ color }}
             initial={{ scale: 0.8, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             viewport={{ once: true }}
@@ -61,7 +62,10 @@ function MetricCard({ title, value, subtitle, color, delay, icon }: MetricCardPr
               stiffness: 200
             }}
           >
-            <div className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-black tracking-tight leading-none text-white [text-shadow:_0_0_20px_rgb(0_0_0_/_40%)] break-words">
+            <div
+              className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-black tracking-tight leading-none [text-shadow:_0_0_20px_rgb(0_0_0_/_40%)] break-words"
+              style={{ color }}
+            >
               {value}
             </div>
           </MotionDiv>
@@ -90,7 +94,7 @@ export default function ImpactMetrics() {
       title: 'API Optimization',
       value: '+100%',
       subtitle: 'CMS API efficiency improvement through strategic caching',
-      color: '#ffffff', // White
+      color: 'rgba(16, 185, 129, 1)', // Emerald
       icon: <IoFlash />,
       delay: 200,
     },
@@ -98,7 +102,7 @@ export default function ImpactMetrics() {
       title: 'Search Efficiency',
       value: '95%',
       subtitle: 'Reduction in Algolia requests: 4.9M → 0.23M per month',
-      color: '#ffffff', // White
+      color: 'rgba(59, 130, 246, 1)', // Blue
       icon: <IoSearch />,
       delay: 400,
     },
@@ -106,7 +110,7 @@ export default function ImpactMetrics() {
       title: 'SEO Impact',
       value: '+40%',
       subtitle: 'Increase in Google Search impressions through optimization',
-      color: '#ffffff', // White
+      color: 'rgba(168, 85, 247, 1)', // Purple
       icon: <IoTrendingUp />,
       delay: 600,
     },
@@ -114,7 +118,7 @@ export default function ImpactMetrics() {
       title: 'API Efficiency',
       value: '20%',
       subtitle: 'Reduction in external API calls via intelligent caching',
-      color: '#ffffff', // White
+      color: 'rgba(234, 179, 8, 1)', // Yellow
       icon: <FaBullseye />,
       delay: 800,
     },

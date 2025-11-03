@@ -47,6 +47,7 @@ function StatCard({ title, value, subtitle, color, delay, icon }: StatCardProps)
           {/* Icon with glow effect */}
           <MotionDiv
             className="text-4xl mb-3 drop-shadow-lg"
+            style={{ color }}
             initial={{ scale: 0.8, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             viewport={{ once: true }}

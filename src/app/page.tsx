@@ -293,7 +293,7 @@ export default function Home() {
         transition={{ duration: 0.5 }}
       >
         {/* Ambient background glow */}
-        <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/5 via-blue-500/5 to-purple-500/5 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-zinc-800/20 via-zinc-700/10 to-zinc-800/20 pointer-events-none" />
 
         <div className="relative w-full">
           <GitHubContributions />
