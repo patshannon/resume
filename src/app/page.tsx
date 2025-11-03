@@ -217,6 +217,55 @@ export default function Home() {
         </div>
       </MotionSection>
 
+      {/* Impact Metrics */}
+      <MotionSection
+        className="bg-zinc-50 text-zinc-900 relative px-10 py-20 min-h-screen container-xl flex flex-col justify-center align-center items-center overflow-hidden"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        {/* Ambient background */}
+        <div className="absolute inset-0 bg-gradient-to-r from-zinc-100/20 via-zinc-50/10 to-zinc-100/20 pointer-events-none" />
+
+        <h2 className="relative text-5xl font-extrabold max-w-lg mx-auto mb-16 text-center bg-gradient-to-r from-zinc-900 via-zinc-800 to-zinc-900 bg-clip-text text-transparent">
+          Measurable Impact
+        </h2>
+        <div className="relative w-full">
+          <ImpactMetrics />
+        </div>
+      </MotionSection>
+
+      {/* Work Experience */}
+      <MotionSection
+        className="bg-gradient-to-b from-zinc-900 via-zinc-800 to-zinc-900 text-zinc-50 relative px-10 py-20 min-h-screen container-xl flex flex-col justify-center align-center items-center text-center"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        <MotionDiv
+          initial={{ y: 30, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-5xl font-extrabold max-w-lg mx-auto mb-16">Work experience</h2>
+        </MotionDiv>
+        <div className="relative flex flex-col gap-10">
+          {/* Animated timeline line */}
+          <MotionDiv
+            className="hidden lg:block absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-zinc-600 via-zinc-500 to-zinc-600"
+            initial={{ height: 0, opacity: 0 }}
+            whileInView={{ height: '100%', opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.5, delay: 0.3 }}
+          />
+          {workData.map((work, index) => (
+            <Workcard key={work.id} data={work} variant='dark' index={index} />
+          ))}
+        </div>
+      </MotionSection>
+
       {/* Projects */}
       <MotionSection
         className="bg-zinc-50 text-zinc-900 relative px-10 py-20 min-h-screen container-xl flex flex-col justify-center align-center items-center text-center"
@@ -233,39 +282,7 @@ export default function Home() {
         </div>
       </MotionSection>
 
-      {/* Toolkit */}
-      <MotionSection
-        className="flex flex-col justify-center min-h-screen px-10 py-20 text-center"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-      >
-        <h2 className="text-5xl font-extrabold max-w-lg mx-auto mb-16">Toolkit</h2>
-        <Toolkit />
-        <div className="mt-16 text-sm font-light">...new tools are added frequently, stay tuned.</div>
-      </MotionSection>
-
       {/* Skills Breakdown */}
-      <MotionSection
-        className="bg-zinc-50 text-zinc-900 relative px-10 py-20 min-h-screen container-xl flex flex-col justify-center align-center items-center overflow-hidden"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-      >
-        <h2 className="text-5xl font-extrabold max-w-lg mx-auto mb-4 text-center">
-          Skills Breakdown
-        </h2>
-        <p className="text-zinc-600 mb-16 max-w-2xl text-center font-light">
-          A visual representation of my technical expertise and professional capabilities
-        </p>
-        <div className="relative w-full">
-          <SkillsRadarChart />
-        </div>
-      </MotionSection>
-
-      {/* Impact Metrics */}
       <MotionSection
         className="bg-gradient-to-b from-zinc-900 via-zinc-800 to-zinc-900 relative px-10 py-20 min-h-screen container-xl flex flex-col justify-center align-center items-center overflow-hidden"
         initial={{ opacity: 0 }}
@@ -273,15 +290,28 @@ export default function Home() {
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        {/* Ambient background */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-gray-900/10 to-black/20 pointer-events-none" />
-
-        <h2 className="relative text-5xl font-extrabold max-w-lg mx-auto mb-16 text-center bg-gradient-to-r from-zinc-50 via-zinc-100 to-zinc-50 bg-clip-text text-transparent">
-          Measurable Impact
+        <h2 className="text-5xl font-extrabold max-w-lg mx-auto mb-4 text-center bg-gradient-to-r from-zinc-50 via-zinc-100 to-zinc-50 bg-clip-text text-transparent">
+          Skills Breakdown
         </h2>
+        <p className="text-zinc-400 mb-16 max-w-2xl text-center font-light">
+          A visual representation of my technical expertise and professional capabilities
+        </p>
         <div className="relative w-full">
-          <ImpactMetrics />
+          <SkillsRadarChart />
         </div>
+      </MotionSection>
+
+      {/* Toolkit */}
+      <MotionSection
+        className="bg-zinc-50 text-zinc-900 flex flex-col justify-center min-h-screen px-10 py-20 text-center"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        <h2 className="text-5xl font-extrabold max-w-lg mx-auto mb-16">Toolkit</h2>
+        <Toolkit />
+        <div className="mt-16 text-sm font-light text-zinc-600">...new tools are added frequently, stay tuned.</div>
       </MotionSection>
 
       {/* GitHub Contributions */}
@@ -300,39 +330,9 @@ export default function Home() {
         </div>
       </MotionSection>
 
-      {/* Work Experience */}
-      <MotionSection
-        className="bg-zinc-50 text-zinc-900 relative px-10 py-20 min-h-screen container-xl flex flex-col justify-center align-center items-center text-center"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-      >
-        <MotionDiv
-          initial={{ y: 30, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-5xl font-extrabold max-w-lg mx-auto mb-16">Work experience</h2>
-        </MotionDiv>
-        <div className="relative flex flex-col gap-10">
-          {/* Animated timeline line */}
-          <MotionDiv
-            className="hidden lg:block absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-zinc-300 via-zinc-400 to-zinc-300"
-            initial={{ height: 0, opacity: 0 }}
-            whileInView={{ height: '100%', opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.5, delay: 0.3 }}
-          />
-          {workData.map((work, index) => (
-            <Workcard key={work.id} data={work} variant='light' index={index} />
-          ))}
-        </div>
-      </MotionSection>
-
       {/* Education */}
       <MotionSection
-        className="relative px-10 py-20 min-h-screen container-xl flex flex-col justify-center align-center items-center text-center"
+        className="bg-zinc-50 text-zinc-900 relative px-10 py-20 min-h-screen container-xl flex flex-col justify-center align-center items-center text-center"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
@@ -348,15 +348,15 @@ export default function Home() {
 
       {/* Contact */}
       <MotionSection
-        className="relative bg-zinc-50 text-zinc-900 px-10 py-20 min-h-screen container-xl flex flex-col justify-center align-center items-center text-center"
+        className="relative bg-gradient-to-b from-zinc-900 via-zinc-800 to-zinc-900 px-10 py-20 min-h-screen container-xl flex flex-col justify-center align-center items-center text-center"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className="text-5xl font-extrabold max-w-lg mx-auto mb-10">Contact and Info</h2>
+        <h2 className="text-5xl font-extrabold max-w-lg mx-auto mb-10 bg-gradient-to-r from-zinc-50 via-zinc-100 to-zinc-50 bg-clip-text text-transparent">Contact and Info</h2>
         <div className="flex flex-col gap-10 items-center">
-          <div>peshannon104@gmail.com</div>
+          <div className="text-zinc-200">peshannon104@gmail.com</div>
           <div className="flex gap-2">
             <a
               target="_blank"
@@ -376,7 +376,7 @@ export default function Home() {
           <a
             download
             href="/pshannon-dev.pdf"
-            className="rounded-full bg-zinc-900 text-zinc-50 px-6 py-4 hover:scale-105 transition-transform"
+            className="rounded-full bg-zinc-50 text-zinc-900 px-6 py-4 hover:scale-105 transition-transform font-semibold"
           >
             Download Resume
           </a>

@@ -23,10 +23,10 @@ function MetricCard({ title, value, subtitle, color, delay, icon }: MetricCardPr
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: delay / 1000 }}
     >
-      <div className="relative bg-zinc-800/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-zinc-700/50 shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all duration-500 h-full overflow-hidden">
+      <div className="relative bg-white backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-zinc-200 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-500 h-full overflow-hidden">
         {/* Animated gradient background glow */}
         <div
-          className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-2xl"
+          className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 blur-2xl"
           style={{ background: `radial-gradient(circle at 50% 50%, ${color}, transparent 70%)` }}
         />
 
@@ -34,7 +34,7 @@ function MetricCard({ title, value, subtitle, color, delay, icon }: MetricCardPr
         <div className="relative z-10">
           {/* Icon with glow effect */}
           <MotionDiv
-            className="text-5xl mb-4 drop-shadow-lg"
+            className="text-5xl mb-4 drop-shadow-md"
             style={{ color }}
             initial={{ scale: 0.8, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
@@ -45,7 +45,7 @@ function MetricCard({ title, value, subtitle, color, delay, icon }: MetricCardPr
           </MotionDiv>
 
           {/* Title */}
-          <h4 className="text-xs font-semibold text-white uppercase tracking-wider mb-3">
+          <h4 className="text-xs font-semibold text-zinc-600 uppercase tracking-wider mb-3">
             {title}
           </h4>
 
@@ -63,7 +63,7 @@ function MetricCard({ title, value, subtitle, color, delay, icon }: MetricCardPr
             }}
           >
             <div
-              className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-black tracking-tight leading-none [text-shadow:_0_0_20px_rgb(0_0_0_/_40%)] break-words"
+              className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-black tracking-tight leading-none break-words"
               style={{ color }}
             >
               {value}
@@ -71,14 +71,14 @@ function MetricCard({ title, value, subtitle, color, delay, icon }: MetricCardPr
           </MotionDiv>
 
           {/* Subtitle/Context */}
-          <p className="text-sm text-white leading-relaxed">
+          <p className="text-sm text-zinc-700 leading-relaxed">
             {subtitle}
           </p>
         </div>
 
         {/* Decorative corner accent */}
         <div
-          className="absolute top-0 right-0 w-24 h-24 opacity-10"
+          className="absolute top-0 right-0 w-24 h-24 opacity-5"
           style={{
             background: `radial-gradient(circle at 100% 0%, ${color}, transparent 70%)`
           }}
@@ -141,7 +141,7 @@ export default function ImpactMetrics() {
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 1 }}
       >
-        <p className="text-xs text-zinc-500 italic">
+        <p className="text-xs text-zinc-600 italic">
           All metrics from real-world production applications at bbox.digital
         </p>
       </MotionDiv>

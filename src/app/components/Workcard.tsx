@@ -43,21 +43,37 @@ const WorkCard = ({ data, variant='dark', index = 0 }: WorkcardProps) => {
       }}
     >
       {/* Card background with subtle hover effect */}
-      <div className="absolute inset-0 bg-zinc-50/0 group-hover:bg-zinc-100/30 transition-colors duration-300 rounded-xl" />
+      <div className={`absolute inset-0 transition-colors duration-300 rounded-xl ${
+        variant === 'dark' 
+          ? 'bg-zinc-800/0 group-hover:bg-zinc-800/30' 
+          : 'bg-zinc-50/0 group-hover:bg-zinc-100/30'
+      }`} />
 
       {/* Subtle border on hover */}
-      <div className="absolute inset-0 rounded-xl border border-transparent group-hover:border-zinc-300/50 transition-colors duration-300" />
+      <div className={`absolute inset-0 rounded-xl border border-transparent transition-colors duration-300 ${
+        variant === 'dark'
+          ? 'group-hover:border-zinc-600/50'
+          : 'group-hover:border-zinc-300/50'
+      }`} />
 
       {/* Timeline connector dot (visible on left side) */}
       <div className="absolute -left-14 top-8 hidden lg:flex items-center">
         <MotionDiv
-          className="w-4 h-4 rounded-full bg-zinc-400 border-4 border-zinc-50 shadow-lg"
+          className={`w-4 h-4 rounded-full shadow-lg ${
+            variant === 'dark'
+              ? 'bg-zinc-500 border-4 border-zinc-800'
+              : 'bg-zinc-400 border-4 border-zinc-50'
+          }`}
           initial={{ scale: 0, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
           transition={{ delay: index * 0.15 + 0.3, type: "spring", stiffness: 200 }}
         />
         <MotionDiv
-          className="w-10 h-0.5 bg-gradient-to-r from-zinc-400 to-transparent"
+          className={`w-10 h-0.5 ${
+            variant === 'dark'
+              ? 'bg-gradient-to-r from-zinc-500 to-transparent'
+              : 'bg-gradient-to-r from-zinc-400 to-transparent'
+          }`}
           initial={{ width: 0, opacity: 0 }}
           whileInView={{ width: 40, opacity: 1 }}
           transition={{ delay: index * 0.15 + 0.5, duration: 0.4 }}
@@ -82,7 +98,7 @@ const WorkCard = ({ data, variant='dark', index = 0 }: WorkcardProps) => {
           {data.company} | {data.location}
         </MotionP>
         <MotionP
-          className="text-sm text-zinc-500"
+          className={`text-sm ${variant === 'dark' ? 'text-zinc-400' : 'text-zinc-500'}`}
           initial={{ opacity: 0, y: 5 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: index * 0.1 + 0.35, duration: 0.4 }}
@@ -90,7 +106,9 @@ const WorkCard = ({ data, variant='dark', index = 0 }: WorkcardProps) => {
           {data.start} - {data.end}
         </MotionP>
         <MotionP
-          className="text-sm mt-2 italic text-zinc-600 leading-relaxed"
+          className={`text-sm mt-2 italic leading-relaxed ${
+            variant === 'dark' ? 'text-zinc-300' : 'text-zinc-600'
+          }`}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: index * 0.1 + 0.45, duration: 0.4 }}

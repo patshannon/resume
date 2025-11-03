@@ -50,29 +50,29 @@ export default function SkillsRadarChart() {
   };
 
   useEffect(() => {
-    // Apply gradients to Hard Skills chart - black/white/grey theme (for white background)
+    // Apply gradients to Hard Skills chart - light theme for dark background
     if (hardChartRef.current) {
       const ctx = hardChartRef.current.ctx;
-      const gradient = createGradient(ctx, 'rgba(0, 0, 0, 0.15)', 'rgba(0, 0, 0, 0.05)');
+      const gradient = createGradient(ctx, 'rgba(255, 255, 255, 0.2)', 'rgba(255, 255, 255, 0.05)');
       hardChartRef.current.data.datasets[0].backgroundColor = gradient;
-      hardChartRef.current.data.datasets[0].borderColor = 'rgba(0, 0, 0, 0.7)';
-      hardChartRef.current.data.datasets[0].pointBackgroundColor = '#000000';
-      hardChartRef.current.data.datasets[0].pointBorderColor = '#ffffff';
-      hardChartRef.current.data.datasets[0].pointHoverBackgroundColor = '#ffffff';
-      hardChartRef.current.data.datasets[0].pointHoverBorderColor = '#000000';
+      hardChartRef.current.data.datasets[0].borderColor = 'rgba(255, 255, 255, 0.8)';
+      hardChartRef.current.data.datasets[0].pointBackgroundColor = '#ffffff';
+      hardChartRef.current.data.datasets[0].pointBorderColor = '#27272a';
+      hardChartRef.current.data.datasets[0].pointHoverBackgroundColor = '#27272a';
+      hardChartRef.current.data.datasets[0].pointHoverBorderColor = '#ffffff';
       hardChartRef.current.update();
     }
 
-    // Apply gradients to Soft Skills chart - black/white/grey theme (for white background)
+    // Apply gradients to Soft Skills chart - light theme for dark background
     if (softChartRef.current) {
       const ctx = softChartRef.current.ctx;
-      const gradient = createGradient(ctx, 'rgba(63, 63, 70, 0.2)', 'rgba(63, 63, 70, 0.05)');
+      const gradient = createGradient(ctx, 'rgba(212, 212, 216, 0.2)', 'rgba(212, 212, 216, 0.05)');
       softChartRef.current.data.datasets[0].backgroundColor = gradient;
-      softChartRef.current.data.datasets[0].borderColor = 'rgba(63, 63, 70, 0.8)';
-      softChartRef.current.data.datasets[0].pointBackgroundColor = '#3f3f46';
-      softChartRef.current.data.datasets[0].pointBorderColor = '#ffffff';
-      softChartRef.current.data.datasets[0].pointHoverBackgroundColor = '#ffffff';
-      softChartRef.current.data.datasets[0].pointHoverBorderColor = '#3f3f46';
+      softChartRef.current.data.datasets[0].borderColor = 'rgba(212, 212, 216, 0.8)';
+      softChartRef.current.data.datasets[0].pointBackgroundColor = '#d4d4d8';
+      softChartRef.current.data.datasets[0].pointBorderColor = '#27272a';
+      softChartRef.current.data.datasets[0].pointHoverBackgroundColor = '#27272a';
+      softChartRef.current.data.datasets[0].pointHoverBorderColor = '#d4d4d8';
       softChartRef.current.update();
     }
   }, [isMobile]);
@@ -91,18 +91,18 @@ export default function SkillsRadarChart() {
         ticks: {
           stepSize: 20,
           backdropColor: 'transparent',
-          color: 'rgba(63, 63, 70, 0.7)',
+          color: 'rgba(212, 212, 216, 0.6)',
           font: {
             size: isMobile ? 9 : 11,
             weight: 'lighter',
           },
         },
         grid: {
-          color: 'rgba(63, 63, 70, 0.2)',
+          color: 'rgba(212, 212, 216, 0.15)',
           circular: true,
         },
         pointLabels: {
-          color: '#18181b',
+          color: '#e4e4e7',
           font: {
             size: isMobile ? 10 : 13,
             weight: 'normal',
@@ -120,7 +120,7 @@ export default function SkillsRadarChart() {
           },
         },
         angleLines: {
-          color: 'rgba(63, 63, 70, 0.2)',
+          color: 'rgba(212, 212, 216, 0.15)',
         },
       },
     },
@@ -130,10 +130,10 @@ export default function SkillsRadarChart() {
       },
       tooltip: {
         enabled: true,
-        backgroundColor: 'rgba(255, 255, 255, 0.95)',
-        titleColor: '#000000',
-        bodyColor: '#000000',
-        borderColor: 'rgba(0, 0, 0, 0.3)',
+        backgroundColor: 'rgba(39, 39, 42, 0.95)',
+        titleColor: '#ffffff',
+        bodyColor: '#ffffff',
+        borderColor: 'rgba(255, 255, 255, 0.2)',
         borderWidth: 1,
         padding: 12,
         displayColors: false,
@@ -173,15 +173,15 @@ export default function SkillsRadarChart() {
         transition={{ duration: 0.8, delay: 0.2 }}
       >
         <div className="relative">
-          <h3 className="text-2xl font-bold mb-6 text-center text-zinc-900">
+          <h3 className="text-2xl font-bold mb-6 text-center text-zinc-100">
             Hard Skills
           </h3>
 
-          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 sm:p-8 border border-zinc-300/50 shadow-xl hover:border-zinc-400/50 transition-all duration-500">
+          <div className="bg-zinc-800/50 backdrop-blur-sm rounded-2xl p-4 sm:p-8 border border-zinc-700/50 shadow-xl hover:border-zinc-600/50 transition-all duration-500">
             <Radar ref={hardChartRef} data={hardSkillsData} options={chartOptions} />
           </div>
 
-          <p className="text-xs text-zinc-600 text-center mt-4 font-light">
+          <p className="text-xs text-zinc-400 text-center mt-4 font-light">
             Technical proficiency across key areas
           </p>
         </div>
@@ -196,15 +196,15 @@ export default function SkillsRadarChart() {
         transition={{ duration: 0.8, delay: 0.4 }}
       >
         <div className="relative">
-          <h3 className="text-2xl font-bold mb-6 text-center text-zinc-700">
+          <h3 className="text-2xl font-bold mb-6 text-center text-zinc-300">
             Soft Skills
           </h3>
 
-          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 sm:p-8 border border-zinc-300/50 shadow-xl hover:border-zinc-400/50 transition-all duration-500">
+          <div className="bg-zinc-800/50 backdrop-blur-sm rounded-2xl p-4 sm:p-8 border border-zinc-700/50 shadow-xl hover:border-zinc-600/50 transition-all duration-500">
             <Radar ref={softChartRef} data={softSkillsData} options={chartOptions} />
           </div>
 
-          <p className="text-xs text-zinc-600 text-center mt-4 font-light">
+          <p className="text-xs text-zinc-400 text-center mt-4 font-light">
             Professional capabilities and interpersonal strengths
           </p>
         </div>
