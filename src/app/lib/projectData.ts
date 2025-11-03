@@ -1,5 +1,12 @@
 export const projectData = [
   {
+    title: "Classavatar",
+    description: "Classroom management platform for Quebec schools where students earn tokens for positive behavior and use them to upgrade their personalized avatars. Features class management, parent-teacher messaging, and a gamified rewards system. Built with Next.js, React, Firebase, Python FastAPI, and Stripe subscriptions.",
+    url: "https://classavatar.ca/",
+    image: "/classavatar-16-10.webp",
+    tools: ["Next.js", "React", "Firebase", "Python", "FastAPI", "Stripe", "Tailwind CSS"]
+  },
+  {
     title: "Espace OBNL",
     description: "Job platform for Quebec NPOs featuring user dashboards, authentication, and Stripe payments. Built with Next.js, TypeScript, Firebase, Algolia, and Plasmic.",
     url: "https://emploi.espaceobnl.ca/fr",
