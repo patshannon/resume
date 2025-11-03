@@ -26,7 +26,7 @@ function MetricCard({ title, value, subtitle, color, delay, icon }: MetricCardPr
       <div className="relative bg-zinc-800/50 backdrop-blur-sm rounded-2xl p-8 border border-zinc-700/50 shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all duration-500 h-full overflow-hidden">
         {/* Animated gradient background glow */}
         <div
-          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl"
+          className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-2xl"
           style={{ background: `radial-gradient(circle at 50% 50%, ${color}, transparent 70%)` }}
         />
 
@@ -34,11 +34,12 @@ function MetricCard({ title, value, subtitle, color, delay, icon }: MetricCardPr
         <div className="relative z-10">
           {/* Icon with glow effect */}
           <MotionDiv
-            className="text-5xl mb-4 drop-shadow-lg"
+            className="text-5xl mb-4 drop-shadow-lg text-zinc-300"
             initial={{ scale: 0.8, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: delay / 1000 + 0.2 }}
+            style={{ color: color }}
           >
             {icon}
           </MotionDiv>
@@ -107,7 +108,7 @@ export default function ImpactMetrics() {
       title: 'API Optimization',
       value: '+100%',
       subtitle: 'CMS API efficiency improvement through strategic caching',
-      color: 'rgba(16, 185, 129, 1)', // Emerald
+      color: '#ffffff', // White
       icon: <IoFlash />,
       delay: 200,
     },
@@ -115,7 +116,7 @@ export default function ImpactMetrics() {
       title: 'Search Efficiency',
       value: '95%',
       subtitle: 'Reduction in Algolia requests: 4.9M → 0.23M per month',
-      color: 'rgba(59, 130, 246, 1)', // Blue
+      color: '#e4e4e7', // Zinc 200
       icon: <IoSearch />,
       delay: 400,
     },
@@ -123,7 +124,7 @@ export default function ImpactMetrics() {
       title: 'SEO Impact',
       value: '+40%',
       subtitle: 'Increase in Google Search impressions through optimization',
-      color: 'rgba(168, 85, 247, 1)', // Purple
+      color: '#d4d4d8', // Zinc 300
       icon: <IoTrendingUp />,
       delay: 600,
     },
@@ -131,7 +132,7 @@ export default function ImpactMetrics() {
       title: 'API Efficiency',
       value: '20%',
       subtitle: 'Reduction in external API calls via intelligent caching',
-      color: 'rgba(234, 179, 8, 1)', // Yellow
+      color: '#a1a1aa', // Zinc 400
       icon: <FaBullseye />,
       delay: 800,
     },
@@ -147,7 +148,7 @@ export default function ImpactMetrics() {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h3 className="text-3xl font-bold mb-3 bg-gradient-to-r from-emerald-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+        <h3 className="text-3xl font-bold mb-3 bg-gradient-to-r from-zinc-50 via-zinc-100 to-zinc-50 bg-clip-text text-transparent">
           Measurable Impact
         </h3>
         <p className="text-zinc-400 text-sm max-w-2xl mx-auto">
