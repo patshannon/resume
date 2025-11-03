@@ -45,12 +45,12 @@ export default function Home() {
         {/* Floating background shapes */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <MotionDiv
-            className="absolute top-20 left-10 w-72 h-72 bg-white/5 rounded-full blur-2xl"
+            className="absolute top-20 left-10 w-72 h-72 bg-white/5 rounded-full blur-3xl"
             style={{ willChange: 'transform' }}
             animate={{
-              x: [0, 100, 0],
-              y: [0, 50, 0],
-              scale: [1, 1.2, 1],
+              x: [0, 50, 0],
+              y: [0, 30, 0],
+              scale: [1, 1.1, 1],
             }}
             transition={{
               duration: 20,
@@ -59,12 +59,12 @@ export default function Home() {
             }}
           />
           <MotionDiv
-            className="absolute bottom-20 right-10 w-96 h-96 bg-white/5 rounded-full blur-2xl"
+            className="absolute bottom-20 right-10 w-96 h-96 bg-white/5 rounded-full blur-3xl"
             style={{ willChange: 'transform' }}
             animate={{
-              x: [0, -80, 0],
-              y: [0, -60, 0],
-              scale: [1, 1.1, 1],
+              x: [0, -40, 0],
+              y: [0, -30, 0],
+              scale: [1, 1.08, 1],
             }}
             transition={{
               duration: 25,
@@ -76,23 +76,41 @@ export default function Home() {
 
         {/* Content */}
         <div className="relative z-10">
+          {/* Profile image with subtle reveal animation */}
           <MotionDiv
-            className="relative mb-8"
-            initial={{ scale: 0.5, opacity: 0 }}
+            className="relative mb-8 group"
+            initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
-            style={{ willChange: 'transform, opacity' }}
+            transition={{
+              duration: 0.6,
+              ease: "easeOut",
+              delay: 0.1
+            }}
+            whileHover={{ scale: 1.03 }}
+            style={{
+              willChange: 'transform, opacity'
+            }}
           >
-            {/* Profile image with animated glow */}
+            {/* Subtle glow effect */}
             <div className="relative inline-block">
-              <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-zinc-400/20 to-white/20 rounded-full blur-lg" />
+              <MotionDiv
+                className="absolute inset-0 bg-gradient-to-r from-white/20 via-zinc-300/20 to-white/20 rounded-full blur-xl"
+                animate={{
+                  opacity: [0.4, 0.6, 0.4],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
               <div className="relative">
-                <Image 
-                  src="/headshot-rounded.png" 
-                  alt="Patrick Shannon" 
-                  width={150} 
-                  height={150} 
-                  quality={100} 
+                <Image
+                  src="/headshot-rounded.png"
+                  alt="Patrick Shannon"
+                  width={150}
+                  height={150}
+                  quality={100}
                   priority
                   className="relative z-10 rounded-full border-4 border-zinc-700/50 shadow-2xl"
                 />
@@ -100,23 +118,33 @@ export default function Home() {
             </div>
           </MotionDiv>
 
+          {/* Name animation */}
           <MotionH1
             className="text-7xl sm:text-5xl font-extrabold mt-6 mb-4"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{
+              duration: 0.6,
+              delay: 0.3,
+              ease: "easeOut"
+            }}
             style={{ willChange: 'transform, opacity' }}
           >
-            <span className="bg-gradient-to-r from-zinc-50 via-zinc-100 to-zinc-200 bg-clip-text text-transparent">
+            <span className="inline-block bg-gradient-to-r from-zinc-50 via-zinc-100 to-zinc-200 bg-clip-text text-transparent">
               Patrick Shannon
             </span>
           </MotionH1>
 
+          {/* Job title */}
           <MotionDiv
             className="flex flex-col gap-4 items-center mt-8 mb-8"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{
+              duration: 0.6,
+              delay: 0.5,
+              ease: "easeOut"
+            }}
             style={{ willChange: 'transform, opacity' }}
           >
             <div className="relative group">
@@ -127,11 +155,12 @@ export default function Home() {
             </div>
           </MotionDiv>
 
+          {/* Location */}
           <MotionDiv
             className="text-zinc-400 text-lg mb-6 flex items-center justify-center gap-2"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
+            transition={{ duration: 0.6, delay: 0.7, ease: "easeOut" }}
             style={{ willChange: 'transform, opacity' }}
           >
             <HiLocationMarker className="text-zinc-500" />
@@ -143,11 +172,11 @@ export default function Home() {
             className="max-w-2xl mx-auto text-zinc-300 text-lg font-light leading-relaxed"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
+            transition={{ duration: 0.6, delay: 0.9, ease: "easeOut" }}
             style={{ willChange: 'transform, opacity' }}
           >
             <p>
-              Crafting scalable solutions and leading complete software lifecycles — 
+              Crafting scalable solutions and leading complete software lifecycles —
               <span className="text-zinc-100 font-medium"> from architecture to optimization</span>
             </p>
           </MotionDiv>
@@ -157,21 +186,28 @@ export default function Home() {
             className="flex flex-wrap justify-center gap-8 mt-12 text-sm"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 1 }}
+            transition={{ duration: 0.6, delay: 1.1, ease: "easeOut" }}
             style={{ willChange: 'transform, opacity' }}
           >
-            <div className="flex flex-col items-center">
-              <div className="text-2xl font-bold text-zinc-50">5+</div>
-              <div className="text-zinc-400">Years Experience</div>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="text-2xl font-bold text-zinc-50">Full Stack</div>
-              <div className="text-zinc-400">Expertise</div>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="text-2xl font-bold text-zinc-50">React</div>
-              <div className="text-zinc-400">Specialized</div>
-            </div>
+            {[
+              { value: '5+', label: 'Years Experience' },
+              { value: 'Full Stack', label: 'Expertise' },
+              { value: 'React', label: 'Specialized' }
+            ].map((stat, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center group cursor-default"
+              >
+                <div className="relative px-4 py-2 bg-zinc-800/50 backdrop-blur-sm rounded-lg border border-zinc-700/50 group-hover:border-zinc-600/50 hover:bg-zinc-800/70 transition-all duration-300">
+                  <div className="text-2xl font-bold text-zinc-50 group-hover:text-white transition-colors">
+                    {stat.value}
+                  </div>
+                  <div className="text-zinc-400 group-hover:text-zinc-300 transition-colors">
+                    {stat.label}
+                  </div>
+                </div>
+              </div>
+            ))}
           </MotionDiv>
         </div>
 
@@ -249,10 +285,24 @@ export default function Home() {
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className="text-5xl font-extrabold max-w-lg mx-auto mb-16">Work experience</h2>
-        <div className="flex flex-col gap-10">
-          {workData.map((work) => (
-            <Workcard key={work.id} data={work} variant='light' />
+        <MotionDiv
+          initial={{ y: 30, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-5xl font-extrabold max-w-lg mx-auto mb-16">Work experience</h2>
+        </MotionDiv>
+        <div className="relative flex flex-col gap-10">
+          {/* Animated timeline line */}
+          <MotionDiv
+            className="hidden lg:block absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-zinc-300 via-zinc-400 to-zinc-300"
+            initial={{ height: 0, opacity: 0 }}
+            whileInView={{ height: '100%', opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.5, delay: 0.3 }}
+          />
+          {workData.map((work, index) => (
+            <Workcard key={work.id} data={work} variant='light' index={index} />
           ))}
         </div>
       </MotionSection>
