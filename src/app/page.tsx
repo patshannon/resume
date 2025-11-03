@@ -275,6 +275,9 @@ export default function Home() {
         {/* Ambient background */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-gray-900/10 to-black/20 pointer-events-none" />
 
+        <h2 className="relative text-5xl font-extrabold max-w-lg mx-auto mb-16 bg-gradient-to-r from-zinc-50 via-zinc-100 to-zinc-50 bg-clip-text text-transparent">
+          Measurable Impact
+        </h2>
         <div className="relative w-full">
           <ImpactMetrics />
         </div>

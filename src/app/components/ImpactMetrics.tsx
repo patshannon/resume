@@ -34,18 +34,17 @@ function MetricCard({ title, value, subtitle, color, delay, icon }: MetricCardPr
         <div className="relative z-10">
           {/* Icon with glow effect */}
           <MotionDiv
-            className="text-5xl mb-4 drop-shadow-lg text-zinc-300"
+            className="text-5xl mb-4 drop-shadow-lg text-white"
             initial={{ scale: 0.8, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: delay / 1000 + 0.2 }}
-            style={{ color: color }}
           >
             {icon}
           </MotionDiv>
 
           {/* Title */}
-          <h4 className="text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-3">
+          <h4 className="text-xs font-semibold text-white uppercase tracking-wider mb-3">
             {title}
           </h4>
 
@@ -62,30 +61,13 @@ function MetricCard({ title, value, subtitle, color, delay, icon }: MetricCardPr
               stiffness: 200
             }}
           >
-            <div
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-none [text-shadow:_0_0_20px_rgb(0_0_0_/_40%)]"
-              style={{
-                color: color,
-              }}
-            >
-              <span
-                className="bg-clip-text text-transparent hidden sm:inline"
-                style={{
-                  background: `linear-gradient(135deg, ${color}, ${color}dd)`,
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                }}
-              >
-                {value}
-              </span>
-              <span className="sm:hidden" style={{ color: color }}>
-                {value}
-              </span>
+            <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-none text-white [text-shadow:_0_0_20px_rgb(0_0_0_/_40%)]">
+              {value}
             </div>
           </MotionDiv>
 
           {/* Subtitle/Context */}
-          <p className="text-sm text-zinc-400 leading-relaxed">
+          <p className="text-sm text-white leading-relaxed">
             {subtitle}
           </p>
         </div>
@@ -116,7 +98,7 @@ export default function ImpactMetrics() {
       title: 'Search Efficiency',
       value: '95%',
       subtitle: 'Reduction in Algolia requests: 4.9M → 0.23M per month',
-      color: '#e4e4e7', // Zinc 200
+      color: '#ffffff', // White
       icon: <IoSearch />,
       delay: 400,
     },
@@ -124,7 +106,7 @@ export default function ImpactMetrics() {
       title: 'SEO Impact',
       value: '+40%',
       subtitle: 'Increase in Google Search impressions through optimization',
-      color: '#d4d4d8', // Zinc 300
+      color: '#ffffff', // White
       icon: <IoTrendingUp />,
       delay: 600,
     },
@@ -132,7 +114,7 @@ export default function ImpactMetrics() {
       title: 'API Efficiency',
       value: '20%',
       subtitle: 'Reduction in external API calls via intelligent caching',
-      color: '#a1a1aa', // Zinc 400
+      color: '#ffffff', // White
       icon: <FaBullseye />,
       delay: 800,
     },
@@ -140,22 +122,6 @@ export default function ImpactMetrics() {
 
   return (
     <div className="w-full max-w-6xl mx-auto">
-      {/* Section Header */}
-      <MotionDiv
-        className="text-center mb-12"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-      >
-        <h3 className="text-3xl font-bold mb-3 bg-gradient-to-r from-zinc-50 via-zinc-100 to-zinc-50 bg-clip-text text-transparent">
-          Measurable Impact
-        </h3>
-        <p className="text-zinc-400 text-sm max-w-2xl mx-auto">
-          Quantifiable improvements delivered across performance, efficiency, and scalability
-        </p>
-      </MotionDiv>
-
       {/* Metrics Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {metrics.map((metric) => (
