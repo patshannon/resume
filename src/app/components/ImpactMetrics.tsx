@@ -23,7 +23,7 @@ function MetricCard({ title, value, subtitle, color, delay, icon }: MetricCardPr
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: delay / 1000 }}
     >
-      <div className="relative bg-zinc-800/50 backdrop-blur-sm rounded-2xl p-8 border border-zinc-700/50 shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all duration-500 h-full overflow-hidden">
+      <div className="relative bg-zinc-800/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-zinc-700/50 shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all duration-500 h-full overflow-hidden">
         {/* Animated gradient background glow */}
         <div
           className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-2xl"
@@ -61,7 +61,7 @@ function MetricCard({ title, value, subtitle, color, delay, icon }: MetricCardPr
               stiffness: 200
             }}
           >
-            <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-none text-white [text-shadow:_0_0_20px_rgb(0_0_0_/_40%)]">
+            <div className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-black tracking-tight leading-none text-white [text-shadow:_0_0_20px_rgb(0_0_0_/_40%)] break-words">
               {value}
             </div>
           </MotionDiv>
