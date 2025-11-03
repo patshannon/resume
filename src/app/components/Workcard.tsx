@@ -33,28 +33,20 @@ const WorkCard = ({ data, variant='dark', index = 0 }: WorkcardProps) => {
         delay: index * 0.1,
         ease: "easeOut"
       }}
-      whileHover={{
-        scale: 1.01,
-        transition: { duration: 0.2 }
-      }}
       className="relative flex flex-col sm:flex-row gap-5 sm:gap-16 items-start max-w-3xl group p-6 rounded-xl overflow-hidden"
       style={{
         willChange: 'transform, opacity'
       }}
     >
-      {/* Card background with subtle hover effect */}
-      <div className={`absolute inset-0 transition-colors duration-300 rounded-xl ${
+      {/* Card background */}
+      <div className={`absolute inset-0 rounded-xl ${
         variant === 'dark' 
-          ? 'bg-zinc-800/0 group-hover:bg-zinc-800/30' 
-          : 'bg-zinc-50/0 group-hover:bg-zinc-100/30'
+          ? 'bg-zinc-800/0' 
+          : 'bg-zinc-50/0'
       }`} />
 
-      {/* Subtle border on hover */}
-      <div className={`absolute inset-0 rounded-xl border border-transparent transition-colors duration-300 ${
-        variant === 'dark'
-          ? 'group-hover:border-zinc-600/50'
-          : 'group-hover:border-zinc-300/50'
-      }`} />
+      {/* Border */}
+      <div className="absolute inset-0 rounded-xl border border-transparent" />
 
       {/* Timeline connector dot (visible on left side) */}
       <div className="absolute -left-14 top-8 hidden lg:flex items-center">
@@ -135,13 +127,9 @@ const WorkCard = ({ data, variant='dark', index = 0 }: WorkcardProps) => {
               duration: 0.3,
               ease: "easeOut"
             }}
-            whileHover={{
-              scale: 1.05,
-              transition: { duration: 0.2 }
-            }}
             className={`text-xs px-2 py-1 rounded-lg font-bold cursor-default ${
               variant === 'dark' ? 'bg-zinc-800 text-zinc-200': 'bg-zinc-200 text-zinc-800'
-            } shadow-sm hover:shadow-md transition-shadow`}
+            } shadow-sm`}
           >
             {tool}
           </MotionDiv>

@@ -66,13 +66,13 @@ export default function SkillsRadarChart() {
     // Apply gradients to Soft Skills chart - light theme for dark background
     if (softChartRef.current) {
       const ctx = softChartRef.current.ctx;
-      const gradient = createGradient(ctx, 'rgba(212, 212, 216, 0.2)', 'rgba(212, 212, 216, 0.05)');
+      const gradient = createGradient(ctx, 'rgba(255, 255, 255, 0.2)', 'rgba(255, 255, 255, 0.05)');
       softChartRef.current.data.datasets[0].backgroundColor = gradient;
-      softChartRef.current.data.datasets[0].borderColor = 'rgba(212, 212, 216, 0.8)';
-      softChartRef.current.data.datasets[0].pointBackgroundColor = '#d4d4d8';
+      softChartRef.current.data.datasets[0].borderColor = 'rgba(255, 255, 255, 0.8)';
+      softChartRef.current.data.datasets[0].pointBackgroundColor = '#ffffff';
       softChartRef.current.data.datasets[0].pointBorderColor = '#27272a';
       softChartRef.current.data.datasets[0].pointHoverBackgroundColor = '#27272a';
-      softChartRef.current.data.datasets[0].pointHoverBorderColor = '#d4d4d8';
+      softChartRef.current.data.datasets[0].pointHoverBorderColor = '#ffffff';
       softChartRef.current.update();
     }
   }, [isMobile]);

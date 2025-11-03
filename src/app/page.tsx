@@ -238,20 +238,60 @@ export default function Home() {
 
       {/* Work Experience */}
       <MotionSection
-        className="bg-gradient-to-b from-zinc-900 via-zinc-800 to-zinc-900 text-zinc-50 relative px-10 py-20 min-h-screen container-xl flex flex-col justify-center align-center items-center text-center"
+        className="relative px-10 py-20 min-h-screen container-xl flex flex-col justify-center align-center items-center text-center overflow-hidden"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
+        {/* Animated gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.03),transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,255,255,0.02),transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(255,255,255,0.02),transparent_50%)]" />
+        </div>
+
+        {/* Floating background shapes */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <MotionDiv
+            className="absolute top-20 left-10 w-72 h-72 bg-white/5 rounded-full blur-3xl"
+            style={{ willChange: 'transform' }}
+            animate={{
+              x: [0, 50, 0],
+              y: [0, 30, 0],
+              scale: [1, 1.1, 1],
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          <MotionDiv
+            className="absolute bottom-20 right-10 w-96 h-96 bg-white/5 rounded-full blur-3xl"
+            style={{ willChange: 'transform' }}
+            animate={{
+              x: [0, -40, 0],
+              y: [0, -30, 0],
+              scale: [1, 1.08, 1],
+            }}
+            transition={{
+              duration: 25,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+        </div>
+
         <MotionDiv
+          className="relative z-10"
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-5xl font-extrabold max-w-lg mx-auto mb-16">Work experience</h2>
+          <h2 className="text-5xl font-extrabold max-w-lg mx-auto mb-16 text-zinc-50">Work experience</h2>
         </MotionDiv>
-        <div className="relative flex flex-col gap-10">
+        <div className="relative z-10 flex flex-col gap-10">
           {/* Animated timeline line */}
           <MotionDiv
             className="hidden lg:block absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-zinc-600 via-zinc-500 to-zinc-600"
@@ -284,20 +324,61 @@ export default function Home() {
 
       {/* Skills Breakdown */}
       <MotionSection
-        className="bg-gradient-to-b from-zinc-900 via-zinc-800 to-zinc-900 relative px-10 py-20 min-h-screen container-xl flex flex-col justify-center align-center items-center overflow-hidden"
+        className="relative px-10 py-20 min-h-screen container-xl flex flex-col justify-center align-center items-center overflow-hidden"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className="text-5xl font-extrabold max-w-lg mx-auto mb-4 text-center bg-gradient-to-r from-zinc-50 via-zinc-100 to-zinc-50 bg-clip-text text-transparent">
-          Skills Breakdown
-        </h2>
-        <p className="text-zinc-400 mb-16 max-w-2xl text-center font-light">
-          A visual representation of my technical expertise and professional capabilities
-        </p>
-        <div className="relative w-full">
-          <SkillsRadarChart />
+        {/* Animated gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.03),transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,255,255,0.02),transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(255,255,255,0.02),transparent_50%)]" />
+        </div>
+
+        {/* Floating background shapes */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <MotionDiv
+            className="absolute top-20 left-10 w-72 h-72 bg-white/5 rounded-full blur-3xl"
+            style={{ willChange: 'transform' }}
+            animate={{
+              x: [0, 50, 0],
+              y: [0, 30, 0],
+              scale: [1, 1.1, 1],
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          <MotionDiv
+            className="absolute bottom-20 right-10 w-96 h-96 bg-white/5 rounded-full blur-3xl"
+            style={{ willChange: 'transform' }}
+            animate={{
+              x: [0, -40, 0],
+              y: [0, -30, 0],
+              scale: [1, 1.08, 1],
+            }}
+            transition={{
+              duration: 25,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+        </div>
+
+        <div className="relative z-10">
+          <h2 className="text-5xl font-extrabold max-w-lg mx-auto mb-4 text-center bg-gradient-to-r from-zinc-50 via-zinc-100 to-zinc-50 bg-clip-text text-transparent">
+            Skills Breakdown
+          </h2>
+          <p className="text-zinc-400 mb-16 max-w-2xl text-center font-light">
+            A visual representation of my technical expertise and professional capabilities
+          </p>
+          <div className="relative w-full">
+            <SkillsRadarChart />
+          </div>
         </div>
       </MotionSection>
 
@@ -309,23 +390,64 @@ export default function Home() {
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className="text-5xl font-extrabold max-w-lg mx-auto mb-16">Toolkit</h2>
-        <Toolkit />
-        <div className="mt-16 text-sm font-light text-zinc-600">...new tools are added frequently, stay tuned.</div>
+        <h2 className="text-5xl font-extrabold max-w-lg mx-auto mb-4">Toolkit</h2>
+        <p className="text-zinc-600 mb-16 max-w-2xl mx-auto font-light">
+          Technologies and tools I use to build exceptional digital experiences
+        </p>
+        <div className="pb-12">
+          <Toolkit />
+        </div>
+        <div className="mt-8 text-sm font-light text-zinc-500">...new tools are added frequently, stay tuned.</div>
       </MotionSection>
 
       {/* GitHub Contributions */}
       <MotionSection
-        className="bg-gradient-to-b from-zinc-900 via-zinc-800 to-zinc-900 relative px-10 py-20 min-h-screen container-xl flex flex-col justify-center align-center items-center overflow-hidden"
+        className="relative px-10 py-20 min-h-screen container-xl flex flex-col justify-center align-center items-center overflow-hidden"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        {/* Ambient background glow */}
-        <div className="absolute inset-0 bg-gradient-to-r from-zinc-800/20 via-zinc-700/10 to-zinc-800/20 pointer-events-none" />
+        {/* Animated gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.03),transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,255,255,0.02),transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(255,255,255,0.02),transparent_50%)]" />
+        </div>
 
-        <div className="relative w-full">
+        {/* Floating background shapes */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <MotionDiv
+            className="absolute top-20 left-10 w-72 h-72 bg-white/5 rounded-full blur-3xl"
+            style={{ willChange: 'transform' }}
+            animate={{
+              x: [0, 50, 0],
+              y: [0, 30, 0],
+              scale: [1, 1.1, 1],
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          <MotionDiv
+            className="absolute bottom-20 right-10 w-96 h-96 bg-white/5 rounded-full blur-3xl"
+            style={{ willChange: 'transform' }}
+            animate={{
+              x: [0, -40, 0],
+              y: [0, -30, 0],
+              scale: [1, 1.08, 1],
+            }}
+            transition={{
+              duration: 25,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+        </div>
+
+        <div className="relative z-10 w-full">
           <GitHubContributions />
         </div>
       </MotionSection>
@@ -340,46 +462,87 @@ export default function Home() {
       >
         <h2 className="text-5xl font-extrabold max-w-lg mx-auto mb-16">Education</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 max-w-3xl mx-auto gap-4">
-          {educationData.map((item) => (
-            <EducationCard key={item.title} data={item} />
+          {educationData.map((item, index) => (
+            <EducationCard key={item.title} data={item} index={index} variant="light" />
           ))}
         </div>
       </MotionSection>
 
       {/* Contact */}
       <MotionSection
-        className="relative bg-gradient-to-b from-zinc-900 via-zinc-800 to-zinc-900 px-10 py-20 min-h-screen container-xl flex flex-col justify-center align-center items-center text-center"
+        className="relative px-10 py-20 min-h-screen container-xl flex flex-col justify-center align-center items-center text-center overflow-hidden"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className="text-5xl font-extrabold max-w-lg mx-auto mb-10 bg-gradient-to-r from-zinc-50 via-zinc-100 to-zinc-50 bg-clip-text text-transparent">Contact and Info</h2>
-        <div className="flex flex-col gap-10 items-center">
-          <div className="text-zinc-200">peshannon104@gmail.com</div>
-          <div className="flex gap-2">
+        {/* Animated gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.03),transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,255,255,0.02),transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(255,255,255,0.02),transparent_50%)]" />
+        </div>
+
+        {/* Floating background shapes */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <MotionDiv
+            className="absolute top-20 left-10 w-72 h-72 bg-white/5 rounded-full blur-3xl"
+            style={{ willChange: 'transform' }}
+            animate={{
+              x: [0, 50, 0],
+              y: [0, 30, 0],
+              scale: [1, 1.1, 1],
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          <MotionDiv
+            className="absolute bottom-20 right-10 w-96 h-96 bg-white/5 rounded-full blur-3xl"
+            style={{ willChange: 'transform' }}
+            animate={{
+              x: [0, -40, 0],
+              y: [0, -30, 0],
+              scale: [1, 1.08, 1],
+            }}
+            transition={{
+              duration: 25,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+        </div>
+
+        <div className="relative z-10">
+          <h2 className="text-5xl font-extrabold max-w-lg mx-auto mb-10 bg-gradient-to-r from-zinc-50 via-zinc-100 to-zinc-50 bg-clip-text text-transparent">Contact and Info</h2>
+          <div className="flex flex-col gap-10 items-center">
+            <div className="text-zinc-200">peshannon104@gmail.com</div>
+            <div className="flex gap-2">
+              <a
+                target="_blank"
+                href="https://github.com/patshannon"
+                className="w-10 h-10 hover:scale-105 transition-transform"
+              >
+                <Image width="40" height="40" src="/ps-github-link-icon.svg" alt="github icon" />
+              </a>
+              <a
+                target="_blank"
+                href="https://www.linkedin.com/in/patrick-e-shannon/"
+                className="w-10 h-10 hover:scale-105 transition-transform"
+              >
+                <Image width="40" height="40" src="/ps-linkedin-link-icon.svg" alt="linkedin icon" />
+              </a>
+            </div>
             <a
-              target="_blank"
-              href="https://github.com/patshannon"
-              className="w-10 h-10 hover:scale-105 transition-transform"
+              download
+              href="/pshannon-dev.pdf"
+              className="rounded-full bg-zinc-50 text-zinc-900 px-6 py-4 hover:scale-105 transition-transform font-semibold"
             >
-              <Image width="40" height="40" src="/ps-github-link-icon.svg" alt="github icon" />
-            </a>
-            <a
-              target="_blank"
-              href="https://www.linkedin.com/in/patrick-e-shannon/"
-              className="w-10 h-10 hover:scale-105 transition-transform"
-            >
-              <Image width="40" height="40" src="/ps-linkedin-link-icon.svg" alt="linkedin icon" />
+              Download Resume
             </a>
           </div>
-          <a
-            download
-            href="/pshannon-dev.pdf"
-            className="rounded-full bg-zinc-50 text-zinc-900 px-6 py-4 hover:scale-105 transition-transform font-semibold"
-          >
-            Download Resume
-          </a>
         </div>
       </MotionSection>
     </main>

@@ -10,9 +10,11 @@ interface EducationCardProps {
     date: string;
     description: string;
   };
+  variant?: 'dark' | 'light';
+  index?: number;
 }
 
-const EducationCard = ({ data }: EducationCardProps) => {
+const EducationCard = ({ data, variant = 'dark', index = 0 }: EducationCardProps) => {
   const [isFlipped, setIsFlipped] = useState(false);
   const handleOnClick = () => {
     setIsFlipped(!isFlipped);

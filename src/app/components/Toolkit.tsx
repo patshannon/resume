@@ -8,18 +8,19 @@ const Toolkit = () => {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
+        staggerChildren: 0.05,
+        delayChildren: 0.1,
       },
     },
   };
 
   return (
     <MotionDiv
-      className="flex flex-wrap gap-3 justify-center max-w-lg mx-auto"
+      className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 justify-items-center max-w-lg mx-auto"
       variants={container}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true }}
+      viewport={{ once: true, margin: "-100px" }}
     >
       {data.map((icon, index) => (
         <ToolIcon key={icon.alt} data={icon} index={index} />

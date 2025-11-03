@@ -37,11 +37,6 @@ const data: ToolkitItem[] = [
     text: 'Claude Code',
     iconName: 'SiClaude',
   },
-  {
-    alt: 'OpenAI Codex',
-    text: 'OpenAI Codex',
-    iconName: 'SiOpenai',
-  },
   // Core Technologies & Modern APIs
   {
     alt: 'JavaScript',
