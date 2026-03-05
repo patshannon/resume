@@ -5,34 +5,34 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'About - Patrick Shannon',
   description:
-    "I'm a Senior Full-Stack Software Developer with 5 years of experience building scalable web applications focused on performance, maintainability, and user experience.",
+    "Software developer with 5 years of experience and a background in aviation. I build fast, reliable web applications and care deeply about the details that separate good software from great software.",
 };
 
 const highlights = [
   {
     icon: HiLightningBolt,
     stat: '100%',
-    description: 'Improved CMS API efficiency through caching architecture',
+    description: 'CMS API cache hit rate after redesigning the caching architecture from scratch',
   },
   {
     icon: HiChartBar,
     stat: '95%',
-    description: 'Reduced Algolia search requests via frontend optimization',
+    description: 'Drop in Algolia search requests through smarter frontend query management',
   },
   {
     icon: HiCode,
-    stat: '60 to 85',
-    description: 'Boosted Lighthouse mobile performance score',
+    stat: '60 → 85',
+    description: 'Lighthouse mobile score improvement after targeted performance work',
   },
   {
     icon: HiSparkles,
     stat: '40%',
-    description: 'Increased SEO impressions through Core Web Vitals improvements',
+    description: 'Lift in SEO impressions driven by Core Web Vitals and structured data fixes',
   },
   {
     icon: HiCheckCircle,
     stat: '15+',
-    description: 'Production releases delivered with CI/CD automation',
+    description: 'Production releases shipped with zero-downtime CI/CD pipelines',
   },
 ];
 
@@ -108,7 +108,7 @@ export default function Page() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            I'm a software developer who loves solving complex problems and building things that matter. Over the past 5 years, I've focused on creating web applications that are fast, maintainable, and genuinely useful to the people who use them.
+            I'm a software developer who cares about building things that actually work — fast, reliable, and easy to reason about. Over the past 5 years, I've shipped web applications across the full stack and developed a strong bias toward solutions that hold up in production, not just in demos.
           </MotionP>
 
           <MotionDiv
@@ -118,10 +118,10 @@ export default function Page() {
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             <p>
-              At <span className="text-zinc-100 font-medium">bbox.digital</span>, I lead end-to-end development - using React, Next.js, and TypeScript on the frontend, and Node.js, Firebase, and GCP on the backend. I take projects from spec and architecture through implementation, optimization, and deployment, collaborating closely with the founding team to align technical decisions with product goals.
+              At <span className="text-zinc-100 font-medium">bbox.digital</span>, I own development end-to-end — from scoping and architecture to deployment and ongoing optimization. I work closely with the founding team to make sure technical decisions track with product goals, and I'm equally comfortable writing TypeScript on the frontend and managing infrastructure on GCP.
             </p>
             <p>
-              My path to software development is unique. Before transitioning to tech, I trained as a pilot and spent time in the aviation industry, where I developed a deep appreciation for precision, systematic thinking, and operating under high-stakes conditions. The discipline and problem-solving mindset from aviation translated naturally into software development, where attention to detail and methodical approaches are equally critical.
+              Before tech, I trained as a pilot. Aviation taught me to think systematically under pressure, to trust checklists over intuition, and to treat ambiguity as something to resolve — not tolerate. Those habits stuck. I bring the same precision to code reviews and incident responses that I once applied to pre-flight checks.
             </p>
           </MotionDiv>
         </div>
@@ -151,7 +151,7 @@ export default function Page() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Measurable impact through technical excellence and optimization
+          Real results from production systems — not lab conditions
         </MotionP>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl w-full">
@@ -212,7 +212,7 @@ export default function Page() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Modern tools and technologies for building scalable applications
+            The stack I reach for when reliability and speed both matter
           </MotionP>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -301,10 +301,10 @@ export default function Page() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            I'm passionate about building systems that scale - emphasizing{' '}
-            <span className="text-zinc-900 font-medium">clean architecture</span>,{' '}
-            <span className="text-zinc-900 font-medium">measurable performance</span>, and{' '}
-            <span className="text-zinc-900 font-medium">reliability</span>. I also leverage AI-assisted tools to accelerate planning, refactoring, and documentation, enabling faster delivery of high-quality software.
+            Good software is defined by what doesn't break. I focus on{' '}
+            <span className="text-zinc-900 font-medium">clear architecture</span>,{' '}
+            <span className="text-zinc-900 font-medium">measurable outcomes</span>, and{' '}
+            <span className="text-zinc-900 font-medium">code that future me won't resent</span>. I use AI tools heavily — not to replace thinking, but to move faster through the parts that don't require it, so I can spend more time on the parts that do.
           </MotionP>
         </div>
       </MotionSection>
