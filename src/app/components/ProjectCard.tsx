@@ -26,16 +26,22 @@ const ProjectCard = ({ data, index }) => {
         whileHover={{ scale: 1.01, boxShadow: '0px 10px 20px 10px rgba(0,0,0,0.15)' }}
         transition={{ duration: 0.3 }}
       >
-        <a href={data.url} target="_blank rounded-lg overflow-hidden">
-          <Image
-            className="w-full rounded-lg overflow-hidden transition-transform duration-500 hover:scale-105"
-            src={data.image}
-            width={1000}
-            height={625}
-            alt={`${data.title} project screenshot`}
-            priority={index < 2}
-            quality={100}
-          />
+        <a href={data.url} target="_blank" rel="noopener noreferrer" className="block rounded-lg overflow-hidden">
+          {data.image ? (
+            <Image
+              className="w-full rounded-lg overflow-hidden transition-transform duration-500 hover:scale-105"
+              src={data.image}
+              width={1000}
+              height={625}
+              alt={`${data.title} project screenshot`}
+              priority={index < 2}
+              quality={100}
+            />
+          ) : (
+            <div className="w-full rounded-lg bg-zinc-200 flex items-center justify-center" style={{ aspectRatio: '16/10' }}>
+              <span className="text-zinc-400 text-sm font-medium">{data.title}</span>
+            </div>
+          )}
         </a>
       </MotionDiv>
       <div className="flex flex-col gap-2 text-left w-full">

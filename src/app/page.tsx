@@ -17,13 +17,13 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { HiDownload } from 'react-icons/hi';
 
 export const metadata: Metadata = {
-  title: 'Patrick Shannon - Senior Full Stack Developer',
+  title: 'Patrick Shannon - Lead Developer & Technical Consultant',
   description:
-    'Senior full-stack developer (5+ years) experienced in leading complete software lifecycles — from technical planning and architecture to implementation and optimization. Skilled in React, Next.js, Node.js, and GCP/Firebase, with a focus on system design, performance optimization, scalability, and maintainability. Based in Halifax, NS.',
+    'Full-stack developer and technical consultant with 5+ years building production platforms across cultural, educational, and nonprofit sectors. Lead developer and sole technical point of contact across 3–4 concurrent client engagements — owning everything from client meetings and scoping to architecture and delivery. Skilled in React, Next.js, TypeScript, Node.js, and GCP/Firebase. Based in Halifax, NS.',
   openGraph: {
-    title: 'Patrick Shannon - Senior Full Stack Developer',
+    title: 'Patrick Shannon - Lead Developer & Technical Consultant',
     description:
-      'Senior full-stack developer (5+ years) experienced in leading complete software lifecycles — from technical planning and architecture to implementation and optimization. Skilled in React, Next.js, Node.js, and GCP/Firebase.',
+      'Full-stack developer and technical consultant with 5+ years building production platforms across cultural, educational, and nonprofit sectors. Skilled in React, Next.js, TypeScript, Node.js, and GCP/Firebase.',
     images: ['/headshot-rounded.png'],
   },
 };
@@ -153,7 +153,7 @@ export default function Home() {
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-r from-zinc-800 via-zinc-700 to-zinc-800 rounded-xl blur opacity-50 group-hover:opacity-75 transition-opacity" />
               <div className="relative px-8 py-4 bg-gradient-to-r from-zinc-800 via-zinc-700 to-zinc-800 rounded-xl text-zinc-50 text-xl font-bold shadow-lg border border-zinc-600/50">
-                Senior Full Stack Developer
+                Lead Developer & Technical Consultant
               </div>
             </div>
           </MotionDiv>
@@ -179,8 +179,8 @@ export default function Home() {
             style={{ willChange: 'transform, opacity' }}
           >
             <p>
-              Crafting scalable solutions and leading complete software lifecycles —
-              <span className="text-zinc-100 font-medium"> from architecture to optimization</span>
+              Full-stack depth and hands-on technical leadership —
+              <span className="text-zinc-100 font-medium"> from client scoping to production delivery</span>
             </p>
           </MotionDiv>
 

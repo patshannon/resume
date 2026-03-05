@@ -7,32 +7,32 @@ export const projectData = [
     tools: ["Next.js", "React", "Firebase", "Python", "FastAPI", "Stripe", "Tailwind CSS"]
   },
   {
-    title: "Espace OBNL",
-    description: "Job platform for Quebec NPOs featuring user dashboards, authentication, and Stripe payments. Built with Next.js, TypeScript, Firebase, Algolia, and Plasmic.",
-    url: "https://emploi.espaceobnl.ca/fr",
-    image: "/eo-16-10.png",
-    tools: ["Next.js", "TypeScript", "Firebase", "Stripe", "Algolia"]
-  },
-  {
     title: "La Vitrine Culturelle",
-    description: "Event curator platform for Quebec, built with Webflow and custom Web Components. Integrated with Supabase, Firestore, and Squidex CMS, featuring authentication, Algolia search, and serverless cloud functions.",
+    description: "Built from day one and served as frontend tech lead for 3+ years on a personalized cultural event recommendation platform for Quebec. Architected a web component library, cloud functions, routing layer, and headless CMS (Squidex) across 7 repositories (1,833 commits).",
     url: "https://www.lavitrine.com/en",
     image: "/lvc-v2-16-10.png",
-    tools: ["Webflow", "TypeScript", "Firebase", "Supabase", "GraphQL", "Algolia"]
+    tools: ["TypeScript", "JavaScript", "Node.js", "CSS", "Docker", "Squidex CMS", "Algolia"]
   },
   {
-    title: "Tel-jeunes",
-    description: "Youth support platform for Quebec, built with Webflow and custom Web Components. Features a headless CMS, GraphQL integration, and serverless backend using Google Cloud Functions.",
+    title: "Tel-Jeunes",
+    description: "Helped build a free, confidential support platform for Quebec youth offering chat, text, phone, and anonymous forum services. Architected the headless CMS (Squidex) and contributed 572 commits across 7 repositories covering web components, backend services, and Cloudflare Workers.",
     url: "https://www.teljeunes.com/en",
     image: "/tj-website-16-10.webp",
-    tools: ["Webflow", "Firebase", "GraphQL", "Algolia"]
+    tools: ["TypeScript", "JavaScript", "Node.js", "HTML", "CSS", "Cloudflare Workers", "Squidex CMS"]
+  },
+  {
+    title: "Espace OBNL",
+    description: "Job board and recruitment platform built for Quebec nonprofits. Contributed to both the frontend and backend across 2 repositories (333 commits), including user dashboards, authentication, and Stripe payments.",
+    url: "https://emploi.espaceobnl.ca/fr",
+    image: "/eo-16-10.png",
+    tools: ["Next.js", "TypeScript", "Node.js", "Python", "JavaScript", "Firebase", "Algolia"]
   },
   {
     title: "Institut des troubles d'apprentissage",
-    description: "Resource center for educators supporting students with learning difficulties. Built with Webflow, a headless CMS, and Cloud Functions, featuring robust search powered by Algolia.",
+    description: "Educational resource platform for teachers and parents of students with learning disabilities, including a video library, training modules, and guides. Architected the headless CMS (Squidex) and built Algolia-powered web components (116 commits across 2 repos).",
     url: "https://www.institutta.com",
     image: "/ita-website-16-10.webp",
-    tools: ["Webflow", "Firebase", "GraphQL", "Algolia"]
+    tools: ["Node.js", "JavaScript", "Squidex CMS", "Algolia"]
   },
   {
     title: "Alloprof",
@@ -40,5 +40,26 @@ export const projectData = [
     url: "https://www.alloprof.qc.ca/fr/eleves/bv/exercices-interactifs/vocabulaire",
     image: "/alloprof-website-16-10.webp",
     tools: ["React", "Firebase", "Squidex CMS"]
+  },
+  {
+    title: "Télé-Québec en classe",
+    description: "Educational platform hosting 11,000+ videos, podcasts, and games for Quebec teachers and students. Work covered static site generation, prototyping, CMS functions, and admin tooling across 4 repositories (83 commits).",
+    url: "https://enclasse.telequebec.tv",
+    image: "",
+    tools: ["Next.js", "TypeScript", "Node.js", "JavaScript", "HTML", "CSS"]
+  },
+  {
+    title: "linkedin-bot",
+    description: "Automated job application pipeline that scrapes LinkedIn postings, ranks them against a base resume, and generates tailored resumes and cover letters via the Claude API.",
+    url: "https://github.com/patshannon",
+    image: "",
+    tools: ["Python", "TypeScript", "Claude API"]
+  },
+  {
+    title: "ai-doc-scanner-proto",
+    description: "Scans physical documents and uses generative AI to generate a filename and category, then automatically uploads the file to the correct folder in Google Drive.",
+    url: "https://github.com/patshannon",
+    image: "",
+    tools: ["Python", "JavaScript", "Generative AI", "Google Drive API"]
   }
 ]
