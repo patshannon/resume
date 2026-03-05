@@ -1,13 +1,32 @@
 const data = [
   {
     id: 1,
-    role: 'Senior Full Stack Developer',
+    role: 'Lead Developer & Technical Consultant',
+    company: 'bbox.digital',
+    location: 'Remote',
+    start: `${new Date('2025/03/01').toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}`,
+    end: 'Present',
+    description:
+      'Operate as one of two remaining developers, serving as de facto technical lead with no management overhead. Own 3–4 concurrent client engagements end-to-end — leading client meetings, scoping features, providing estimates, and delivering implementation solo. Consult on UX/UI decisions across client projects — identifying design issues before implementation, proposing alternatives, and designing full features in Figma from written briefs. Apply AI-assisted workflows (Claude Code, GitHub Copilot, Codex) to accelerate development, refactoring, and architecture planning.',
+    tools: [
+      'React',
+      'Next.js',
+      'TypeScript',
+      'Node.js',
+      'Figma',
+      'Claude Code',
+      'GitHub Copilot',
+    ],
+  },
+  {
+    id: 2,
+    role: 'Frontend Tech Lead',
     company: 'bbox.digital',
     location: 'Remote',
     start: `${new Date('2021/12/01').toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}`,
-    end: 'Present',
+    end: `${new Date('2025/03/01').toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}`,
     description:
-      'Planned, architected, and delivered full-stack web applications across multiple client projects, partnering with leadership to define technical direction. Built scalable solutions using React, Next.js, TypeScript, and Node.js with GraphQL/REST APIs on GCP/Firebase, integrating headless CMS architectures. Leveraged AI-assisted development tools (Claude Code, GitHub Copilot) to accelerate architecture and refactoring workflows. Optimized caching strategies improving CMS API efficiency by 100%, reducing external API calls by 20%, and cutting Algolia search requests by ~95% (4.9M → 0.23M/month). Implemented CI/CD pipelines, automated testing (Jest, Playwright), and SEO/a11y improvements contributing to a 40% increase in Google Search impressions.',
+      'Led a team of 3–4 developers as frontend tech lead, owning architecture decisions, code reviews, and technical direction. Mentored junior developers and established development standards across multi-repo codebases. Authored production web component libraries used across multiple client platforms, enabling consistent UI and accelerating cross-project delivery. Architected headless CMS (Squidex) for La Vitrine, Tel-Jeunes, and Institut TA. Designed caching layers and backend optimizations, doubling CMS API efficiency and reducing external API calls by 20%. Reduced Algolia search traffic by ~95% (4.9M → 0.23M/month). Improved Core Web Vitals and SEO, driving a 40% increase in Google Search impressions. Implemented logging, monitoring, and performance tracing using GCP Cloud Logging & Monitoring.',
     tools: [
       'React',
       'Next.js',
@@ -21,17 +40,17 @@ const data = [
     ],
   },
   {
-    id: 2,
-    role: 'Webflow Expert / Web Developer / Web Designer',
+    id: 3,
+    role: 'Web Developer / Web Designer',
     company: 'Upwork (Freelance)',
     location: 'Remote',
     start: `${new Date('2021/05/01').toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}`,
     end: `${new Date('2021/12/01').toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}`,
-    description: 'Designed and developed responsive web applications using Figma, Webflow, and JavaScript. Delivered client projects with focus on clean UI/UX, scalability, and maintainability while ensuring clear communication and on-time delivery. Collaborated with clients in an agile environment to ensure product goals were achieved efficiently and iteratively.',
+    description: 'Designed and developed 5+ responsive client websites using Webflow, Figma, and JavaScript. Delivered client projects with focus on clean UI/UX, scalability, and maintainability while ensuring clear communication and on-time delivery.',
     tools: ['Webflow', 'Figma', 'JavaScript', 'UI/UX'],
   },
   {
-    id: 3,
+    id: 4,
     role: 'Aviation Career',
     company: 'Porter Airlines | PAL Aerospace | Moncton Flight College',
     location: 'Various',
