@@ -40,5 +40,26 @@ export const projectData = [
     url: "https://www.alloprof.qc.ca/fr/eleves/bv/exercices-interactifs/vocabulaire",
     image: "/alloprof-website-16-10.webp",
     tools: ["React", "Firebase", "Squidex CMS"]
+  },
+  {
+    title: "Télé-Québec en classe",
+    description: "Educational platform hosting 11,000+ videos, podcasts, and games for Quebec teachers and students. Work covered static site generation, prototyping, CMS functions, and admin tooling across 4 repositories (83 commits).",
+    url: "https://enclasse.telequebec.tv",
+    image: "",
+    tools: ["Next.js", "TypeScript", "Node.js", "JavaScript", "HTML", "CSS"]
+  },
+  {
+    title: "linkedin-bot",
+    description: "Automated job application pipeline that scrapes LinkedIn postings, ranks them against a base resume, and generates tailored resumes and cover letters via the Claude API.",
+    url: "https://github.com/patshannon",
+    image: "",
+    tools: ["Python", "TypeScript", "Claude API"]
+  },
+  {
+    title: "ai-doc-scanner-proto",
+    description: "Scans physical documents and uses generative AI to generate a filename and category, then automatically uploads the file to the correct folder in Google Drive.",
+    url: "https://github.com/patshannon",
+    image: "",
+    tools: ["Python", "JavaScript", "Generative AI", "Google Drive API"]
   }
 ]
