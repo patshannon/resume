@@ -68,7 +68,7 @@ const ProjectCard = ({ data, index }: ProjectCardProps) => {
           <p className="mt-4 text-sm leading-7 text-muted-dark">{data.description}</p>
         </div>
 
-        <dl className="grid gap-4 text-sm">
+        <dl className="flex flex-col gap-4 self-start text-sm">
           {data.focus && (
             <div className="border-l border-line pl-4">
               <dt className="spec-label text-signal">Focus</dt>
@@ -87,15 +87,18 @@ const ProjectCard = ({ data, index }: ProjectCardProps) => {
               <dd className="mt-1.5 leading-6 text-muted-dark">{data.outcome}</dd>
             </div>
           )}
-          <div className="flex flex-wrap gap-2 pt-1">
-            {data.tools.map((tool) => (
-              <span
-                key={tool}
-                className="rounded-sm border border-line px-2.5 py-1 font-mono text-[11px] tracking-[0.04em] text-muted-dark"
-              >
-                {tool}
-              </span>
-            ))}
+          <div className="border-l border-line pl-4">
+            <dt className="spec-label text-signal">Stack</dt>
+            <dd className="mt-2.5 flex flex-wrap items-start gap-2">
+              {data.tools.map((tool) => (
+                <span
+                  key={tool}
+                  className="rounded-sm border border-line px-2.5 py-1 font-mono text-[11px] tracking-[0.04em] text-muted-dark"
+                >
+                  {tool}
+                </span>
+              ))}
+            </dd>
           </div>
         </dl>
       </div>
