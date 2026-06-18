@@ -33,14 +33,20 @@ const ProjectCard = ({ data, index }: ProjectCardProps) => {
         rel="noopener noreferrer"
         className="group relative block overflow-hidden rounded-sm border border-line bg-graphite-2"
       >
-        <Image
-          className="aspect-[16/10] h-full w-full object-cover opacity-95 transition duration-500 group-hover:scale-[1.03] group-hover:opacity-100"
-          src={data.image}
-          width={1000}
-          height={625}
-          alt={`${data.title} project screenshot`}
-          priority={index < 2}
-        />
+        {data.image ? (
+          <Image
+            className="aspect-[16/10] h-full w-full object-cover opacity-95 transition duration-500 group-hover:scale-[1.03] group-hover:opacity-100"
+            src={data.image}
+            width={1000}
+            height={625}
+            alt={`${data.title} project screenshot`}
+            priority={index < 2}
+          />
+        ) : (
+          <div className="flex aspect-[16/10] h-full w-full items-center justify-center bg-graphite-2 px-4 text-center">
+            <span className="spec-label text-muted-dark">{data.title}</span>
+          </div>
+        )}
         <span className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-sm border border-line bg-graphite/80 text-cream opacity-0 backdrop-blur-sm transition group-hover:opacity-100">
           <HiArrowUpRight className="text-sm" />
         </span>
