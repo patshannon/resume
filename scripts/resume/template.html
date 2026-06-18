@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Patrick Shannon — Résumé</title>
+<style>
+  @font-face {
+    font-family: 'Inter';
+    src: url(__FONT_INTER__) format('truetype');
+    font-weight: 100 900; font-style: normal; font-display: block;
+  }
+  @font-face {
+    font-family: 'Fraunces';
+    src: url(__FONT_FRAUNCES__) format('truetype');
+    font-weight: 100 900; font-style: normal; font-display: block;
+  }
+  @font-face {
+    font-family: 'JetBrains Mono';
+    src: url(__FONT_JETBRAINS__) format('truetype');
+    font-weight: 100 800; font-style: normal; font-display: block;
+  }
+
+  :root {
+    --graphite: #111317;
+    --graphite-2: #161a1f;
+    --graphite-3: #1d2229;
+    --paper: #eceae2;
+    --paper-2: #f5f3ec;
+    --sheet: #f3f1ea;
+    --ink: #14161a;
+    --cream: #ecebe4;
+    --line: #272d35;
+    --line-paper: #d5d2c6;
+    --muted-dark: #878f97;
+    --muted-light: #5c6055;
+    --signal: #dba03f;
+    --signal-bright: #f0bb5a;
+    --signal-paper: #8f5f14;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  @page { size: Letter; margin: 0; }
+
+  html, body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--sheet);
+    color: var(--ink);
+    font-size: 10.3px;
+    line-height: 1.5;
+    letter-spacing: 0.002em;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .serif {
+    font-family: 'Fraunces', Georgia, serif;
+    font-optical-sizing: auto;
+    font-variation-settings: 'opsz' 96, 'SOFT' 30, 'WONK' 0;
+  }
+  .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+
+  /* ── Masthead (dark band) ─────────────────────────────── */
+  .masthead {
+    position: relative;
+    background: var(--graphite);
+    color: var(--cream);
+    padding: 30px 52px 26px;
+    overflow: hidden;
+  }
+  .masthead::before { /* drafting grid */
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,0.022) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.022) 1px, transparent 1px);
+    background-size: 46px 46px;
+    pointer-events: none;
+  }
+  .masthead::after { /* amber top hairline */
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(219,160,63,0.85), transparent);
+  }
+  .mast-top {
+    position: relative;
+    display: flex; align-items: flex-start; justify-content: space-between;
+  }
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8.2px; text-transform: uppercase; letter-spacing: 0.22em;
+    color: var(--muted-dark);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .eyebrow .dash { display: inline-block; width: 18px; height: 1px; background: var(--line); }
+  .eyebrow .sig { color: var(--signal); }
+
+  .name {
+    font-size: 39px; font-weight: 500; line-height: 1.0;
+    letter-spacing: -0.015em; margin-top: 14px; color: var(--cream);
+    font-variation-settings: 'opsz' 96, 'SOFT' 40, 'WONK' 1;
+  }
+  .title {
+    margin-top: 11px; font-size: 11.2px; color: var(--muted-dark);
+    letter-spacing: 0.01em;
+  }
+  .title b { color: var(--cream); font-weight: 600; }
+
+  .status {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8.2px; text-transform: uppercase; letter-spacing: 0.2em;
+    color: var(--signal);
+    display: inline-flex; align-items: center; gap: 7px;
+    border: 1px solid var(--line); border-radius: 2px;
+    padding: 6px 10px; background: var(--graphite-2);
+    white-space: nowrap;
+  }
+  .status .dot {
+    width: 6px; height: 6px; border-radius: 50%; background: var(--signal);
+    box-shadow: 0 0 0 3px rgba(219,160,63,0.18);
+  }
+
+  .contact {
+    position: relative;
+    margin-top: 22px; padding-top: 14px;
+    border-top: 1px solid var(--line);
+    display: flex; flex-wrap: wrap; gap: 4px 22px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9.4px; color: var(--cream);
+  }
+  .contact .k { color: var(--muted-dark); margin-right: 7px; }
+  .contact a { color: var(--cream); text-decoration: none; }
+  .contact .item { display: flex; align-items: baseline; }
+
+  /* ── Sheet (paper body) ───────────────────────────────── */
+  .sheet { padding: 26px 52px 40px; }
+
+  section { margin-top: 22px; }
+  section:first-child { margin-top: 4px; }
+
+  .sec-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px; text-transform: uppercase; letter-spacing: 0.2em;
+    color: var(--signal-paper);
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 13px;
+  }
+  .sec-label .rule { flex: 1; height: 1px; background: var(--line-paper); }
+
+  /* Profile */
+  .lede {
+    font-size: 14.5px; line-height: 1.4; font-weight: 500; color: var(--ink);
+    letter-spacing: -0.005em; max-width: 92%;
+    font-variation-settings: 'opsz' 60, 'SOFT' 30, 'WONK' 0;
+  }
+  .lede em { color: var(--signal-paper); font-style: normal; }
+  .summary { margin-top: 10px; color: var(--muted-light); max-width: 96%; }
+  .summary b { color: var(--ink); font-weight: 600; }
+
+  /* Impact metrics */
+  .metrics {
+    display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px;
+  }
+  .metric { border-top: 1px solid var(--line-paper); padding-top: 8px; }
+  .metric .num {
+    font-family: 'Fraunces', Georgia, serif; font-weight: 500;
+    font-size: 27px; line-height: 1; color: var(--ink); letter-spacing: -0.01em;
+    display: flex; align-items: baseline; gap: 3px;
+    font-variation-settings: 'opsz' 72, 'SOFT' 20, 'WONK' 0;
+  }
+  .metric .unit {
+    font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--signal-paper);
+  }
+  .metric .lab { margin-top: 7px; font-size: 8.8px; line-height: 1.35; color: var(--muted-light); }
+
+  .drainwrap {
+    margin-top: 14px; border: 1px solid var(--line-paper);
+    border-radius: 3px; background: var(--paper-2);
+    padding: 11px 14px;
+    display: grid; grid-template-columns: 1fr auto; gap: 3px 0; align-items: center;
+  }
+  .drainwrap .hl-label {
+    font-family: 'JetBrains Mono', monospace; font-size: 8.4px;
+    text-transform: uppercase; letter-spacing: 0.16em; color: var(--muted-light);
+  }
+  .drainwrap .hl-delta {
+    font-family: 'JetBrains Mono', monospace; font-size: 9px;
+    letter-spacing: 0.1em; color: var(--signal-paper); text-align: right; font-weight: 600;
+  }
+  .drainwrap .hl-vals {
+    font-family: 'JetBrains Mono', monospace; font-size: 12.5px; margin-top: 4px;
+    display: flex; align-items: baseline; gap: 8px; grid-column: 1 / -1;
+  }
+  .drainwrap .from { color: var(--muted-light); text-decoration: line-through; text-decoration-color: rgba(92,96,85,0.45); }
+  .drainwrap .arrow { color: var(--muted-light); }
+  .drainwrap .to { color: var(--signal-paper); font-weight: 700; }
+  .drainbar {
+    grid-column: 1 / -1; margin-top: 9px; height: 7px; border-radius: 2px;
+    background: var(--line-paper); overflow: hidden;
+  }
+  .drainbar > i {
+    display: block; height: 100%; width: 4.7%;
+    background: linear-gradient(90deg, var(--signal-paper), var(--signal));
+    border-radius: 2px;
+  }
+  .drainwrap .note {
+    grid-column: 1 / -1; margin-top: 8px; font-size: 8.6px; color: var(--muted-light);
+  }
+
+  /* Experience */
+  .job { margin-top: 15px; break-inside: avoid; }
+  .job:first-of-type { margin-top: 0; }
+  .job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
+  .job-role { font-size: 12.2px; font-weight: 700; color: var(--ink); letter-spacing: -0.005em; }
+  .job-co { font-size: 9.6px; color: var(--muted-light); margin-top: 2px; }
+  .job-co b { color: var(--signal-paper); font-weight: 600; }
+  .job-dates {
+    font-family: 'JetBrains Mono', monospace; font-size: 8.7px; color: var(--muted-light);
+    white-space: nowrap; text-transform: uppercase; letter-spacing: 0.08em;
+  }
+  ul.points { list-style: none; margin-top: 8px; }
+  ul.points li {
+    position: relative; padding-left: 15px; margin-top: 4.5px;
+    color: var(--muted-light); line-height: 1.46;
+  }
+  ul.points li::before {
+    content: ''; position: absolute; left: 2px; top: 6.5px;
+    width: 4px; height: 4px; border-radius: 50%; background: var(--signal-paper); opacity: 0.85;
+  }
+  ul.points li b { color: var(--ink); font-weight: 600; }
+  .oneline { margin-top: 7px; color: var(--muted-light); line-height: 1.46; }
+
+  /* Selected work */
+  .proj { margin-top: 10px; break-inside: avoid; }
+  .proj:first-of-type { margin-top: 0; }
+  .proj-head { display: flex; align-items: baseline; gap: 9px; }
+  .proj-title { font-size: 11px; font-weight: 700; color: var(--ink); }
+  .proj-url { font-family: 'JetBrains Mono', monospace; font-size: 8.2px; color: var(--signal-paper); }
+  .proj-desc { color: var(--muted-light); margin-top: 2px; line-height: 1.42; }
+  .proj-tools {
+    font-family: 'JetBrains Mono', monospace; font-size: 8px; color: var(--muted-light);
+    margin-top: 3px; letter-spacing: 0.02em;
+  }
+
+  /* Two-column lower block */
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+
+  .stack-row { display: flex; gap: 10px; margin-top: 7px; }
+  .stack-row:first-child { margin-top: 0; }
+  .stack-row .g {
+    font-family: 'JetBrains Mono', monospace; font-size: 8.2px; text-transform: uppercase;
+    letter-spacing: 0.14em; color: var(--muted-light); width: 78px; flex: none; padding-top: 1px;
+  }
+  .stack-row .v { color: var(--ink); font-size: 9.8px; line-height: 1.4; }
+
+  .edu { margin-top: 9px; break-inside: avoid; }
+  .edu:first-child { margin-top: 0; }
+  .edu-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .edu-title { font-size: 10.2px; font-weight: 600; color: var(--ink); }
+  .edu-date {
+    font-family: 'JetBrains Mono', monospace; font-size: 8px; color: var(--muted-light);
+    white-space: nowrap; letter-spacing: 0.05em;
+  }
+  .edu-school { font-size: 9.2px; color: var(--signal-paper); margin-top: 1px; }
+  .edu-note { font-size: 8.8px; color: var(--muted-light); margin-top: 2px; line-height: 1.4; }
+
+  .footer {
+    margin-top: 26px; padding-top: 12px; border-top: 1px solid var(--line-paper);
+    display: flex; justify-content: space-between;
+    font-family: 'JetBrains Mono', monospace; font-size: 8px; color: var(--muted-light);
+    letter-spacing: 0.06em; text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+
+  <header class="masthead">
+    <div class="mast-top">
+      <div>
+        <div class="eyebrow">
+          <span class="sig">§ 00</span><span class="dash"></span>
+          <span>Production systems</span>
+        </div>
+        <h1 class="name serif">Patrick Shannon</h1>
+        <div class="title">
+          <b>Product-Minded Software Architect</b> &nbsp;·&nbsp; Senior Full-Stack Developer
+        </div>
+      </div>
+      <div class="status"><span class="dot"></span>Status: Available</div>
+    </div>
+
+    <div class="contact">
+      <span class="item"><span class="k">loc</span>Halifax, NS · UTC−4</span>
+      <span class="item"><span class="k">email</span><a href="mailto:patrick.e.shannon@gmail.com">patrick.e.shannon@gmail.com</a></span>
+      <span class="item"><span class="k">git</span><a href="https://github.com/patshannon">github.com/patshannon</a></span>
+      <span class="item"><span class="k">in</span><a href="https://www.linkedin.com/in/patrick-e-shannon/">linkedin.com/in/patrick-e-shannon</a></span>
+    </div>
+  </header>
+
+  <div class="sheet">
+
+    <!-- Profile -->
+    <section>
+      <div class="sec-label">§ A / Profile<span class="rule"></span></div>
+      <p class="lede serif">I build systems that stay fast, maintainable, and <em>useful</em>.</p>
+      <p class="summary">
+        Senior full-stack developer and architect at <b>bbox.digital</b>, taking projects from spec and
+        architecture through implementation, optimization, and deployment — React, Next.js, and TypeScript
+        on the front end; Node.js, Firebase, and GCP behind it. I work closely with the founding team to
+        keep technical decisions aligned with product goals, and standardize AI-assisted workflows across
+        every repo. My differentiator is <b>provable production outcomes, not capability claims</b>.
+      </p>
+    </section>
+
+    <!-- Impact -->
+    <section>
+      <div class="sec-label">§ B / Production Impact<span class="rule"></span></div>
+      <div class="metrics">
+        <div class="metric"><div class="num">95<span class="unit">% ↓</span></div><div class="lab">Algolia search requests</div></div>
+        <div class="metric"><div class="num">100<span class="unit">% ↑</span></div><div class="lab">CMS API efficiency via caching</div></div>
+        <div class="metric"><div class="num">40<span class="unit">% ↑</span></div><div class="lab">Google Search impressions</div></div>
+        <div class="metric"><div class="num">20<span class="unit">% ↓</span></div><div class="lab">External API calls</div></div>
+        <div class="metric"><div class="num">60→85<span class="unit">LH</span></div><div class="lab">Lighthouse mobile score</div></div>
+        <div class="metric"><div class="num">15<span class="unit">+ rel</span></div><div class="lab">Releases shipped via CI/CD</div></div>
+      </div>
+      <div class="drainwrap">
+        <span class="hl-label">Algolia requests / month</span>
+        <span class="hl-delta">↓ 95%</span>
+        <span class="hl-vals"><span class="from">4,900,000</span><span class="arrow">→</span><span class="to">230,000</span></span>
+        <span class="drainbar"><i></i></span>
+        <span class="note">Caching + request strategy — product behavior unchanged.</span>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section>
+      <div class="sec-label">§ C / Experience<span class="rule"></span></div>
+
+      <div class="job">
+        <div class="job-head">
+          <div>
+            <div class="job-role">Senior Full-Stack Developer</div>
+            <div class="job-co"><b>bbox.digital</b> · Remote</div>
+          </div>
+          <div class="job-dates">Dec 2021 — Present</div>
+        </div>
+        <ul class="points">
+          <li>Lead architecture and full-stack delivery across several client platforms in parallel — from spec and technical direction through implementation, release coordination, and production hardening.</li>
+          <li>Build on React, Next.js, and TypeScript with Node.js, GraphQL/REST APIs, GCP/Firebase, and headless CMS architectures (Sanity, Squidex), including bilingual (FR/EN) routing and Algolia search backends (facets, sort replicas, InstantSearch).</li>
+          <li>Modernized Cloud Functions to Gen2 on Node 22 with concurrency tuning for SSR performance; migrated secrets off the deprecated <span class="mono">functions.config()</span> API to Secret Manager with dotenv for local development.</li>
+          <li>Hardened production with resilient pipelines — exponential backoff, graceful degradation, per-stage error observability — and a deployment-orchestration layer unifying promote and rollback into a single state machine.</li>
+          <li>Standardized AI-assisted workflows across the portfolio: AGENTS.md as a single source of truth per repo, using Claude Code and GitHub Copilot to accelerate architecture, refactoring, and documentation.</li>
+          <li><b>Outcomes:</b> +100% CMS API efficiency, −20% external API calls, −95% Algolia search requests (4.9M → 0.23M/mo); CI/CD, Jest/Playwright testing, and SEO/a11y work drove +40% Google Search impressions.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <div>
+            <div class="job-role">Web Developer &amp; Designer · Webflow Expert</div>
+            <div class="job-co"><b>Upwork</b> · Freelance · Remote</div>
+          </div>
+          <div class="job-dates">May 2021 — Dec 2021</div>
+        </div>
+        <ul class="points">
+          <li>Designed and developed responsive web applications using Figma, Webflow, and JavaScript, with a focus on clean UI/UX, scalability, and maintainability.</li>
+          <li>Collaborated with clients in an agile environment, delivering on time with clear communication and iterative product goals.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <div>
+            <div class="job-role">Aviation Career</div>
+            <div class="job-co"><b>Porter Airlines</b> · PAL Aerospace · Moncton Flight College</div>
+          </div>
+          <div class="job-dates">2013 — 2021</div>
+        </div>
+        <p class="oneline">Leadership and training roles in commercial and medevac operations — precision under pressure, team coordination, and regulatory compliance, all directly transferable to software leadership and reliability engineering.</p>
+      </div>
+    </section>
+
+    <!-- Selected work -->
+    <section>
+      <div class="sec-label">§ D / Selected Work<span class="rule"></span></div>
+
+      <div class="proj">
+        <div class="proj-head"><span class="proj-title">Classavatar</span><span class="proj-url">classavatar.ca</span></div>
+        <div class="proj-desc">Classroom-management platform for Quebec schools — student rewards, avatar progression, parent-teacher messaging, and subscriptions. Full-stack architecture across gamified domain logic and payment infrastructure.</div>
+        <div class="proj-tools">Next.js · React · Firebase · FastAPI · Stripe</div>
+      </div>
+
+      <div class="proj">
+        <div class="proj-head"><span class="proj-title">Espace OBNL</span><span class="proj-url">emploi.espaceobnl.ca</span></div>
+        <div class="proj-desc">Specialized job platform for Quebec nonprofits — authenticated dashboards, marketplace workflows, payments, and search-backed discovery.</div>
+        <div class="proj-tools">Next.js · TypeScript · Firebase · Stripe · Algolia</div>
+      </div>
+
+      <div class="proj">
+        <div class="proj-head"><span class="proj-title">La Vitrine Culturelle</span><span class="proj-url">lavitrine.com</span></div>
+        <div class="proj-desc">Public cultural-event discovery platform — headless content architecture, search performance, custom web components, and serverless integrations.</div>
+        <div class="proj-tools">Webflow · TypeScript · Firebase · GraphQL · Algolia</div>
+      </div>
+
+      <div class="proj">
+        <div class="proj-head"><span class="proj-title">Tel-jeunes</span><span class="proj-url">teljeunes.com</span></div>
+        <div class="proj-desc">Youth-support platform for Quebec — reliable content delivery, structured search, and maintainable backend integration for a sensitive public-facing service.</div>
+        <div class="proj-tools">Webflow · Firebase · GraphQL · Algolia</div>
+      </div>
+
+      <div class="proj">
+        <div class="proj-head"><span class="proj-title">Captain&apos;s Log</span><span class="proj-url">github.com/patshannon/captains-log</span></div>
+        <div class="proj-desc">Automated dev journal turning daily GitHub activity into a written narrative — a provider-agnostic LLM pipeline with cost/safety discipline, running unattended nightly via GitHub Actions.</div>
+        <div class="proj-tools">Python · OpenRouter · LLM Pipelines · GitHub Actions</div>
+      </div>
+    </section>
+
+    <!-- Stack + Education -->
+    <div class="cols">
+      <section style="margin-top:0">
+        <div class="sec-label">§ E / Stack<span class="rule"></span></div>
+        <div class="stack-row"><span class="g">Frontend</span><span class="v">React · Next.js · TypeScript</span></div>
+        <div class="stack-row"><span class="g">Backend</span><span class="v">Node.js · Firebase · Google Cloud Platform</span></div>
+        <div class="stack-row"><span class="g">Data / Search</span><span class="v">GraphQL · REST · Algolia · Headless CMS (Sanity, Squidex)</span></div>
+        <div class="stack-row"><span class="g">Delivery</span><span class="v">CI/CD · Jest · Playwright · SEO / a11y · Core Web Vitals</span></div>
+        <div class="stack-row"><span class="g">Payments</span><span class="v">Stripe</span></div>
+        <div class="stack-row"><span class="g">AI Tooling</span><span class="v">Claude Code · GitHub Copilot · Codex · Spec Kit</span></div>
+      </section>
+
+      <section style="margin-top:0">
+        <div class="sec-label">§ F / Education &amp; Community<span class="rule"></span></div>
+        <div class="edu">
+          <div class="edu-head"><span class="edu-title">Software Development Training</span><span class="edu-date">2021 — 2022</span></div>
+          <div class="edu-school">Self-Directed</div>
+          <div class="edu-note">Comprehensive full-stack curriculum — React, Node.js, REST/GraphQL, GCP, system design, testing, and security.</div>
+        </div>
+        <div class="edu">
+          <div class="edu-head"><span class="edu-title">B.Sc., Aviation</span><span class="edu-date">2009 — 2013</span></div>
+          <div class="edu-school">Mount Allison University · Sackville, NB</div>
+          <div class="edu-note">Graduated with 3.68 GPA.</div>
+        </div>
+        <div class="edu">
+          <div class="edu-head"><span class="edu-title">Mentor · Skills for Hire Atlantic</span><span class="edu-date">2025 — Ongoing</span></div>
+          <div class="edu-school">Digital Nova Scotia · Halifax, NS</div>
+          <div class="edu-note">Mentoring emerging tech professionals across Atlantic Canada.</div>
+        </div>
+      </section>
+    </div>
+
+    <div class="footer">
+      <span>Patrick Shannon — Résumé</span>
+      <span>Production outcomes, not capability claims</span>
+    </div>
+
+  </div>
+</body>
+</html>

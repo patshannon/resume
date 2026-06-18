@@ -19,6 +19,9 @@
 .DS_Store
 *.pem
 
+# résumé build font cache
+/scripts/resume/.fonts
+
 # debug
 npm-debug.log*
 yarn-debug.log*
