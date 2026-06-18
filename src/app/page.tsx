@@ -1,573 +1,285 @@
-import Toolkit from '@/components/Toolkit';
 import workData from '@/lib/workExperience';
 import Workcard from '@/components/Workcard';
-import { educationData } from '@/lib/educationData';
-import EducationCard from '@/components/EducationCard';
-import ScrollDown from '@/components/ScrollDown';
-import SkillsRadarChart from '@/components/SkillsRadarChart';
 import ImpactMetrics from '@/components/ImpactMetrics';
-import GitHubContributions from '@/components/GitHubContributions';
-import Image from 'next/image';
+import SystemReadout from '@/components/SystemReadout';
 import ProjectCard from '@/components/ProjectCard';
 import { projectData } from '@/lib/projectData';
 import { Metadata } from 'next';
 import { MotionDiv, MotionSection, MotionH1 } from './motion';
-import { HiLocationMarker } from 'react-icons/hi';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { HiDownload } from 'react-icons/hi';
 
 export const metadata: Metadata = {
-  title: 'Patrick Shannon - Senior Full Stack Developer',
+  title: 'Patrick Shannon - Product-Minded Software Architect',
   description:
-    'Senior full-stack developer (5+ years) experienced in leading complete software lifecycles — from technical planning and architecture to implementation and optimization. Skilled in React, Next.js, Node.js, and GCP/Firebase, with a focus on system design, performance optimization, scalability, and maintainability. Based in Halifax, NS.',
+    'Product-minded software architect and technical lead based in Halifax, focused on system architecture, product ownership, delivery planning, performance, and maintainable web platforms.',
   openGraph: {
-    title: 'Patrick Shannon - Senior Full Stack Developer',
+    title: 'Patrick Shannon - Product-Minded Software Architect',
     description:
-      'Senior full-stack developer (5+ years) experienced in leading complete software lifecycles — from technical planning and architecture to implementation and optimization. Skilled in React, Next.js, Node.js, and GCP/Firebase.',
+      'Architecture, product ownership, delivery planning, performance, and maintainable web platforms.',
     images: ['/headshot-rounded.png'],
   },
 };
 
+const focusAreas = [
+  {
+    index: 'A',
+    title: 'Architecture',
+    body: 'Practical web-platform architecture across frontend, backend, content, search, auth, payments, and cloud — including headless CMS, Algolia search backends, Gen2 cloud functions, and secrets management.',
+  },
+  {
+    index: 'B',
+    title: 'Product Ownership',
+    body: 'Turning ambiguous goals into technical plans, delivery slices, and measurable outcomes — shipped across multiple client platforms in parallel.',
+  },
+  {
+    index: 'C',
+    title: 'Operational Quality',
+    body: 'Improving reliability, performance, and cost in production — resilient pipelines, deployment orchestration, caching, and monitoring that holds up under load.',
+  },
+];
+
 export default function Home() {
   return (
     <main>
-      {/* Header */}
+      {/* ── Masthead ────────────────────────────────────────────── */}
       <MotionSection
-        className="relative px-10 sm:px-5 py-20 sm:py-5 min-h-screen container-xl flex flex-col justify-center align-center items-center text-center overflow-hidden"
+        className="relative overflow-hidden bg-graphite px-6 pb-20 pt-32 text-cream sm:px-8 lg:px-10 lg:pb-28 lg:pt-36"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.4 }}
       >
-        {/* Animated gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.03),transparent_50%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,255,255,0.02),transparent_50%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(255,255,255,0.02),transparent_50%)]" />
-        </div>
+        <div className="bg-grid-dark pointer-events-none absolute inset-0" />
+        <div
+          className="pointer-events-none absolute inset-x-0 top-0 h-px"
+          style={{ background: 'linear-gradient(90deg, transparent, rgba(219,160,63,0.5), transparent)' }}
+        />
 
-        {/* Floating background shapes */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <MotionDiv
-            className="absolute top-20 left-10 w-72 h-72 bg-white/5 rounded-full blur-3xl"
-            style={{ willChange: 'transform' }}
-            animate={{
-              x: [0, 50, 0],
-              y: [0, 30, 0],
-              scale: [1, 1.1, 1],
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-          <MotionDiv
-            className="absolute bottom-20 right-10 w-96 h-96 bg-white/5 rounded-full blur-3xl"
-            style={{ willChange: 'transform' }}
-            animate={{
-              x: [0, -40, 0],
-              y: [0, -30, 0],
-              scale: [1, 1.08, 1],
-            }}
-            transition={{
-              duration: 25,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-        </div>
-
-        {/* Content */}
-        <div className="relative z-10">
-          {/* Profile image with subtle reveal animation */}
-          <MotionDiv
-            className="relative mb-8 group"
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{
-              duration: 0.6,
-              ease: "easeOut",
-              delay: 0.1
-            }}
-            whileHover={{ scale: 1.03 }}
-            style={{
-              willChange: 'transform, opacity'
-            }}
-          >
-            {/* Subtle glow effect */}
-            <div className="relative inline-block">
-              <MotionDiv
-                className="absolute inset-0 bg-gradient-to-r from-white/20 via-zinc-300/20 to-white/20 rounded-full blur-xl"
-                animate={{
-                  opacity: [0.4, 0.6, 0.4],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              />
-              <div className="relative">
-                <Image
-                  src="/headshot-rounded.png"
-                  alt="Patrick Shannon"
-                  width={150}
-                  height={150}
-                  quality={100}
-                  priority
-                  className="relative z-10 rounded-full border-4 border-zinc-700/50 shadow-2xl"
-                />
-              </div>
+        <div className="relative mx-auto grid max-w-6xl items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
+          <div>
+            <div className="spec-label flex flex-wrap items-center gap-x-3 gap-y-2 text-muted-dark">
+              <span className="text-signal">§ 00</span>
+              <span className="h-px w-6 bg-line" />
+              <span>Patrick Shannon</span>
+              <span className="h-px w-6 bg-line" />
+              <span>Production systems</span>
             </div>
-          </MotionDiv>
 
-          {/* Name animation */}
-          <MotionH1
-            className="text-7xl sm:text-5xl font-extrabold mt-6 mb-4"
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{
-              duration: 0.6,
-              delay: 0.3,
-              ease: "easeOut"
-            }}
-            style={{ willChange: 'transform, opacity' }}
-          >
-            <span className="inline-block bg-gradient-to-r from-zinc-50 via-zinc-100 to-zinc-200 bg-clip-text text-transparent">
-              Patrick Shannon
-            </span>
-          </MotionH1>
+            <MotionH1
+              className="mt-8 max-w-3xl font-serif text-[2.15rem] font-medium leading-[1.06] tracking-[-0.01em] text-cream sm:text-[3.4rem] lg:text-[4.1rem] lg:leading-[1.04]"
+              initial={{ y: 18, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.05 }}
+            >
+              I architect web platforms that hold up in{' '}
+              <span className="text-signal">production</span>.
+            </MotionH1>
 
-          {/* Job title */}
-          <MotionDiv
-            className="flex flex-col gap-4 items-center mt-8 mb-8"
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{
-              duration: 0.6,
-              delay: 0.5,
-              ease: "easeOut"
-            }}
-            style={{ willChange: 'transform, opacity' }}
-          >
-            <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-r from-zinc-800 via-zinc-700 to-zinc-800 rounded-xl blur opacity-50 group-hover:opacity-75 transition-opacity" />
-              <div className="relative px-8 py-4 bg-gradient-to-r from-zinc-800 via-zinc-700 to-zinc-800 rounded-xl text-zinc-50 text-xl font-bold shadow-lg border border-zinc-600/50">
-                Senior Full Stack Developer
-              </div>
-            </div>
-          </MotionDiv>
+            <MotionDiv
+              className="mt-7 max-w-xl text-base leading-8 text-muted-dark sm:text-lg"
+              initial={{ y: 14, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.12 }}
+            >
+              I turn ambiguous product goals into reliable systems — architecture,
+              delivery planning, performance work, and maintainable full-stack
+              implementation. Every metric here is pulled from production.
+            </MotionDiv>
 
-          {/* Location */}
-          <MotionDiv
-            className="text-zinc-400 text-lg mb-6 flex items-center justify-center gap-2"
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.7, ease: "easeOut" }}
-            style={{ willChange: 'transform, opacity' }}
-          >
-            <HiLocationMarker className="text-zinc-500" />
-            <span className="font-light">Halifax, N.S. Canada</span>
-          </MotionDiv>
-
-          {/* Tagline */}
-          <MotionDiv
-            className="max-w-2xl mx-auto text-zinc-300 text-lg font-light leading-relaxed"
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.9, ease: "easeOut" }}
-            style={{ willChange: 'transform, opacity' }}
-          >
-            <p>
-              Crafting scalable solutions and leading complete software lifecycles —
-              <span className="text-zinc-100 font-medium"> from architecture to optimization</span>
-            </p>
-          </MotionDiv>
-
-          {/* Quick stats */}
-          <MotionDiv
-            className="flex flex-wrap justify-center gap-8 mt-12 text-sm"
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 1.1, ease: "easeOut" }}
-            style={{ willChange: 'transform, opacity' }}
-          >
-            {[
-              { value: '5+', label: 'Years Experience' },
-              { value: 'Full Stack', label: 'Expertise' },
-              { value: 'React', label: 'Specialized' }
-            ].map((stat, index) => (
-              <div
-                key={index}
-                className="flex flex-col items-center group cursor-default"
+            <MotionDiv
+              className="mt-10 flex flex-wrap gap-3"
+              initial={{ y: 14, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.18 }}
+            >
+              <a
+                download
+                href="/Patrick_Shannon_FullStack_Resume_2026.pdf"
+                className="inline-flex items-center gap-2 rounded-sm bg-cream px-5 py-3 text-sm font-semibold text-ink transition-colors hover:bg-signal-bright"
               >
-                <div className="relative px-4 py-2 bg-zinc-800/50 backdrop-blur-sm rounded-lg border border-zinc-700/50 group-hover:border-zinc-600/50 hover:bg-zinc-800/70 transition-all duration-300">
-                  <div className="text-2xl font-bold text-zinc-50 group-hover:text-white transition-colors">
-                    {stat.value}
-                  </div>
-                  <div className="text-zinc-400 group-hover:text-zinc-300 transition-colors">
-                    {stat.label}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </MotionDiv>
-        </div>
+                <HiDownload />
+                Résumé
+              </a>
+              <a
+                href="#selected-work"
+                className="rounded-sm border border-line px-5 py-3 text-sm font-semibold text-cream transition-colors hover:border-signal hover:text-signal"
+              >
+                Selected work
+              </a>
+              <a
+                href="#contact"
+                className="rounded-sm border border-line px-5 py-3 text-sm font-semibold text-cream transition-colors hover:border-signal hover:text-signal"
+              >
+                Get in touch
+              </a>
+            </MotionDiv>
+          </div>
 
-        <div className="absolute w-20 text-center mx-auto bottom-10 left-0 right-0 flex justify-center z-10">
-          <ScrollDown />
+          <SystemReadout />
         </div>
       </MotionSection>
 
-      {/* Impact Metrics */}
+      {/* ── §01 Evidence ────────────────────────────────────────── */}
       <MotionSection
-        className="bg-zinc-50 text-zinc-900 relative px-10 py-20 min-h-screen container-xl flex flex-col justify-center align-center items-center overflow-hidden"
+        className="border-t border-line-paper bg-paper px-6 py-20 text-ink sm:px-8 lg:px-10 lg:py-28"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.35 }}
       >
-        {/* Ambient background */}
-        <div className="absolute inset-0 bg-gradient-to-r from-zinc-100/20 via-zinc-50/10 to-zinc-100/20 pointer-events-none" />
-
-        <h2 className="relative text-5xl font-extrabold max-w-lg mx-auto mb-16 text-center bg-gradient-to-r from-zinc-900 via-zinc-800 to-zinc-900 bg-clip-text text-transparent">
-          Measurable Impact
-        </h2>
-        <div className="relative w-full">
+        <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.42fr_1fr]">
+          <div>
+            <p className="spec-label text-signal-paper">§ 01 / Evidence</p>
+            <h2 className="mt-4 font-serif text-4xl font-medium leading-[1.08] text-ink sm:text-5xl">
+              Production outcomes, not capability claims.
+            </h2>
+            <p className="mt-5 max-w-md text-base leading-7 text-muted-light">
+              A few examples of architecture and optimization work that moved cost,
+              performance, and search visibility in live applications.
+            </p>
+          </div>
           <ImpactMetrics />
         </div>
       </MotionSection>
 
-      {/* Work Experience */}
+      {/* ── §02 Operating focus ─────────────────────────────────── */}
       <MotionSection
-        className="relative px-10 py-20 min-h-screen container-xl flex flex-col justify-center align-center items-center text-center overflow-hidden"
+        className="bg-graphite px-6 py-20 text-cream sm:px-8 lg:px-10 lg:py-28"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.35 }}
       >
-        {/* Animated gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.03),transparent_50%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,255,255,0.02),transparent_50%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(255,255,255,0.02),transparent_50%)]" />
-        </div>
-
-        {/* Floating background shapes */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <MotionDiv
-            className="absolute top-20 left-10 w-72 h-72 bg-white/5 rounded-full blur-3xl"
-            style={{ willChange: 'transform' }}
-            animate={{
-              x: [0, 50, 0],
-              y: [0, 30, 0],
-              scale: [1, 1.1, 1],
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-          <MotionDiv
-            className="absolute bottom-20 right-10 w-96 h-96 bg-white/5 rounded-full blur-3xl"
-            style={{ willChange: 'transform' }}
-            animate={{
-              x: [0, -40, 0],
-              y: [0, -30, 0],
-              scale: [1, 1.08, 1],
-            }}
-            transition={{
-              duration: 25,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-        </div>
-
-        <MotionDiv
-          className="relative z-10"
-          initial={{ y: 30, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-5xl font-extrabold max-w-lg mx-auto mb-16 text-zinc-50">Work experience</h2>
-        </MotionDiv>
-        <div className="relative z-10 flex flex-col gap-10">
-          {/* Animated timeline line */}
-          <MotionDiv
-            className="hidden lg:block absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-zinc-600 via-zinc-500 to-zinc-600"
-            initial={{ height: 0, opacity: 0 }}
-            whileInView={{ height: '100%', opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.5, delay: 0.3 }}
-          />
-          {workData.map((work, index) => (
-            <Workcard key={work.id} data={work} variant='dark' index={index} />
-          ))}
-        </div>
-      </MotionSection>
-
-      {/* Projects */}
-      <MotionSection
-        className="bg-zinc-50 text-zinc-900 relative px-10 py-20 min-h-screen container-xl flex flex-col justify-center align-center items-center text-center"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-      >
-        <h2 className="text-5xl font-extrabold max-w-lg mx-auto mb-16">Portfolio</h2>
-        <div className="max-w-3xl">
-          {projectData.map((project, index) => (
-            <ProjectCard key={project.title} data={project} index={index} />
-          ))}
-        </div>
-      </MotionSection>
-
-      {/* Skills Breakdown */}
-      <MotionSection
-        className="relative px-10 py-20 min-h-screen container-xl flex flex-col justify-center align-center items-center overflow-hidden"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-      >
-        {/* Animated gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.03),transparent_50%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,255,255,0.02),transparent_50%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(255,255,255,0.02),transparent_50%)]" />
-        </div>
-
-        {/* Floating background shapes */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <MotionDiv
-            className="absolute top-20 left-10 w-72 h-72 bg-white/5 rounded-full blur-3xl"
-            style={{ willChange: 'transform' }}
-            animate={{
-              x: [0, 50, 0],
-              y: [0, 30, 0],
-              scale: [1, 1.1, 1],
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-          <MotionDiv
-            className="absolute bottom-20 right-10 w-96 h-96 bg-white/5 rounded-full blur-3xl"
-            style={{ willChange: 'transform' }}
-            animate={{
-              x: [0, -40, 0],
-              y: [0, -30, 0],
-              scale: [1, 1.08, 1],
-            }}
-            transition={{
-              duration: 25,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-        </div>
-
-        <div className="relative z-10">
-          <h2 className="text-5xl font-extrabold max-w-lg mx-auto mb-4 text-center bg-gradient-to-r from-zinc-50 via-zinc-100 to-zinc-50 bg-clip-text text-transparent">
-            Skills Breakdown
-          </h2>
-          <p className="text-zinc-400 mb-16 max-w-2xl text-center font-light">
-            A visual representation of my technical expertise and professional capabilities
-          </p>
-          <div className="relative w-full">
-            <SkillsRadarChart />
+        <div className="mx-auto max-w-6xl">
+          <div className="max-w-3xl">
+            <p className="spec-label text-signal">§ 02 / Operating focus</p>
+            <h2 className="mt-4 font-serif text-4xl font-medium leading-[1.08] text-cream sm:text-5xl">
+              The work is increasingly about judgment, structure, and ownership.
+            </h2>
+          </div>
+          <div className="mt-12 grid gap-px overflow-hidden rounded-sm border border-line bg-line md:grid-cols-3">
+            {focusAreas.map((item) => (
+              <div key={item.title} className="bg-graphite-2 p-7">
+                <span className="spec-label text-muted-dark">{item.index}</span>
+                <h3 className="mt-3 font-serif text-2xl font-medium text-cream">{item.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-muted-dark">{item.body}</p>
+              </div>
+            ))}
           </div>
         </div>
       </MotionSection>
 
-      {/* Toolkit */}
+      {/* ── §03 Experience ──────────────────────────────────────── */}
       <MotionSection
-        className="bg-zinc-50 text-zinc-900 flex flex-col justify-center min-h-screen px-10 py-20 text-center"
+        className="border-t border-line-paper bg-paper px-6 py-20 text-ink sm:px-8 lg:px-10 lg:py-28"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.35 }}
       >
-        <h2 className="text-5xl font-extrabold max-w-lg mx-auto mb-4">Toolkit</h2>
-        <p className="text-zinc-600 mb-16 max-w-2xl mx-auto font-light">
-          Technologies and tools I use to build exceptional digital experiences
-        </p>
-        <div className="pb-12">
-          <Toolkit />
-        </div>
-        <div className="mt-8 text-sm font-light text-zinc-500">...new tools are added frequently, stay tuned.</div>
-      </MotionSection>
-
-      {/* GitHub Contributions */}
-      <MotionSection
-        className="relative px-10 py-20 min-h-screen container-xl flex flex-col justify-center align-center items-center overflow-hidden"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-      >
-        {/* Animated gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.03),transparent_50%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,255,255,0.02),transparent_50%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(255,255,255,0.02),transparent_50%)]" />
-        </div>
-
-        {/* Floating background shapes */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <MotionDiv
-            className="absolute top-20 left-10 w-72 h-72 bg-white/5 rounded-full blur-3xl"
-            style={{ willChange: 'transform' }}
-            animate={{
-              x: [0, 50, 0],
-              y: [0, 30, 0],
-              scale: [1, 1.1, 1],
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-          <MotionDiv
-            className="absolute bottom-20 right-10 w-96 h-96 bg-white/5 rounded-full blur-3xl"
-            style={{ willChange: 'transform' }}
-            animate={{
-              x: [0, -40, 0],
-              y: [0, -30, 0],
-              scale: [1, 1.08, 1],
-            }}
-            transition={{
-              duration: 25,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-        </div>
-
-        <div className="relative z-10 w-full">
-          <GitHubContributions />
+        <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[0.34fr_1fr]">
+          <div>
+            <p className="spec-label text-signal-paper">§ 03 / Experience</p>
+            <h2 className="mt-4 font-serif text-4xl font-medium leading-[1.08] text-ink sm:text-5xl">
+              Technical depth with operational context.
+            </h2>
+          </div>
+          <div className="grid gap-10">
+            {workData.map((work, index) => (
+              <Workcard key={work.id} data={work} variant="light" index={index} />
+            ))}
+          </div>
         </div>
       </MotionSection>
 
-      {/* Education */}
+      {/* ── §04 Selected work ───────────────────────────────────── */}
       <MotionSection
-        className="bg-zinc-50 text-zinc-900 relative px-10 py-20 min-h-screen container-xl flex flex-col justify-center align-center items-center text-center"
+        id="selected-work"
+        className="bg-graphite px-6 py-20 text-cream sm:px-8 lg:px-10 lg:py-28"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.35 }}
       >
-        <h2 className="text-5xl font-extrabold max-w-lg mx-auto mb-16">Education</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 max-w-3xl mx-auto gap-4">
-          {educationData.map((item, index) => (
-            <EducationCard key={item.title} data={item} index={index} variant="light" />
-          ))}
+        <div className="mx-auto max-w-6xl">
+          <div className="grid gap-8 lg:grid-cols-[0.42fr_1fr] lg:items-end">
+            <div>
+              <p className="spec-label text-signal">§ 04 / Selected work</p>
+              <h2 className="mt-4 font-serif text-4xl font-medium leading-[1.08] text-cream sm:text-5xl">
+                Representative systems, not a wall of screenshots.
+              </h2>
+            </div>
+            <p className="max-w-2xl text-base leading-7 text-muted-dark">
+              These are systems where architecture, implementation, integrations, and
+              product constraints all mattered at once.
+            </p>
+          </div>
+
+          <div className="mt-14 grid gap-12">
+            {projectData.slice(0, 5).map((project, index) => (
+              <ProjectCard key={project.title} data={project} index={index} />
+            ))}
+          </div>
         </div>
       </MotionSection>
 
-      {/* Contact */}
+      {/* ── §05 Contact ─────────────────────────────────────────── */}
       <MotionSection
-        className="relative px-10 py-20 min-h-screen container-xl flex flex-col justify-center align-center items-center text-center overflow-hidden"
+        id="contact"
+        className="border-t border-line-paper bg-paper px-6 py-20 text-ink sm:px-8 lg:px-10 lg:py-28"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.35 }}
       >
-        {/* Animated gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.03),transparent_50%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,255,255,0.02),transparent_50%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(255,255,255,0.02),transparent_50%)]" />
-        </div>
+        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.62fr_0.38fr] lg:items-end">
+          <div>
+            <p className="spec-label text-signal-paper">§ 05 / Contact</p>
+            <h2 className="mt-4 max-w-2xl font-serif text-4xl font-medium leading-[1.08] text-ink sm:text-5xl">
+              A place for context, not a high-pressure funnel.
+            </h2>
+            <p className="mt-5 max-w-xl text-base leading-7 text-muted-light">
+              Best reached for architecture discussions, product-minded engineering
+              work, or technical leadership conversations.
+            </p>
+          </div>
 
-        {/* Floating background shapes */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <MotionDiv
-            className="absolute top-20 left-10 w-72 h-72 bg-white/5 rounded-full blur-3xl"
-            style={{ willChange: 'transform' }}
-            animate={{
-              x: [0, 50, 0],
-              y: [0, 30, 0],
-              scale: [1, 1.1, 1],
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-          <MotionDiv
-            className="absolute bottom-20 right-10 w-96 h-96 bg-white/5 rounded-full blur-3xl"
-            style={{ willChange: 'transform' }}
-            animate={{
-              x: [0, -40, 0],
-              y: [0, -30, 0],
-              scale: [1, 1.08, 1],
-            }}
-            transition={{
-              duration: 25,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-        </div>
-
-        <div className="relative z-10">
-          <h2 className="text-5xl font-extrabold max-w-lg mx-auto mb-10 bg-gradient-to-r from-zinc-50 via-zinc-100 to-zinc-50 bg-clip-text text-transparent">Contact and Info</h2>
-          <div className="flex flex-col gap-10 items-center">
-            <div className="text-zinc-200">peshannon104@gmail.com</div>
-            <div className="flex gap-2">
+          <div className="rounded-sm border border-line-paper bg-paper-2 p-6">
+            <p className="spec-label text-muted-light">Direct</p>
+            <a
+              href="mailto:patrick.e.shannon@gmail.com"
+              className="mt-2 block break-all font-mono text-base font-medium text-ink underline-offset-4 hover:text-signal-paper hover:underline"
+            >
+              patrick.e.shannon@gmail.com
+            </a>
+            <div className="mt-6 flex flex-wrap gap-3">
               <a
                 target="_blank"
                 href="https://github.com/patshannon"
-                className="w-10 h-10 hover:scale-105 transition-transform flex items-center justify-center bg-white rounded-full text-black"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-sm border border-line-paper px-4 py-2 text-sm font-semibold text-ink transition-colors hover:border-signal-paper hover:text-signal-paper"
               >
-                <FaGithub size={24} />
+                <FaGithub />
+                GitHub
               </a>
               <a
                 target="_blank"
                 href="https://www.linkedin.com/in/patrick-e-shannon/"
-                className="w-10 h-10 hover:scale-105 transition-transform flex items-center justify-center bg-white rounded-full text-black"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-sm border border-line-paper px-4 py-2 text-sm font-semibold text-ink transition-colors hover:border-signal-paper hover:text-signal-paper"
               >
-                <FaLinkedin size={24} />
+                <FaLinkedin />
+                LinkedIn
               </a>
-            </div>
-            <MotionDiv
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-              transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              className="relative"
-            >
-              {/* Glow shadow on hover */}
-              <div className="absolute inset-0 rounded-xl bg-white/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
-              
               <a
                 download
-                href="/Patrick_Shannon_FullStack_Resume_2025.pdf"
-                className="relative group inline-flex items-center gap-3 px-8 py-4 rounded-xl font-semibold text-zinc-50 overflow-hidden shadow-lg shadow-black/30 group-hover:shadow-xl group-hover:shadow-white/5 transition-shadow duration-300"
+                href="/Patrick_Shannon_FullStack_Resume_2026.pdf"
+                className="inline-flex items-center gap-2 rounded-sm bg-ink px-4 py-2 text-sm font-semibold text-cream transition-colors hover:bg-signal hover:text-ink"
               >
-                {/* Animated gradient background */}
-                <div className="absolute inset-0 bg-gradient-to-r from-zinc-800 via-zinc-700 to-zinc-800 rounded-xl" />
-                <div className="absolute inset-0 bg-gradient-to-r from-zinc-700 via-zinc-600 to-zinc-700 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                
-                {/* Subtle inner glow */}
-                <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                
-                {/* Border */}
-                <div className="absolute inset-0 rounded-xl border border-zinc-600/50 group-hover:border-zinc-500/70 transition-colors duration-300" />
-                
-                {/* Content */}
-                <span className="relative z-10 flex items-center gap-3">
-                  <HiDownload className="text-xl group-hover:translate-y-0.5 transition-transform duration-300" />
-                  <span>Download Resume</span>
-                </span>
+                <HiDownload />
+                Résumé
               </a>
-            </MotionDiv>
+            </div>
           </div>
         </div>
       </MotionSection>

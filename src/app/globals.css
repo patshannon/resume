@@ -3,24 +3,69 @@
 @tailwind utilities;
 
 @layer base {
-  /* Performance optimizations for animations */
-  * {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
-  /* Enable hardware acceleration for transforms */
-  [class*="transform"],
-  [class*="translate"],
-  [class*="scale"],
-  [class*="rotate"] {
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    perspective: 1000px;
+  /* Fraunces optical axis: big, soft, slightly wonky at display size. */
+  .font-serif {
+    font-optical-sizing: auto;
+    font-variation-settings: 'opsz' 96, 'SOFT' 40, 'WONK' 1;
   }
 
-  /* Optimize blur effects */
-  [class*="blur"] {
-    transform: translateZ(0);
+  /* Visible keyboard focus across the whole site. */
+  :focus-visible {
+    outline: 2px solid theme('colors.signal-paper');
+    outline-offset: 3px;
+    border-radius: 1px;
+  }
+
+  ::selection {
+    background: theme('colors.signal');
+    color: #14161a;
+  }
+}
+
+@layer components {
+  /* Monospace section index / eyebrow label — the spec-sheet voice. */
+  .spec-label {
+    @apply font-mono text-[11px] uppercase tracking-label;
+  }
+
+  /* Hairline that reads as a drafted rule, not a CSS border afterthought. */
+  .rule-dark {
+    @apply border-line;
+  }
+  .rule-paper {
+    @apply border-line-paper;
+  }
+}
+
+@layer utilities {
+  /* Subtle drafting grid used behind the dark hero. */
+  .bg-grid-dark {
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    background-size: 72px 72px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
   }
 }

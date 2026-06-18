@@ -1,150 +1,93 @@
 'use client';
 
 import { MotionDiv } from '../motion';
-import { IoFlash, IoSearch, IoTrendingUp } from 'react-icons/io5';
-import { FaBullseye } from 'react-icons/fa';
-import { ReactNode } from 'react';
 
 interface MetricCardProps {
+  id: string;
   title: string;
   value: string;
+  unit?: string;
   subtitle: string;
-  color: string;
+  context: string;
   delay: number;
-  icon: ReactNode;
 }
 
-function MetricCard({ title, value, subtitle, color, delay, icon }: MetricCardProps) {
+function MetricCard({ id, title, value, unit, subtitle, context, delay }: MetricCardProps) {
   return (
     <MotionDiv
-      className="relative group"
-      initial={{ opacity: 0, y: 30 }}
+      className="border-t border-line-paper pt-5"
+      initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6, delay: delay / 1000 }}
+      transition={{ duration: 0.4, delay: delay / 1000 }}
     >
-      <div className="relative bg-white backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-zinc-200 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-500 h-full overflow-hidden">
-        {/* Animated gradient background glow */}
-        <div
-          className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 blur-2xl"
-          style={{ background: `radial-gradient(circle at 50% 50%, ${color}, transparent 70%)` }}
-        />
-
-        {/* Content */}
-        <div className="relative z-10">
-          {/* Icon with glow effect */}
-          <MotionDiv
-            className="text-5xl mb-4 drop-shadow-md"
-            style={{ color }}
-            initial={{ scale: 0.8, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: delay / 1000 + 0.2 }}
-          >
-            {icon}
-          </MotionDiv>
-
-          {/* Title */}
-          <h4 className="text-xs font-semibold text-zinc-600 uppercase tracking-wider mb-3">
-            {title}
-          </h4>
-
-          {/* The Hero: Big Impact Number */}
-          <MotionDiv
-            className="mb-4"
-            initial={{ scale: 0.5, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{
-              duration: 0.8,
-              delay: delay / 1000 + 0.3,
-              type: "spring",
-              stiffness: 200
-            }}
-          >
-            <div
-              className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-black tracking-tight leading-none break-words"
-              style={{ color }}
-            >
-              {value}
-            </div>
-          </MotionDiv>
-
-          {/* Subtitle/Context */}
-          <p className="text-sm text-zinc-700 leading-relaxed">
-            {subtitle}
-          </p>
-        </div>
-
-        {/* Decorative corner accent */}
-        <div
-          className="absolute top-0 right-0 w-24 h-24 opacity-5"
-          style={{
-            background: `radial-gradient(circle at 100% 0%, ${color}, transparent 70%)`
-          }}
-        />
+      <div className="flex items-center justify-between">
+        <h3 className="spec-label text-muted-light">{title}</h3>
+        <span className="font-mono text-[11px] text-line-paper">{id}</span>
       </div>
+
+      <div className="mt-4 flex items-baseline gap-1.5">
+        <span className="font-serif text-5xl font-medium leading-none text-ink sm:text-6xl">
+          {value}
+        </span>
+        {unit && <span className="font-mono text-sm text-signal-paper">{unit}</span>}
+      </div>
+
+      <p className="mt-4 text-base font-medium leading-7 text-ink">{subtitle}</p>
+      <p className="mt-2 text-sm leading-6 text-muted-light">{context}</p>
     </MotionDiv>
   );
 }
 
 export default function ImpactMetrics() {
-  const metrics = [
+  const metrics: MetricCardProps[] = [
     {
-      title: 'API Optimization',
-      value: '+100%',
-      subtitle: 'CMS API efficiency improvement through strategic caching',
-      color: 'rgba(16, 185, 129, 1)', // Emerald
-      icon: <IoFlash />,
+      id: 'M.01',
+      title: 'Search cost',
+      value: '95',
+      unit: '% ↓',
+      subtitle: 'Cut Algolia requests from 4.9M to 0.23M per month.',
+      context:
+        'A caching and request strategy that preserved product behavior while sharply reducing external search volume.',
+      delay: 100,
+    },
+    {
+      id: 'M.02',
+      title: 'CMS efficiency',
+      value: '100',
+      unit: '% ↑',
+      subtitle: 'Improved CMS API efficiency through cache architecture.',
+      context:
+        'Reduced redundant upstream calls and made content-heavy surfaces more predictable under load.',
       delay: 200,
     },
     {
-      title: 'Search Efficiency',
-      value: '95%',
-      subtitle: 'Reduction in Algolia requests: 4.9M → 0.23M per month',
-      color: 'rgba(59, 130, 246, 1)', // Blue
-      icon: <IoSearch />,
+      id: 'M.03',
+      title: 'Search visibility',
+      value: '40',
+      unit: '% ↑',
+      subtitle: 'Increased Google Search impressions via technical optimization.',
+      context:
+        'Performance, SEO, and accessibility work tied to measurable production discovery gains.',
+      delay: 300,
+    },
+    {
+      id: 'M.04',
+      title: 'External APIs',
+      value: '20',
+      unit: '% ↓',
+      subtitle: 'Reduced external API calls through deliberate data flow.',
+      context:
+        'A smaller operational footprint achieved through architecture, not visual redesign alone.',
       delay: 400,
-    },
-    {
-      title: 'SEO Impact',
-      value: '+40%',
-      subtitle: 'Increase in Google Search impressions through optimization',
-      color: 'rgba(168, 85, 247, 1)', // Purple
-      icon: <IoTrendingUp />,
-      delay: 600,
-    },
-    {
-      title: 'API Efficiency',
-      value: '20%',
-      subtitle: 'Reduction in external API calls via intelligent caching',
-      color: 'rgba(234, 179, 8, 1)', // Yellow
-      icon: <FaBullseye />,
-      delay: 800,
     },
   ];
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
-      {/* Metrics Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {metrics.map((metric) => (
-          <MetricCard key={metric.title} {...metric} />
-        ))}
-      </div>
-
-      {/* Bottom Context */}
-      <MotionDiv
-        className="mt-8 text-center"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 1 }}
-      >
-        <p className="text-xs text-zinc-600 italic">
-          All metrics from real-world production applications at bbox.digital
-        </p>
-      </MotionDiv>
+    <div className="grid gap-x-10 gap-y-10 sm:grid-cols-2">
+      {metrics.map((metric) => (
+        <MetricCard key={metric.id} {...metric} />
+      ))}
     </div>
   );
 }

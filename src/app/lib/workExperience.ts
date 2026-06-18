@@ -7,7 +7,7 @@ const data = [
     start: `${new Date('2021/12/01').toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}`,
     end: 'Present',
     description:
-      'Planned, architected, and delivered full-stack web applications across multiple client projects, partnering with leadership to define technical direction. Built scalable solutions using React, Next.js, TypeScript, and Node.js with GraphQL/REST APIs on GCP/Firebase, integrating headless CMS architectures. Leveraged AI-assisted development tools (Claude Code, GitHub Copilot) to accelerate architecture and refactoring workflows. Optimized caching strategies improving CMS API efficiency by 100%, reducing external API calls by 20%, and cutting Algolia search requests by ~95% (4.9M → 0.23M/month). Implemented CI/CD pipelines, automated testing (Jest, Playwright), and SEO/a11y improvements contributing to a 40% increase in Google Search impressions.',
+      'Lead architecture and full-stack delivery across several client platforms in parallel — from spec and technical direction through implementation, release coordination, and production hardening. Build on React, Next.js, and TypeScript with Node.js, GraphQL/REST APIs, GCP/Firebase, and headless CMS architectures (Sanity, Squidex), including bilingual (FR/EN) routing and Algolia search backends (facets, sort replicas, InstantSearch). Modernized Cloud Functions to Gen2 on Node 22 with concurrency tuning for SSR performance, and migrated secrets off the deprecated functions.config() API to Secret Manager with dotenv for local development. Hardened production systems with resilient pipelines — exponential backoff, graceful degradation, and per-stage error observability — and a deployment-orchestration layer that unified promote and rollback into a single state machine. Standardized AI-assisted workflows across the portfolio, consolidating AGENTS.md as a single source of truth per repo and using Claude Code and GitHub Copilot to accelerate architecture, refactoring, and documentation. Optimization work improved CMS API efficiency by 100%, cut external API calls by 20%, and reduced Algolia search requests by ~95% (4.9M → 0.23M/month); CI/CD pipelines, automated testing (Jest, Playwright), and SEO/a11y work drove a 40% increase in Google Search impressions.',
     tools: [
       'React',
       'Next.js',
@@ -16,6 +16,7 @@ const data = [
       'GraphQL',
       'Firebase',
       'Google Cloud Platform',
+      'Algolia',
       'CI/CD',
       'Playwright',
     ],

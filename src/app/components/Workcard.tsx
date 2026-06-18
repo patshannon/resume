@@ -14,129 +14,68 @@ interface WorkcardProps {
   index?: number;
 }
 
-const WorkCard = ({ data, variant='dark', index = 0 }: WorkcardProps) => {
+const WorkCard = ({ data, variant = 'light', index = 0 }: WorkcardProps) => {
+  const isDark = variant === 'dark';
+
+  const line = isDark ? 'border-line' : 'border-line-paper';
+  const eyebrow = isDark ? 'text-signal' : 'text-signal-paper';
+  const meta = isDark ? 'text-muted-dark' : 'text-muted-light';
+  const heading = isDark ? 'text-cream' : 'text-ink';
+  const company = isDark ? 'text-cream' : 'text-ink';
+  const body = isDark ? 'text-muted-dark' : 'text-muted-light';
+  const tag = isDark
+    ? 'border-line text-muted-dark'
+    : 'border-line-paper text-muted-light';
+
   return (
     <MotionDiv
-      initial={{
-        opacity: 0,
-        y: 30,
-        scale: 0.97
-      }}
-      whileInView={{
-        opacity: 1,
-        y: 0,
-        scale: 1
-      }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{
-        duration: 0.6,
-        delay: index * 0.1,
-        ease: "easeOut"
-      }}
-      className="relative flex flex-col sm:flex-row gap-5 sm:gap-16 items-start max-w-3xl group p-6 rounded-xl overflow-hidden"
-      style={{
-        willChange: 'transform, opacity'
-      }}
+      initial={{ opacity: 0, y: 18 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-40px' }}
+      transition={{ duration: 0.4, delay: index * 0.06 }}
+      className={`grid gap-6 border-t pt-8 md:grid-cols-[0.28fr_1fr] ${line}`}
     >
-      {/* Card background */}
-      <div className={`absolute inset-0 rounded-xl ${
-        variant === 'dark' 
-          ? 'bg-zinc-800/0' 
-          : 'bg-zinc-50/0'
-      }`} />
-
-      {/* Border */}
-      <div className="absolute inset-0 rounded-xl border border-transparent" />
-
-      {/* Timeline connector dot (visible on left side) */}
-      <div className="absolute -left-14 top-8 hidden lg:flex items-center">
-        <MotionDiv
-          className={`w-4 h-4 rounded-full shadow-lg ${
-            variant === 'dark'
-              ? 'bg-zinc-500 border-4 border-zinc-800'
-              : 'bg-zinc-400 border-4 border-zinc-50'
-          }`}
-          initial={{ scale: 0, opacity: 0 }}
-          whileInView={{ scale: 1, opacity: 1 }}
-          transition={{ delay: index * 0.15 + 0.3, type: "spring", stiffness: 200 }}
-        />
-        <MotionDiv
-          className={`w-10 h-0.5 ${
-            variant === 'dark'
-              ? 'bg-gradient-to-r from-zinc-500 to-transparent'
-              : 'bg-gradient-to-r from-zinc-400 to-transparent'
-          }`}
-          initial={{ width: 0, opacity: 0 }}
-          whileInView={{ width: 40, opacity: 1 }}
-          transition={{ delay: index * 0.15 + 0.5, duration: 0.4 }}
-        />
+      <div>
+        <p className={`spec-label ${eyebrow}`}>
+          {data.start} — {data.end}
+        </p>
+        <p className={`mt-2 font-mono text-[12px] ${meta}`}>{data.location}</p>
       </div>
 
-      <div className="relative sm:text-left flex flex-col max-w-sm z-10">
+      <div>
         <MotionH3
-          className="font-bold text-2xl"
-          initial={{ opacity: 0, y: 8 }}
+          className={`font-serif text-2xl font-medium leading-tight ${heading}`}
+          initial={{ opacity: 0, y: 6 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: index * 0.1 + 0.15, duration: 0.4 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, delay: index * 0.06 + 0.05 }}
         >
           {data.role}
         </MotionH3>
+        <p className={`mt-1 text-sm font-semibold ${company}`}>{data.company}</p>
         <MotionP
-          className="text-sm font-medium"
-          initial={{ opacity: 0, y: 5 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: index * 0.1 + 0.25, duration: 0.4 }}
-        >
-          {data.company} | {data.location}
-        </MotionP>
-        <MotionP
-          className={`text-sm ${variant === 'dark' ? 'text-zinc-400' : 'text-zinc-500'}`}
-          initial={{ opacity: 0, y: 5 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: index * 0.1 + 0.35, duration: 0.4 }}
-        >
-          {data.start} - {data.end}
-        </MotionP>
-        <MotionP
-          className={`text-sm mt-2 italic leading-relaxed ${
-            variant === 'dark' ? 'text-zinc-300' : 'text-zinc-600'
-          }`}
+          className={`mt-5 max-w-3xl text-sm leading-7 ${body}`}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ delay: index * 0.1 + 0.45, duration: 0.4 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, delay: index * 0.06 + 0.1 }}
         >
           {data.description}
         </MotionP>
-      </div>
 
-      {/* Tool badges with subtle fade-in */}
-      <div className="relative flex flex-wrap gap-2 justify-center sm:justify-end max-w-xs mx-auto z-10">
-        {data.tools.map((tool, toolIndex) => (
-          <MotionDiv
-            key={toolIndex}
-            initial={{
-              opacity: 0,
-              scale: 0.9
-            }}
-            whileInView={{
-              opacity: 1,
-              scale: 1
-            }}
-            transition={{
-              delay: index * 0.1 + 0.5 + (toolIndex * 0.03),
-              duration: 0.3,
-              ease: "easeOut"
-            }}
-            className={`text-xs px-2 py-1 rounded-lg font-bold cursor-default ${
-              variant === 'dark' ? 'bg-zinc-800 text-zinc-200': 'bg-zinc-200 text-zinc-800'
-            } shadow-sm`}
-          >
-            {tool}
-          </MotionDiv>
-        ))}
+        <div className="mt-5 flex flex-wrap gap-2">
+          {data.tools.map((tool) => (
+            <span
+              key={tool}
+              className={`rounded-sm border px-2.5 py-1 font-mono text-[11px] tracking-[0.04em] ${tag}`}
+            >
+              {tool}
+            </span>
+          ))}
+        </div>
       </div>
     </MotionDiv>
   );
-}
+};
 
-export default WorkCard
+export default WorkCard;
