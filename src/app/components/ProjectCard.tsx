@@ -25,17 +25,17 @@ const ProjectCard = ({ data, index }: ProjectCardProps) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay: index * 0.06 }}
-      className="grid gap-7 border-t border-line pt-8 lg:grid-cols-[0.42fr_1fr]"
+      className="grid gap-7 border-t border-line pt-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-10 xl:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)]"
     >
       <a
         href={data.url}
         target="_blank"
         rel="noopener noreferrer"
-        className="group relative block overflow-hidden rounded-sm border border-line bg-graphite-2"
+        className="group relative block self-start overflow-hidden rounded-sm border border-line bg-graphite-2"
       >
         {data.image ? (
           <Image
-            className="aspect-[16/10] h-full w-full object-cover opacity-95 transition duration-500 group-hover:scale-[1.03] group-hover:opacity-100"
+            className="aspect-[16/10] w-full object-cover opacity-95 transition duration-500 group-hover:scale-[1.03] group-hover:opacity-100"
             src={data.image}
             width={1000}
             height={625}
@@ -52,42 +52,42 @@ const ProjectCard = ({ data, index }: ProjectCardProps) => {
         </span>
       </a>
 
-      <div className="grid gap-6 md:grid-cols-[0.44fr_1fr]">
-        <div>
-          <span className="spec-label text-muted-dark">{num}</span>
-          <a
-            href={data.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group mt-2 inline-flex items-baseline gap-2"
-          >
-            <h3 className="font-serif text-3xl font-medium leading-tight text-cream transition-colors group-hover:text-signal">
-              {data.title}
-            </h3>
-          </a>
-          <p className="mt-4 text-sm leading-7 text-muted-dark">{data.description}</p>
-        </div>
+      <div className="min-w-0">
+        <span className="spec-label text-muted-dark">{num}</span>
+        <a
+          href={data.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group mt-2 flex w-fit items-baseline gap-2"
+        >
+          <h3 className="font-serif text-3xl font-medium leading-tight text-cream transition-colors group-hover:text-signal sm:text-4xl">
+            {data.title}
+          </h3>
+        </a>
+        <p className="mt-5 max-w-3xl text-sm leading-7 text-muted-dark sm:text-base sm:leading-8">
+          {data.description}
+        </p>
 
-        <dl className="flex flex-col gap-4 self-start text-sm">
+        <dl className="mt-7 grid gap-4 border-t border-line pt-5 text-sm sm:grid-cols-2 xl:grid-cols-3">
           {data.focus && (
-            <div className="border-l border-line pl-4">
+            <div>
               <dt className="spec-label text-signal">Focus</dt>
               <dd className="mt-1.5 leading-6 text-muted-dark">{data.focus}</dd>
             </div>
           )}
           {data.role && (
-            <div className="border-l border-line pl-4">
+            <div>
               <dt className="spec-label text-signal">Role</dt>
               <dd className="mt-1.5 leading-6 text-muted-dark">{data.role}</dd>
             </div>
           )}
           {data.outcome && (
-            <div className="border-l border-line pl-4">
+            <div>
               <dt className="spec-label text-signal">Outcome</dt>
               <dd className="mt-1.5 leading-6 text-muted-dark">{data.outcome}</dd>
             </div>
           )}
-          <div className="border-l border-line pl-4">
+          <div className="sm:col-span-2 xl:col-span-3">
             <dt className="spec-label text-signal">Stack</dt>
             <dd className="mt-2.5 flex flex-wrap items-start gap-2">
               {data.tools.map((tool) => (
