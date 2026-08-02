@@ -55,7 +55,7 @@ export default function SystemReadout() {
       <motion.div variants={row} className="space-y-1.5 px-4 py-4 text-[12px] leading-relaxed">
         <div className="flex justify-between">
           <span className="text-muted-dark">role</span>
-          <span className="text-cream">software_architect</span>
+          <span className="text-cream">lead_developer</span>
         </div>
         <div className="flex justify-between">
           <span className="text-muted-dark">location</span>
@@ -63,7 +63,7 @@ export default function SystemReadout() {
         </div>
         <div className="flex justify-between">
           <span className="text-muted-dark">focus</span>
-          <span className="text-cream">systems · product · delivery</span>
+          <span className="text-cream">modernization · product · delivery</span>
         </div>
       </motion.div>
 

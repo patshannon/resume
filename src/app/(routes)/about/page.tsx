@@ -6,7 +6,7 @@ import { HiDownload } from 'react-icons/hi';
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'Patrick Shannon is a product-minded software architect focused on performance, maintainability, and provable production outcomes.',
+    'Patrick Shannon is a product-minded lead developer and technical consultant specializing in production-safe web platform modernization.',
 };
 
 const highlights = [
@@ -43,7 +43,7 @@ export default function Page() {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.05 }}
             >
-              I build systems that stay fast, maintainable, and useful.
+              I take ownership when the system is complex and the path forward is unclear.
             </MotionH1>
             <MotionDiv
               className="mt-7 max-w-xl space-y-5 text-base leading-7 text-muted-dark"
@@ -52,18 +52,18 @@ export default function Page() {
               transition={{ duration: 0.5, delay: 0.12 }}
             >
               <p>
-                I&apos;m a senior full-stack developer and architect at{' '}
-                <span className="text-cream">bbox.digital</span>. I take projects from
-                spec and architecture through implementation, optimization, and
-                deployment — React, Next.js, and TypeScript on the front end; Node.js,
-                Firebase, and GCP behind it — working closely with the founding team to
-                keep technical decisions aligned with product goals.
+                I&apos;m a lead developer and technical consultant at{' '}
+                <span className="text-cream">bbox.digital</span>, serving as the primary
+                client-facing technical lead within a lean two-developer team. I own 3–4
+                concurrent engagements from feature discovery and estimation through
+                architecture, implementation, deployment, and production support.
               </p>
               <p>
                 I came to software after an earlier career in aviation, which left me
                 with a durable bias toward precision and systematic thinking under
-                pressure. These days that shows up as architecture work, measurable
-                performance, and shipping reliably.
+                pressure. These days that shows up in production-safe modernization:
+                understanding inherited systems, choosing a pragmatic path forward, and
+                verifying the replacement before calling it done.
               </p>
             </MotionDiv>
           </div>
@@ -196,11 +196,11 @@ export default function Page() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            I build for scale through{' '}
-            <span className="text-signal-paper">clean architecture</span>, measurable
-            performance, and reliability — and I standardize AI-assisted workflows
-            across every repo so planning, refactoring, and documentation move
-            faster without lowering the bar.
+            I make complex systems understandable before I change them — then use{' '}
+            <span className="text-signal-paper">pragmatic architecture</span>, measurable
+            verification, and hands-on delivery to modernize them safely. I standardize
+            AI-assisted workflows across every repo so discovery, planning, refactoring,
+            and documentation move faster without lowering the bar.
           </MotionP>
           <MotionDiv
             className="mt-10"

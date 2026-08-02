@@ -10,13 +10,13 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { HiDownload } from 'react-icons/hi';
 
 export const metadata: Metadata = {
-  title: 'Patrick Shannon - Product-Minded Software Architect',
+  title: 'Patrick Shannon - Lead Developer & Technical Consultant',
   description:
-    'Product-minded software architect and technical lead based in Halifax, focused on system architecture, product ownership, delivery planning, performance, and maintainable web platforms.',
+    'Product-minded lead developer and technical consultant based in Halifax, specializing in production-safe web platform modernization and hands-on technical ownership.',
   openGraph: {
-    title: 'Patrick Shannon - Product-Minded Software Architect',
+    title: 'Patrick Shannon - Lead Developer & Technical Consultant',
     description:
-      'Architecture, product ownership, delivery planning, performance, and maintainable web platforms.',
+      'Production-safe web platform modernization, technical ownership, and hands-on delivery.',
     images: ['/headshot-rounded.png'],
   },
 };
@@ -24,18 +24,18 @@ export const metadata: Metadata = {
 const focusAreas = [
   {
     index: 'A',
-    title: 'Architecture',
-    body: 'Practical web-platform architecture across frontend, backend, content, search, auth, payments, and cloud — including headless CMS, Algolia search backends, Gen2 cloud functions, and secrets management.',
+    title: 'System Discovery',
+    body: 'Reverse-engineering undocumented platforms, mapping the behaviors users depend on, and making hidden constraints explicit before changing the system.',
   },
   {
     index: 'B',
-    title: 'Product Ownership',
-    body: 'Turning ambiguous goals into technical plans, delivery slices, and measurable outcomes — shipped across multiple client platforms in parallel.',
+    title: 'Migration Architecture',
+    body: 'Choosing pragmatic stacks and migration paths across frontend, backend, content, search, auth, payments, and cloud — based on product needs, not novelty.',
   },
   {
     index: 'C',
-    title: 'Operational Quality',
-    body: 'Improving reliability, performance, and cost in production — resilient pipelines, deployment orchestration, caching, and monitoring that holds up under load.',
+    title: 'Production Delivery',
+    body: 'Implementing hands-on, verifying behavior, and improving performance, reliability, deployment, and maintainability without disrupting the product.',
   },
 ];
 
@@ -62,7 +62,7 @@ export default function Home() {
               <span className="h-px w-6 bg-line" />
               <span>Patrick Shannon</span>
               <span className="h-px w-6 bg-line" />
-              <span>Production systems</span>
+              <span>Platform modernization</span>
             </div>
 
             <MotionH1
@@ -71,8 +71,8 @@ export default function Home() {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.05 }}
             >
-              I architect web platforms that hold up in{' '}
-              <span className="text-signal">production</span>.
+              I modernize complex web platforms without breaking{' '}
+              <span className="text-signal">what already works</span>.
             </MotionH1>
 
             <MotionDiv
@@ -81,9 +81,9 @@ export default function Home() {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.12 }}
             >
-              I turn ambiguous product goals into reliable systems — architecture,
-              delivery planning, performance work, and maintainable full-stack
-              implementation. Every metric here is pulled from production.
+              I reverse-engineer undocumented systems, define pragmatic architectures,
+              and lead hands-on migrations that improve performance, reliability, and
+              delivery — while preserving the behavior users depend on.
             </MotionDiv>
 
             <MotionDiv
@@ -134,8 +134,8 @@ export default function Home() {
               Production outcomes, not capability claims.
             </h2>
             <p className="mt-5 max-w-md text-base leading-7 text-muted-light">
-              A few examples of architecture and optimization work that moved cost,
-              performance, and search visibility in live applications.
+              A few examples of modernization and optimization work that moved cost,
+              performance, reliability, and search visibility in live applications.
             </p>
           </div>
           <ImpactMetrics />
@@ -154,7 +154,7 @@ export default function Home() {
           <div className="max-w-3xl">
             <p className="spec-label text-signal">§ 02 / Operating focus</p>
             <h2 className="mt-4 font-serif text-4xl font-medium leading-[1.08] text-cream sm:text-5xl">
-              The work is increasingly about judgment, structure, and ownership.
+              Understand the system. Choose the path. Prove the replacement.
             </h2>
           </div>
           <div className="mt-12 grid gap-px overflow-hidden rounded-sm border border-line bg-line md:grid-cols-3">
@@ -181,7 +181,7 @@ export default function Home() {
           <div>
             <p className="spec-label text-signal-paper">§ 03 / Experience</p>
             <h2 className="mt-4 font-serif text-4xl font-medium leading-[1.08] text-ink sm:text-5xl">
-              Technical depth with operational context.
+              Technical ownership from client request to production.
             </h2>
           </div>
           <div className="grid gap-10">
@@ -206,12 +206,12 @@ export default function Home() {
             <div>
               <p className="spec-label text-signal">§ 04 / Selected work</p>
               <h2 className="mt-4 font-serif text-4xl font-medium leading-[1.08] text-cream sm:text-5xl">
-                Representative systems, not a wall of screenshots.
+                Systems shaped by real constraints.
               </h2>
             </div>
             <p className="max-w-2xl text-base leading-7 text-muted-dark">
-              These are systems where architecture, implementation, integrations, and
-              product constraints all mattered at once.
+              Modernization, architecture, implementation, integrations, and product
+              constraints all mattered at once.
             </p>
           </div>
 
@@ -239,8 +239,8 @@ export default function Home() {
               A place for context, not a high-pressure funnel.
             </h2>
             <p className="mt-5 max-w-xl text-base leading-7 text-muted-light">
-              Best reached for architecture discussions, product-minded engineering
-              work, or technical leadership conversations.
+              Best reached for platform modernization, product-minded lead engineering,
+              or hands-on technical consulting.
             </p>
           </div>
 

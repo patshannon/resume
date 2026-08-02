@@ -30,11 +30,11 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'),
   title: {
-    default: 'Patrick Shannon - Product-Minded Software Architect',
+    default: 'Patrick Shannon - Lead Developer & Technical Consultant',
     template: '%s | Patrick Shannon',
   },
   description:
-    'Product-minded software architect and technical lead focused on architecture, product ownership, delivery planning, performance, and maintainable web platforms.',
+    'Product-minded lead developer and technical consultant specializing in production-safe web platform modernization, technical ownership, and hands-on delivery.',
 }
 
 export default function RootLayout({ children }) {

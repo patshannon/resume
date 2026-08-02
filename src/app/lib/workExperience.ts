@@ -7,7 +7,7 @@ const data = [
     start: `${new Date('2025/03/01').toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}`,
     end: 'Present',
     description:
-      'Operate as one of two remaining developers, serving as de facto technical lead with no management overhead. Own 3–4 concurrent client engagements end-to-end — leading client meetings, scoping features, providing estimates, and delivering implementation solo. Consult on UX/UI decisions across client projects — identifying design issues before implementation, proposing alternatives, and designing full features in Figma from written briefs. Apply AI-assisted workflows (Claude Code, GitHub Copilot, Codex) to accelerate development, refactoring, and architecture planning.',
+      'Serve as the primary client-facing technical lead within a lean two-developer team. Own 3–4 concurrent client engagements end-to-end — leading feature discovery, scoping work, providing estimates, choosing technical approaches, and delivering implementation, deployment, and production support. Consult on UX/UI decisions across client projects — identifying design issues before implementation, proposing alternatives, and designing full features in Figma from written briefs. Apply AI-assisted workflows (Claude Code, GitHub Copilot, Codex) to accelerate discovery, development, refactoring, and architecture planning.',
     tools: [
       'React',
       'Next.js',

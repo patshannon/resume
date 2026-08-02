@@ -1,7 +1,7 @@
 export const projectData = [
   {
     title: "Télé-Québec en classe",
-    description: "As sole frontend engineer, migrated a platform serving 11,000+ videos, podcasts, and games from a hybrid Paperbits/Knockout runtime to a statically exported Next.js 15 application. Preserved its established responsive design and French URL contracts while achieving audited 100% feature parity across 60 production behaviors.",
+    description: "As sole frontend engineer and migration architect, reverse-engineered an undocumented Paperbits/Knockout platform serving 11,000+ videos, podcasts, and games, chose its statically exported Next.js 15 replacement architecture, and delivered the migration across 4 repositories. Preserved its responsive design and French URL contracts, achieved audited 100% feature parity across 60 production behaviors, and improved performance, reliability, and maintainability while accelerating development, simplifying deployments and content operations, and reducing defects.",
     url: "https://enclasse.telequebec.tv",
     image: "/tq-enclasse-16-10.webp",
     tools: ["Next.js", "React", "TypeScript", "Firebase", "Algolia", "Tailwind CSS", "Brightcove"]
