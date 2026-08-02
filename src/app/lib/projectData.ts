@@ -1,10 +1,10 @@
 export const projectData = [
   {
-    title: "Classavatar",
-    description: "Classroom management platform for Quebec schools with student rewards, avatar progression, class management, parent-teacher messaging, and subscriptions. Full-stack architecture across gamified domain logic and Stripe-backed payment infrastructure.",
-    url: "https://classavatar.ca/",
-    image: "/classavatar-16-10.webp",
-    tools: ["Next.js", "React", "Firebase", "Python", "FastAPI", "Stripe", "Tailwind CSS"]
+    title: "Télé-Québec en classe",
+    description: "As sole frontend engineer, migrated a platform serving 11,000+ videos, podcasts, and games from a hybrid Paperbits/Knockout runtime to a statically exported Next.js 15 application. Preserved its established responsive design and French URL contracts while achieving audited 100% feature parity across 60 production behaviors.",
+    url: "https://enclasse.telequebec.tv",
+    image: "/tq-enclasse-16-10.webp",
+    tools: ["Next.js", "React", "TypeScript", "Firebase", "Algolia", "Tailwind CSS", "Brightcove"]
   },
   {
     title: "La Vitrine Culturelle",
@@ -19,6 +19,13 @@ export const projectData = [
     url: "https://www.teljeunes.com/en",
     image: "/tj-website-16-10.webp",
     tools: ["TypeScript", "JavaScript", "Node.js", "HTML", "CSS", "Cloudflare Workers", "Squidex CMS"]
+  },
+  {
+    title: "Classavatar",
+    description: "Classroom management platform for Quebec schools with student rewards, avatar progression, class management, parent-teacher messaging, and subscriptions. Full-stack architecture across gamified domain logic and Stripe-backed payment infrastructure.",
+    url: "https://classavatar.ca/",
+    image: "/classavatar-16-10.webp",
+    tools: ["Next.js", "React", "Firebase", "Python", "FastAPI", "Stripe", "Tailwind CSS"]
   },
   {
     title: "Espace OBNL",
@@ -47,13 +54,6 @@ export const projectData = [
     url: "https://github.com/patshannon/captains-log",
     image: "/captains-log-16-10.svg",
     tools: ["Python", "OpenRouter", "LLM Pipelines", "GitHub Actions"]
-  },
-  {
-    title: "Télé-Québec en classe",
-    description: "Educational platform hosting 11,000+ videos, podcasts, and games for Quebec teachers and students. Work covered static site generation, prototyping, CMS functions, and admin tooling across 4 repositories (83 commits).",
-    url: "https://enclasse.telequebec.tv",
-    image: "",
-    tools: ["Next.js", "TypeScript", "Node.js", "JavaScript", "HTML", "CSS"]
   },
   {
     title: "linkedin-bot",
