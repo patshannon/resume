@@ -10,8 +10,8 @@ interface ProjectCardProps {
     image: string;
     tools: string[];
     focus?: string;
-    role?: string;
-    outcome?: string;
+    ownership?: string;
+    evidence?: string;
   };
   index: number;
 }
@@ -75,16 +75,16 @@ const ProjectCard = ({ data, index }: ProjectCardProps) => {
               <dd className="mt-1.5 leading-6 text-muted-dark">{data.focus}</dd>
             </div>
           )}
-          {data.role && (
+          {data.ownership && (
             <div>
-              <dt className="spec-label text-signal">Role</dt>
-              <dd className="mt-1.5 leading-6 text-muted-dark">{data.role}</dd>
+              <dt className="spec-label text-signal">Ownership</dt>
+              <dd className="mt-1.5 leading-6 text-muted-dark">{data.ownership}</dd>
             </div>
           )}
-          {data.outcome && (
+          {data.evidence && (
             <div>
-              <dt className="spec-label text-signal">Outcome</dt>
-              <dd className="mt-1.5 leading-6 text-muted-dark">{data.outcome}</dd>
+              <dt className="spec-label text-signal">Evidence</dt>
+              <dd className="mt-1.5 leading-6 text-muted-dark">{data.evidence}</dd>
             </div>
           )}
           <div className="sm:col-span-2 xl:col-span-3">

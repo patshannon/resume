@@ -1,38 +1,53 @@
 export const projectData = [
   {
     title: "Télé-Québec en classe",
-    description: "As sole frontend engineer and migration architect, reverse-engineered an undocumented Paperbits/Knockout platform serving 11,000+ videos, podcasts, and games, chose its statically exported Next.js 15 replacement architecture, and delivered the migration across 4 repositories. Preserved its responsive design and French URL contracts, achieved audited 100% feature parity across 60 production behaviors, and improved performance, reliability, and maintainability while accelerating development, simplifying deployments and content operations, and reducing defects.",
+    description: "Reverse-engineered an undocumented Paperbits/Knockout learning platform serving 11,000+ videos, podcasts, and games, chose its statically exported Next.js 15 replacement architecture, and delivered the migration across 4 repositories. Preserved its responsive design and French URL contracts while improving performance, reliability, maintainability, deployments, and content operations.",
     url: "https://enclasse.telequebec.tv",
     image: "/tq-enclasse-16-10.webp",
-    tools: ["Next.js", "React", "TypeScript", "Firebase", "Algolia", "Tailwind CSS", "Brightcove"]
+    tools: ["Next.js", "React", "TypeScript", "Firebase", "Algolia", "Tailwind CSS", "Brightcove"],
+    focus: "Undocumented platform migration",
+    ownership: "Discovery, architecture, and hands-on delivery",
+    evidence: "100% parity across 60 audited behaviors"
   },
   {
     title: "La Vitrine Culturelle",
     description: "Built from day one and served as frontend tech lead for 3+ years on a personalized cultural event recommendation platform for Quebec. Architected a web component library, cloud functions, routing layer, and headless CMS (Squidex) across 7 repositories (1,833 commits).",
     url: "https://www.lavitrine.com/en",
     image: "/lvc-v2-16-10.png",
-    tools: ["TypeScript", "JavaScript", "Node.js", "CSS", "Docker", "Squidex CMS", "Algolia"]
+    tools: ["TypeScript", "JavaScript", "Node.js", "CSS", "Docker", "Squidex CMS", "Algolia"],
+    focus: "Multi-repository product platform",
+    ownership: "Frontend architecture and technical direction",
+    evidence: "1,833 commits across 7 repositories"
   },
   {
     title: "Tel-Jeunes",
     description: "Helped build a free, confidential support platform for Quebec youth offering chat, text, phone, and anonymous forum services. Architected the headless CMS (Squidex) and contributed 572 commits across 7 repositories covering web components, backend services, and Cloudflare Workers.",
     url: "https://www.teljeunes.com/en",
     image: "/tj-website-16-10.webp",
-    tools: ["TypeScript", "JavaScript", "Node.js", "HTML", "CSS", "Cloudflare Workers", "Squidex CMS"]
+    tools: ["TypeScript", "JavaScript", "Node.js", "HTML", "CSS", "Cloudflare Workers", "Squidex CMS"],
+    focus: "Content and service architecture",
+    ownership: "CMS architecture and multi-repo delivery",
+    evidence: "572 commits across 7 repositories"
   },
   {
     title: "Classavatar",
     description: "Classroom management platform for Quebec schools with student rewards, avatar progression, class management, parent-teacher messaging, and subscriptions. Full-stack architecture across gamified domain logic and Stripe-backed payment infrastructure.",
     url: "https://classavatar.ca/",
     image: "/classavatar-16-10.webp",
-    tools: ["Next.js", "React", "Firebase", "Python", "FastAPI", "Stripe", "Tailwind CSS"]
+    tools: ["Next.js", "React", "Firebase", "Python", "FastAPI", "Stripe", "Tailwind CSS"],
+    focus: "Product and platform architecture",
+    ownership: "Full-stack technical direction",
+    evidence: "Core workflows, messaging, and subscriptions"
   },
   {
     title: "Espace OBNL",
     description: "Job board and recruitment platform built for Quebec nonprofits. Contributed to both the frontend and backend across 2 repositories (333 commits), including user dashboards, authentication, and Stripe payments.",
     url: "https://emploi.espaceobnl.ca/fr",
     image: "/eo-16-10.png",
-    tools: ["Next.js", "TypeScript", "Node.js", "Python", "JavaScript", "Firebase", "Algolia"]
+    tools: ["Next.js", "TypeScript", "Node.js", "Python", "JavaScript", "Firebase", "Algolia"],
+    focus: "Full-stack product delivery",
+    ownership: "Frontend and backend implementation",
+    evidence: "Dashboards, authentication, and payments"
   },
   {
     title: "Institut des troubles d'apprentissage",

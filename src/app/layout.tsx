@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     template: '%s | Patrick Shannon',
   },
   description:
-    'Product-minded lead developer and technical consultant specializing in production-safe web platform modernization, technical ownership, and hands-on delivery.',
+    'Lead developer and technical consultant who reverse-engineers undocumented systems and delivers production-safe web platform modernizations.',
 }
 
 export default function RootLayout({ children }) {

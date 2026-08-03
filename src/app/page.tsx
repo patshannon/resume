@@ -12,11 +12,11 @@ import { HiDownload } from 'react-icons/hi';
 export const metadata: Metadata = {
   title: 'Patrick Shannon - Lead Developer & Technical Consultant',
   description:
-    'Product-minded lead developer and technical consultant based in Halifax, specializing in production-safe web platform modernization and hands-on technical ownership.',
+    'Halifax-based lead developer and technical consultant who reverse-engineers undocumented systems and delivers production-safe web platform modernizations.',
   openGraph: {
     title: 'Patrick Shannon - Lead Developer & Technical Consultant',
     description:
-      'Production-safe web platform modernization, technical ownership, and hands-on delivery.',
+      'Undocumented systems made understandable, modernized, and verified in production.',
     images: ['/headshot-rounded.png'],
   },
 };
@@ -210,8 +210,8 @@ export default function Home() {
               </h2>
             </div>
             <p className="max-w-2xl text-base leading-7 text-muted-dark">
-              Modernization, architecture, implementation, integrations, and product
-              constraints all mattered at once.
+              Each project shows the same operating pattern: uncover the constraints,
+              choose a practical architecture, and carry the work into production.
             </p>
           </div>
 
@@ -236,22 +236,25 @@ export default function Home() {
           <div>
             <p className="spec-label text-signal-paper">§ 05 / Contact</p>
             <h2 className="mt-4 max-w-2xl font-serif text-4xl font-medium leading-[1.08] text-ink sm:text-5xl">
-              A place for context, not a high-pressure funnel.
+              Modernizing a platform without disrupting the people who rely on it?
             </h2>
             <p className="mt-5 max-w-xl text-base leading-7 text-muted-light">
-              Best reached for platform modernization, product-minded lead engineering,
-              or hands-on technical consulting.
+              If you&apos;re facing an undocumented system, a risky migration, or a
+              backlog that needs clear technical ownership, let&apos;s talk.
             </p>
           </div>
 
           <div className="rounded-sm border border-line-paper bg-paper-2 p-6">
-            <p className="spec-label text-muted-light">Direct</p>
+            <p className="spec-label text-muted-light">Start here</p>
             <a
-              href="mailto:patrick.e.shannon@gmail.com"
-              className="mt-2 block break-all font-mono text-base font-medium text-ink underline-offset-4 hover:text-signal-paper hover:underline"
+              href="mailto:patrick.e.shannon@gmail.com?subject=Platform%20modernization"
+              className="mt-3 inline-flex rounded-sm bg-ink px-4 py-2.5 text-sm font-semibold text-cream transition-colors hover:bg-signal hover:text-ink"
             >
-              patrick.e.shannon@gmail.com
+              Start a conversation
             </a>
+            <p className="mt-3 break-all font-mono text-[11px] text-muted-light">
+              patrick.e.shannon@gmail.com
+            </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <a
                 target="_blank"

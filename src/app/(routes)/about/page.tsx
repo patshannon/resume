@@ -6,7 +6,7 @@ import { HiDownload } from 'react-icons/hi';
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'Patrick Shannon is a product-minded lead developer and technical consultant specializing in production-safe web platform modernization.',
+    'Patrick Shannon is a lead developer and technical consultant who makes complex systems understandable and safe to modernize.',
 };
 
 const highlights = [
@@ -18,9 +18,9 @@ const highlights = [
 ];
 
 const stack = [
-  { group: 'Frontend', items: ['React', 'Next.js', 'TypeScript'] },
-  { group: 'Backend', items: ['Node.js', 'Firebase', 'GCP'] },
-  { group: 'AI Tooling', items: ['Claude Code', 'Codex'] },
+  { group: 'Application', items: ['React', 'Next.js', 'TypeScript'] },
+  { group: 'Platform', items: ['Node.js', 'Firebase', 'GCP'] },
+  { group: 'Verification', items: ['Playwright', 'CI/CD', 'Observability'] },
 ];
 
 export default function Page() {
@@ -43,7 +43,8 @@ export default function Page() {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.05 }}
             >
-              I take ownership when the system is complex and the path forward is unclear.
+              I make the path forward clear when a web platform is complex, undocumented,
+              or risky to change.
             </MotionH1>
             <MotionDiv
               className="mt-7 max-w-xl space-y-5 text-base leading-7 text-muted-dark"
@@ -54,8 +55,9 @@ export default function Page() {
               <p>
                 I&apos;m a lead developer and technical consultant at{' '}
                 <span className="text-cream">bbox.digital</span>, serving as the primary
-                client-facing technical lead within a lean two-developer team. I own 3–4
-                concurrent engagements from feature discovery and estimation through
+                client-facing technical lead within a lean two-developer team. Clients
+                bring feature requests and platform decisions directly to me, and I own
+                3–4 concurrent engagements from discovery and estimation through
                 architecture, implementation, deployment, and production support.
               </p>
               <p>
@@ -157,7 +159,7 @@ export default function Page() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              The tools I reach for.
+              Tools for discovery, delivery, and verification.
             </MotionH2>
           </div>
 
@@ -198,9 +200,9 @@ export default function Page() {
           >
             I make complex systems understandable before I change them — then use{' '}
             <span className="text-signal-paper">pragmatic architecture</span>, measurable
-            verification, and hands-on delivery to modernize them safely. I standardize
-            AI-assisted workflows across every repo so discovery, planning, refactoring,
-            and documentation move faster without lowering the bar.
+            verification, and hands-on delivery to modernize them safely. That means
+            mapping existing behavior, making tradeoffs visible, and validating the
+            replacement against production before cutover.
           </MotionP>
           <MotionDiv
             className="mt-10"
@@ -222,7 +224,7 @@ export default function Page() {
                 href="/#contact"
                 className="inline-flex items-center gap-2 rounded-sm border border-line-paper px-5 py-3 text-sm font-semibold text-ink transition-colors hover:border-signal-paper hover:text-signal-paper"
               >
-                Start a conversation
+                Discuss a platform
               </a>
             </div>
           </MotionDiv>

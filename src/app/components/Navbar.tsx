@@ -34,7 +34,9 @@ const Navbar = () => {
         >
           <span className="h-2 w-2 rounded-full bg-signal transition-transform group-hover:scale-125" />
           P. Shannon
-          <span className="hidden text-muted-dark sm:inline">/ lead developer</span>
+          <span className="hidden text-muted-dark lg:inline">
+            / lead developer &amp; technical consultant
+          </span>
         </a>
 
         <ul className="flex items-center gap-4 font-mono text-[12px] uppercase tracking-[0.16em] sm:gap-6 sm:tracking-[0.18em]">
