@@ -20,7 +20,7 @@ const highlights = [
 const stack = [
   { group: 'Frontend', items: ['React', 'Next.js', 'TypeScript'] },
   { group: 'Backend', items: ['Node.js', 'Firebase', 'GCP'] },
-  { group: 'AI Tooling', items: ['Claude Code', 'GitHub Copilot', 'Codex', 'Spec Kit'] },
+  { group: 'AI Tooling', items: ['Claude Code', 'Codex'] },
 ];
 
 export default function Page() {
