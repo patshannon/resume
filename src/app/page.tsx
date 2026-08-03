@@ -72,7 +72,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.05 }}
             >
               I modernize complex web platforms without breaking{' '}
-              <span className="text-signal">what already works</span>.
+              <span className="text-signal">what works</span>.
             </MotionH1>
 
             <MotionDiv
@@ -81,9 +81,9 @@ export default function Home() {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.12 }}
             >
-              I reverse-engineer undocumented systems, define pragmatic architectures,
-              and lead hands-on migrations that improve performance, reliability, and
-              delivery — while preserving the behavior users depend on.
+              I reverse-engineer undocumented systems, choose pragmatic architectures,
+              and deliver verified migrations that improve performance, reliability,
+              and maintainability.
             </MotionDiv>
 
             <MotionDiv

@@ -4,8 +4,8 @@ import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 
 const links = [
-  { href: '/', label: 'Index' },
-  { href: '/about', label: 'About' },
+  { href: '/#selected-work', label: 'Work', activePath: '/' },
+  { href: '/about', label: 'About', activePath: '/about' },
 ];
 
 const Navbar = () => {
@@ -39,7 +39,7 @@ const Navbar = () => {
 
         <ul className="flex items-center gap-4 font-mono text-[12px] uppercase tracking-[0.16em] sm:gap-6 sm:tracking-[0.18em]">
           {links.map((link) => {
-            const active = pathname === link.href;
+            const active = pathname === link.activePath;
             return (
               <li key={link.href}>
                 <a
